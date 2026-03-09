@@ -1,0 +1,101 @@
+{
+  "classId": "student",
+  "scenarios": [
+    {
+      "id": "stu-1",
+      "title": "The Assignment",
+      "subtitle": "A week out. The clock is ticking.",
+      "prompt": "You've got a big assignment due in a week. How do you handle it?",
+      "choices": [
+        { "id": "stu-1a", "text": "Break it into pieces and start early. I like being ahead", "tags": ["high-structure", "proactive", "planning-oriented"] },
+        { "id": "stu-1b", "text": "I'll start a few days before. Enough time without overdoing it", "tags": ["moderate-structure", "steady", "practical"] },
+        { "id": "stu-1c", "text": "I know I'll procrastinate, but I always pull it off last minute", "tags": ["low-structure", "procrastinator", "pressure-performer"] },
+        { "id": "stu-1d", "text": "I honestly forget about it until it's almost too late", "tags": ["low-structure", "avoidant", "overwhelm-prone"] }
+      ]
+    },
+    {
+      "id": "stu-2",
+      "title": "The Difficult Concept",
+      "subtitle": "When the material just isn't clicking.",
+      "prompt": "You're studying something and you just don't get it. What's your move?",
+      "choices": [
+        { "id": "stu-2a", "text": "Reread the material and look up other sources until it clicks", "tags": ["self-directed", "persistent", "research-oriented"] },
+        { "id": "stu-2b", "text": "Watch a YouTube video. Someone out there explains it better", "tags": ["visual-learner", "external-resource-seeker", "passive-intake"] },
+        { "id": "stu-2c", "text": "Ask a classmate or go to office hours", "tags": ["social-learner", "help-seeker", "relationship-oriented"] },
+        { "id": "stu-2d", "text": "Skip it and hope it's not on the exam", "tags": ["avoidant", "selective-effort", "risk-taker"] }
+      ]
+    },
+    {
+      "id": "stu-3",
+      "title": "The Group Project",
+      "subtitle": "Everyone's favorite assignment.",
+      "prompt": "You're assigned a group project. What role do you usually end up playing?",
+      "choices": [
+        { "id": "stu-3a", "text": "I take charge and organize everything. Someone has to", "tags": ["leader", "organizer", "high-responsibility"] },
+        { "id": "stu-3b", "text": "I do my part well but don't want to run the whole thing", "tags": ["contributor", "reliable", "independent-worker"] },
+        { "id": "stu-3c", "text": "I'm the ideas person. Great in the brainstorm, less great on the follow-through", "tags": ["creative", "ideator", "execution-gap"] },
+        { "id": "stu-3d", "text": "I'm not proud of it, but I'm mostly hoping the group carries me", "tags": ["low-accountability", "passive", "minimal-effort"] }
+      ]
+    },
+    {
+      "id": "stu-4",
+      "title": "The Exam",
+      "subtitle": "The big one is coming up.",
+      "prompt": "You've got a big exam coming up. How do you usually prepare?",
+      "choices": [
+        { "id": "stu-4a", "text": "I make study guides, flashcards, and review notes well in advance", "tags": ["high-preparation", "systematic", "organized-learner"] },
+        { "id": "stu-4b", "text": "I review my notes a couple times and hope the main ideas stuck", "tags": ["moderate-preparation", "passive-review", "confidence-based"] },
+        { "id": "stu-4c", "text": "I cram the night before. It's stressful but it works (mostly)", "tags": ["low-preparation", "crammer", "pressure-performer"] },
+        { "id": "stu-4d", "text": "I kind of wing it and see what happens", "tags": ["minimal-preparation", "avoidant", "low-investment"] }
+      ]
+    },
+    {
+      "id": "stu-5",
+      "title": "The Blank Page",
+      "subtitle": "Cursor blinking. Nothing written.",
+      "prompt": "You need to write a paper or essay. You're staring at a blank document. What happens?",
+      "choices": [
+        { "id": "stu-5a", "text": "I outline first, then write section by section. Structure keeps me on track", "tags": ["structured-writer", "outline-first", "methodical"] },
+        { "id": "stu-5b", "text": "I just start writing and figure out the structure as I go", "tags": ["freeform-writer", "discovery-based", "momentum-driven"] },
+        { "id": "stu-5c", "text": "I write the intro last because I never know how to start", "tags": ["start-blocker", "middle-out", "intro-anxious"] },
+        { "id": "stu-5d", "text": "I stare at it for way too long, write a sentence, delete it, repeat", "tags": ["paralyzed-writer", "perfectionism-block", "high-anxiety"] }
+      ]
+    },
+    {
+      "id": "stu-6",
+      "title": "The Career Question",
+      "subtitle": "The question everyone keeps asking.",
+      "prompt": "Someone asks you 'what do you want to do after graduation?' What's going through your head?",
+      "choices": [
+        { "id": "stu-6a", "text": "I have a clear plan. I know what field and what steps to take", "tags": ["career-clear", "goal-oriented", "planning-ahead"] },
+        { "id": "stu-6b", "text": "I have a general direction but the specifics are fuzzy", "tags": ["career-leaning", "exploring", "directionally-aware"] },
+        { "id": "stu-6c", "text": "I have too many interests and can't narrow it down", "tags": ["career-scattered", "multi-interested", "decision-paralysis"] },
+        { "id": "stu-6d", "text": "I try not to think about it honestly", "tags": ["career-avoidant", "anxious", "overwhelmed-by-future"] }
+      ]
+    },
+    {
+      "id": "stu-7",
+      "title": "The Overwhelm",
+      "subtitle": "Everything is due at once.",
+      "prompt": "It's midterms week. Exams, papers, and a project all due within days. How are you handling it?",
+      "choices": [
+        { "id": "stu-7a", "text": "I made a schedule weeks ago. Stressed but on track", "tags": ["high-planning", "proactive-stress-management", "ahead-of-deadlines"] },
+        { "id": "stu-7b", "text": "I'm triaging. Figuring out what's worth the most and prioritizing", "tags": ["strategic", "triage-oriented", "practical-under-pressure"] },
+        { "id": "stu-7c", "text": "I'm doing everything at once and nothing well", "tags": ["scattered", "multitasking", "stress-reactive"] },
+        { "id": "stu-7d", "text": "I'm spiraling and considering dropping something", "tags": ["overwhelm-crisis", "anxiety-driven", "near-breaking-point"] }
+      ]
+    },
+    {
+      "id": "stu-8",
+      "title": "The Skill They Want",
+      "subtitle": "Something you've been meaning to get better at.",
+      "prompt": "There's a skill you wish you were better at, for school, career, or personal interest. How do you usually approach learning new things?",
+      "choices": [
+        { "id": "stu-8a", "text": "I find courses, tutorials, and books. I like learning systematically", "tags": ["systematic-learner", "course-seeker", "structured-growth"] },
+        { "id": "stu-8b", "text": "I learn by doing. Just throw me in and I'll figure it out", "tags": ["experiential-learner", "hands-on", "trial-and-error"] },
+        { "id": "stu-8c", "text": "I watch other people do it and pick up what I can", "tags": ["observational-learner", "passive-absorption", "example-driven"] },
+        { "id": "stu-8d", "text": "I keep meaning to start but I never get around to it", "tags": ["growth-stalled", "aspiration-gap", "activation-barrier"] }
+      ]
+    }
+  ]
+}

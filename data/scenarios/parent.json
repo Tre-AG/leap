@@ -1,0 +1,101 @@
+{
+  "classId": "parent",
+  "scenarios": [
+    {
+      "id": "par-1",
+      "title": "The Morning Chaos",
+      "subtitle": "Every morning is an event.",
+      "prompt": "It's a weekday morning. Kids need to get ready, lunches need to happen, and you need to get out the door. What does this look like?",
+      "choices": [
+        { "id": "par-1a", "text": "We have a routine. Everyone knows what to do and it mostly runs itself", "tags": ["high-structure", "systems-built", "routine-established"] },
+        { "id": "par-1b", "text": "I'm directing traffic the entire time. It works but I'm the engine", "tags": ["manager-mode", "high-effort", "central-coordinator"] },
+        { "id": "par-1c", "text": "It's a scramble every single day and I don't know how we make it", "tags": ["reactive", "chaotic", "surviving"] },
+        { "id": "par-1d", "text": "My partner handles most of the morning. I deal with other parts", "tags": ["shared-responsibility", "delegated", "role-divided"] }
+      ]
+    },
+    {
+      "id": "par-2",
+      "title": "The Dinner Question",
+      "subtitle": "The question that never stops.",
+      "prompt": "It's 4pm. Someone's going to ask 'what's for dinner?' What's going through your head?",
+      "choices": [
+        { "id": "par-2a", "text": "I already know. I plan meals for the week", "tags": ["meal-planner", "proactive", "organized"] },
+        { "id": "par-2b", "text": "I've got go-to meals and I'll figure it out in the next hour", "tags": ["repertoire-based", "moderate-planning", "good-enough"] },
+        { "id": "par-2c", "text": "I dread this question every single day", "tags": ["decision-fatigued", "meal-stressed", "daily-struggle"] },
+        { "id": "par-2d", "text": "We order takeout more than I'd like to admit", "tags": ["convenience-dependent", "time-poor", "guilt-carrying"] }
+      ]
+    },
+    {
+      "id": "par-3",
+      "title": "The Mental Load",
+      "subtitle": "The stuff nobody sees.",
+      "prompt": "Doctor appointments, school events, permission slips, birthday parties, groceries, that thing you were supposed to call about... How do you keep track?",
+      "choices": [
+        { "id": "par-3a", "text": "I have a system. Calendar, lists, reminders. A lot but organized", "tags": ["system-dependent", "high-organization", "managed-load"] },
+        { "id": "par-3b", "text": "It's mostly in my head and that's terrifying", "tags": ["memory-reliant", "no-system", "high-risk"] },
+        { "id": "par-3c", "text": "I write things down in 5 different places", "tags": ["scattered-capture", "fragmented", "good-intentions"] },
+        { "id": "par-3d", "text": "My partner and I split it but things still fall through", "tags": ["shared-load", "communication-gaps", "coordination-failure"] }
+      ]
+    },
+    {
+      "id": "par-4",
+      "title": "The Kid Moment",
+      "subtitle": "They need you right now.",
+      "prompt": "Your kid comes to you with something. A homework question, a social problem, a big feeling. What do you do?",
+      "choices": [
+        { "id": "par-4a", "text": "I try to help even if I have to quietly Google the answer", "tags": ["engaged", "resourceful", "hands-on"] },
+        { "id": "par-4b", "text": "I sit with them and listen but I don't always know the right thing to say", "tags": ["emotionally-present", "uncertain", "supportive-but-unsure"] },
+        { "id": "par-4c", "text": "I tell them to ask their teacher. I'm not equipped for everything", "tags": ["hands-off", "boundaries-set", "pragmatic"] },
+        { "id": "par-4d", "text": "I feel guilty because I'm usually too tired to give them my full attention", "tags": ["guilt-carrying", "exhausted", "attention-stretched"] }
+      ]
+    },
+    {
+      "id": "par-5",
+      "title": "The Personal Time",
+      "subtitle": "Remember that?",
+      "prompt": "When was the last time you did something just for you? Not for the kids, not for work.",
+      "choices": [
+        { "id": "par-5a", "text": "I make time regularly. It keeps me sane", "tags": ["self-prioritizing", "boundaries-set", "healthy-balance"] },
+        { "id": "par-5b", "text": "Occasionally but I always feel guilty about it", "tags": ["guilt-prone", "occasional-self-care", "permission-needed"] },
+        { "id": "par-5c", "text": "I honestly can't remember", "tags": ["self-neglecting", "depleted", "identity-lost-in-parenting"] },
+        { "id": "par-5d", "text": "Scrolling my phone after the kids are in bed counts, right?", "tags": ["micro-escapes", "low-bar", "surviving"] }
+      ]
+    },
+    {
+      "id": "par-6",
+      "title": "The Scheduling Nightmare",
+      "subtitle": "Five calendars, one family.",
+      "prompt": "Between your schedule, your partner's, kids' activities, and everything else. How does the family calendar work?",
+      "choices": [
+        { "id": "par-6a", "text": "Shared digital calendar. It's the source of truth", "tags": ["digital-calendar", "shared-system", "coordinated"] },
+        { "id": "par-6b", "text": "I keep track and tell everyone where to be", "tags": ["single-point-of-failure", "coordinator", "information-hub"] },
+        { "id": "par-6c", "text": "We try to coordinate but double-bookings happen regularly", "tags": ["coordination-gaps", "miscommunication", "system-failure"] },
+        { "id": "par-6d", "text": "We just wing it week by week", "tags": ["no-system", "reactive", "low-planning"] }
+      ]
+    },
+    {
+      "id": "par-7",
+      "title": "The Household Admin",
+      "subtitle": "The never-ending list.",
+      "prompt": "Bills, groceries, home maintenance, car stuff, insurance, that thing you've been meaning to call about for two weeks. How's all that going?",
+      "choices": [
+        { "id": "par-7a", "text": "Mostly on autopilot. Auto-pay, recurring orders, maintenance schedule", "tags": ["automated", "systems-oriented", "on-top-of-it"] },
+        { "id": "par-7b", "text": "I handle it as it comes up but stay mostly current", "tags": ["reactive-functional", "bill-by-bill", "managing"] },
+        { "id": "par-7c", "text": "There are at least 3 things on that list I've been avoiding", "tags": ["procrastinating", "avoidant", "task-pile-up"] },
+        { "id": "par-7d", "text": "My partner handles most of this", "tags": ["role-divided", "complementary", "specialized"] }
+      ]
+    },
+    {
+      "id": "par-8",
+      "title": "The Worry",
+      "subtitle": "The thing that keeps you up.",
+      "prompt": "What's the thing about parenting that takes up more mental space than you'd like?",
+      "choices": [
+        { "id": "par-8a", "text": "Am I doing enough? Are my kids getting what they need from me?", "tags": ["adequacy-anxiety", "quality-concerned", "emotionally-invested"] },
+        { "id": "par-8b", "text": "Screen time, social media, technology. I worry about what it's doing to them", "tags": ["tech-anxious", "safety-concerned", "digitally-worried"] },
+        { "id": "par-8c", "text": "Money. Providing, saving for their future, affording activities", "tags": ["financially-stressed", "provider-anxiety", "cost-conscious"] },
+        { "id": "par-8d", "text": "The balance. I feel like I'm failing at everything a little bit", "tags": ["balance-overwhelmed", "spreading-thin", "guilt-pervasive"] }
+      ]
+    }
+  ]
+}

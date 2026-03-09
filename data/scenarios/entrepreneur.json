@@ -1,0 +1,101 @@
+{
+  "classId": "entrepreneur",
+  "scenarios": [
+    {
+      "id": "ent-1",
+      "title": "The Idea Phase",
+      "subtitle": "Where it all starts.",
+      "prompt": "When it comes to starting something of your own, a side project, a hustle, a business, where are you at?",
+      "choices": [
+        { "id": "ent-1a", "text": "I have a specific idea I'm working on or ready to start", "tags": ["idea-committed", "action-oriented", "direction-clear"] },
+        { "id": "ent-1b", "text": "I have a few ideas but I can't decide which one to go with", "tags": ["idea-multiple", "decision-paralysis", "needs-validation"] },
+        { "id": "ent-1c", "text": "I want to build something but I haven't figured out what yet", "tags": ["idea-searching", "aspiration-strong", "direction-unclear"] },
+        { "id": "ent-1d", "text": "I like the idea of it but I don't know where to even begin", "tags": ["idea-dreamer", "activation-barrier", "overwhelmed-by-starting"] }
+      ]
+    },
+    {
+      "id": "ent-2",
+      "title": "The Skills You've Got",
+      "subtitle": "Everyone brings something to the table.",
+      "prompt": "Everyone's got something they're good at, even if they don't think of it as a 'business skill.' What's yours?",
+      "choices": [
+        { "id": "ent-2a", "text": "I'm good with people. Communicating, networking, selling ideas", "tags": ["people-skilled", "communication-strong", "relationship-builder"] },
+        { "id": "ent-2b", "text": "I'm good at making things. Writing, design, building, creating content", "tags": ["maker", "creative-skilled", "output-oriented"] },
+        { "id": "ent-2c", "text": "I'm good at figuring things out. Research, problem-solving, learning fast", "tags": ["analytical", "resourceful", "self-taught"] },
+        { "id": "ent-2d", "text": "I'm not sure what I'd offer. I don't feel like I have a marketable skill", "tags": ["low-confidence", "skill-blind", "needs-discovery"] }
+      ]
+    },
+    {
+      "id": "ent-3",
+      "title": "The Time Reality",
+      "subtitle": "Be honest with yourself.",
+      "prompt": "How much time do you realistically have to work on something of your own?",
+      "choices": [
+        { "id": "ent-3a", "text": "A lot of free time right now. I could go all in", "tags": ["time-rich", "available", "full-commitment-possible"] },
+        { "id": "ent-3b", "text": "A few hours a week. Evenings and weekends around a job or school", "tags": ["time-limited", "side-hustle-mode", "working-around-commitments"] },
+        { "id": "ent-3c", "text": "Not much. Already stretched thin but I still want to try", "tags": ["time-scarce", "overcommitted", "aspirational"] },
+        { "id": "ent-3d", "text": "I could make time if I knew it was worth it. I need to see potential first", "tags": ["time-conditional", "proof-seeking", "risk-averse"] }
+      ]
+    },
+    {
+      "id": "ent-4",
+      "title": "The Money Situation",
+      "subtitle": "What you're working with.",
+      "prompt": "What's your budget situation for getting something off the ground?",
+      "choices": [
+        { "id": "ent-4a", "text": "I've got some savings or money I can invest", "tags": ["funded", "willing-to-invest", "resourced"] },
+        { "id": "ent-4b", "text": "I can spend a little. A subscription or two if it's worth it", "tags": ["budget-limited", "selective-spending", "value-conscious"] },
+        { "id": "ent-4c", "text": "Basically nothing. Whatever I do needs to be free or close to it", "tags": ["budget-zero", "bootstrap-only", "free-tools-essential"] },
+        { "id": "ent-4d", "text": "I'd rather invest time than money right now", "tags": ["time-over-money", "sweat-equity", "learning-oriented"] }
+      ]
+    },
+    {
+      "id": "ent-5",
+      "title": "The Putting Yourself Out There Problem",
+      "subtitle": "The part nobody tells you about.",
+      "prompt": "Building something usually means putting yourself out there. Social media, networking, telling people what you're working on. How does that feel?",
+      "choices": [
+        { "id": "ent-5a", "text": "I'm comfortable. I already post and share what I'm up to", "tags": ["visibility-comfortable", "self-promoter", "already-public"] },
+        { "id": "ent-5b", "text": "I can do it but it doesn't come naturally. I have to push myself", "tags": ["visibility-reluctant", "willing-but-uncomfortable", "needs-encouragement"] },
+        { "id": "ent-5c", "text": "I hate it. Self-promotion makes me cringe", "tags": ["visibility-averse", "self-promotion-allergic", "imposter-syndrome"] },
+        { "id": "ent-5d", "text": "I don't even know what I'd say or where I'd post", "tags": ["visibility-lost", "no-platform", "needs-strategy"] }
+      ]
+    },
+    {
+      "id": "ent-6",
+      "title": "The Learning Curve",
+      "subtitle": "There's always something you don't know yet.",
+      "prompt": "Starting something on your own means learning things you've never done. Marketing, finance, design. How do you deal with that?",
+      "choices": [
+        { "id": "ent-6a", "text": "I love learning new things. Videos, courses, figuring it out", "tags": ["self-directed-learner", "growth-oriented", "resourceful"] },
+        { "id": "ent-6b", "text": "I learn what I need in the moment. I'll figure out invoicing when I need to send one", "tags": ["just-in-time-learner", "practical", "on-demand"] },
+        { "id": "ent-6c", "text": "I'd rather find someone to do the things I'm not good at", "tags": ["delegation-minded", "collaboration-seeker", "knows-limitations"] },
+        { "id": "ent-6d", "text": "I get overwhelmed by how much I don't know", "tags": ["skill-overwhelmed", "imposter-syndrome", "paralyzed-by-gaps"] }
+      ]
+    },
+    {
+      "id": "ent-7",
+      "title": "The First Dollar",
+      "subtitle": "The hardest line to cross.",
+      "prompt": "Have you made money from something you built or created yourself? Could be anything. Freelancing, selling something, a side gig.",
+      "choices": [
+        { "id": "ent-7a", "text": "Yeah. I've freelanced, sold things, or done gig work", "tags": ["revenue-experienced", "proven-ability", "has-foundation"] },
+        { "id": "ent-7b", "text": "A little. Some money but nothing consistent", "tags": ["revenue-sporadic", "early-stage", "needs-consistency"] },
+        { "id": "ent-7c", "text": "No, but I have an idea of what I'd charge for", "tags": ["revenue-zero", "pricing-aware", "pre-launch"] },
+        { "id": "ent-7d", "text": "I have no idea how I'd make money from what I do", "tags": ["revenue-clueless", "monetization-blind", "needs-discovery"] }
+      ]
+    },
+    {
+      "id": "ent-8",
+      "title": "The Big Picture",
+      "subtitle": "What's this all for?",
+      "prompt": "When you imagine your life a few years from now, what does the ideal version look like?",
+      "choices": [
+        { "id": "ent-8a", "text": "Working for myself full-time. I want to be my own boss", "tags": ["full-independence", "ambitious", "long-term-builder"] },
+        { "id": "ent-8b", "text": "A side income that gives freedom and options. Don't need to quit my day job", "tags": ["side-income", "flexibility-seeker", "security-conscious"] },
+        { "id": "ent-8c", "text": "Doing work I actually care about, even if it pays less", "tags": ["purpose-driven", "meaning-seeker", "values-over-money"] },
+        { "id": "ent-8d", "text": "More control over my life. Tired of others deciding my schedule and income", "tags": ["autonomy-seeking", "frustration-driven", "independence-motivated"] }
+      ]
+    }
+  ]
+}

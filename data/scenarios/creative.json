@@ -1,0 +1,101 @@
+{
+  "classId": "creative",
+  "scenarios": [
+    {
+      "id": "cre-1",
+      "title": "The Creative Process",
+      "subtitle": "How it starts for you.",
+      "prompt": "You're starting a new creative project. What does the beginning usually look like?",
+      "choices": [
+        { "id": "cre-1a", "text": "I dive right in. I figure things out as I create", "tags": ["intuitive", "momentum-driven", "discovery-based"] },
+        { "id": "cre-1b", "text": "I plan it out first. Research, sketches, outlines, then I start", "tags": ["structured-creative", "research-first", "methodical"] },
+        { "id": "cre-1c", "text": "I have the idea but getting started is the hardest part", "tags": ["start-blocker", "perfectionism-prone", "overthinking"] },
+        { "id": "cre-1d", "text": "I wait for inspiration. I can't force it", "tags": ["inspiration-dependent", "flow-chaser", "inconsistent-output"] }
+      ]
+    },
+    {
+      "id": "cre-2",
+      "title": "The Feedback Problem",
+      "subtitle": "Is it any good?",
+      "prompt": "You've made something and you want to know if it's good. What do you do?",
+      "choices": [
+        { "id": "cre-2a", "text": "Share it with trusted people and ask for honest feedback", "tags": ["feedback-seeking", "community-connected", "open-to-critique"] },
+        { "id": "cre-2b", "text": "Post it and see how people react. Engagement tells me what I need to know", "tags": ["audience-validated", "metrics-driven", "public-feedback"] },
+        { "id": "cre-2c", "text": "Compare it to others' work and usually feel like mine isn't as good", "tags": ["comparison-prone", "self-critical", "imposter-syndrome"] },
+        { "id": "cre-2d", "text": "I don't usually share. It feels too personal", "tags": ["private-creator", "vulnerability-averse", "sharing-blocked"] }
+      ]
+    },
+    {
+      "id": "cre-3",
+      "title": "The Unglamorous Work",
+      "subtitle": "The part nobody posts about.",
+      "prompt": "Every creative project has boring parts. Editing, revisions, organizing files, formatting. How do you handle it?",
+      "choices": [
+        { "id": "cre-3a", "text": "I'm pretty good about it. I edit thoroughly and keep things organized", "tags": ["disciplined-finisher", "detail-oriented", "process-complete"] },
+        { "id": "cre-3b", "text": "I do it but I hate every second. It's where my creative energy goes to die", "tags": ["grudging-finisher", "admin-resentful", "energy-drain"] },
+        { "id": "cre-3c", "text": "I rush through it. Good enough is good enough", "tags": ["rusher", "quality-sacrificing", "next-project-oriented"] },
+        { "id": "cre-3d", "text": "I avoid it and it piles up. Folders full of unedited, unorganized work", "tags": ["avoidant", "backlog-accumulating", "completion-gap"] }
+      ]
+    },
+    {
+      "id": "cre-4",
+      "title": "The Time to Create",
+      "subtitle": "Finding it, making it, protecting it.",
+      "prompt": "When it comes to finding time for your creative work, what's the reality?",
+      "choices": [
+        { "id": "cre-4a", "text": "I make it a priority. Regular schedule or routine for creating", "tags": ["creation-prioritized", "routine-established", "disciplined"] },
+        { "id": "cre-4b", "text": "I squeeze it in. Lunch breaks, late nights, weekends", "tags": ["time-scarce", "passion-persistent", "stealing-moments"] },
+        { "id": "cre-4c", "text": "It depends on mood and energy. Sometimes prolific, sometimes weeks go by", "tags": ["inconsistent", "energy-dependent", "burst-creator"] },
+        { "id": "cre-4d", "text": "I don't create as much as I want to. Life gets in the way", "tags": ["creation-starved", "guilt-carrying", "aspiration-gap"] }
+      ]
+    },
+    {
+      "id": "cre-5",
+      "title": "The Creative Block",
+      "subtitle": "When nothing's working.",
+      "prompt": "You're stuck. The ideas aren't coming, the work feels stale, or you can't get motivated. What do you do?",
+      "choices": [
+        { "id": "cre-5a", "text": "Push through. Discipline matters more than inspiration", "tags": ["discipline-driven", "grind-mentality", "output-focused"] },
+        { "id": "cre-5b", "text": "Step away and do something else until it passes", "tags": ["break-taker", "reset-seeker", "process-trusting"] },
+        { "id": "cre-5c", "text": "Consume other people's work to get inspired", "tags": ["input-seeker", "inspiration-absorber", "reference-driven"] },
+        { "id": "cre-5d", "text": "I spiral. Start wondering if I'm even good at this", "tags": ["block-to-crisis", "confidence-fragile", "existential-doubt"] }
+      ]
+    },
+    {
+      "id": "cre-6",
+      "title": "The Tools of the Trade",
+      "subtitle": "Your creative toolkit.",
+      "prompt": "When it comes to the tools and software for your creative work, how do you feel?",
+      "choices": [
+        { "id": "cre-6a", "text": "I know my tools well. Invested time in learning them", "tags": ["tool-proficient", "invested", "workflow-established"] },
+        { "id": "cre-6b", "text": "I use the basics but there's more I could learn", "tags": ["tool-functional", "surface-level", "growth-potential"] },
+        { "id": "cre-6c", "text": "I feel behind. Tools and techniques I should learn but haven't", "tags": ["tool-anxious", "skill-gap", "falling-behind"] },
+        { "id": "cre-6d", "text": "I keep things simple on purpose. Don't need fancy tools", "tags": ["tool-minimalist", "craft-focused", "anti-complexity"] }
+      ]
+    },
+    {
+      "id": "cre-7",
+      "title": "The Unfinished Projects",
+      "subtitle": "Be honest.",
+      "prompt": "Be honest. How many half-finished creative projects do you have sitting around right now?",
+      "choices": [
+        { "id": "cre-7a", "text": "Not many. I finish what I start before moving on", "tags": ["completer", "disciplined", "follow-through-strong"] },
+        { "id": "cre-7b", "text": "A few. I circle back eventually", "tags": ["slow-finisher", "rotating-attention", "eventual-completer"] },
+        { "id": "cre-7c", "text": "More than I'd like to admit. Great at starting, not at finishing", "tags": ["serial-starter", "completion-struggle", "shiny-object"] },
+        { "id": "cre-7d", "text": "Everything is unfinished. I've never completed and shared something I'm proud of", "tags": ["completion-blocked", "sharing-blocked", "perfectionism-paralysis"] }
+      ]
+    },
+    {
+      "id": "cre-8",
+      "title": "The Dream",
+      "subtitle": "No constraints. What does it look like?",
+      "prompt": "If you could spend your time doing exactly the creative work you want, no constraints, what would that look like?",
+      "choices": [
+        { "id": "cre-8a", "text": "Close to what I'm doing. Just more of it and getting better", "tags": ["satisfied-direction", "growth-focused", "more-of-same"] },
+        { "id": "cre-8b", "text": "I'd go deeper into one thing instead of juggling multiple projects", "tags": ["focus-seeking", "depth-over-breadth", "niche-aspiring"] },
+        { "id": "cre-8c", "text": "I'd try something completely different from what I'm doing now", "tags": ["pivot-curious", "exploration-driven", "restless"] },
+        { "id": "cre-8d", "text": "I don't know. I just want to create and I want it to matter", "tags": ["purpose-seeking", "meaning-driven", "vision-unclear"] }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,192 @@
+{
+  "professional": [
+    {
+      "id": "pro-f1",
+      "afterScenario": 2,
+      "title": "The Elevator",
+      "prompt": "You're in the elevator. Someone you half-recognize gets in.",
+      "choices": [
+        { "id": "pro-f1a", "text": "Smile and say hi. Keep it short." },
+        { "id": "pro-f1b", "text": "Go for the full conversation. I can talk to anyone." },
+        { "id": "pro-f1c", "text": "Phone comes out. Very important email happening right now." },
+        { "id": "pro-f1d", "text": "Nod. Silence. We both understand." }
+      ]
+    },
+    {
+      "id": "pro-f2",
+      "afterScenario": 4,
+      "title": "The Friday Ping",
+      "prompt": "Friday at 4:55. Someone pings you with a \"quick question.\"",
+      "choices": [
+        { "id": "pro-f2a", "text": "Knock it out so it's not hanging over the weekend" },
+        { "id": "pro-f2b", "text": "\"Can this wait until Monday?\"" },
+        { "id": "pro-f2c", "text": "Pretend I didn't see it" },
+        { "id": "pro-f2d", "text": "Open it, sigh, start typing" }
+      ]
+    },
+    {
+      "id": "pro-f3",
+      "afterScenario": 6,
+      "title": "The Lunch Decision",
+      "prompt": "Nobody can decide where to go for lunch.",
+      "choices": [
+        { "id": "pro-f3a", "text": "I pick. Someone has to." },
+        { "id": "pro-f3b", "text": "Throw out three options and make them choose" },
+        { "id": "pro-f3c", "text": "\"I'm fine with whatever\" and mean it" },
+        { "id": "pro-f3d", "text": "Already eating at my desk" }
+      ]
+    }
+  ],
+  "student": [
+    {
+      "id": "stu-f1",
+      "afterScenario": 2,
+      "title": "The Invitation",
+      "prompt": "Your friend wants to hang out but you told yourself you'd be productive tonight.",
+      "choices": [
+        { "id": "stu-f1a", "text": "I go. I wasn't going to be productive anyway." },
+        { "id": "stu-f1b", "text": "Say no, then sit on my phone for three hours instead" },
+        { "id": "stu-f1c", "text": "Try to do both. Study at their place. Never works." },
+        { "id": "stu-f1d", "text": "Actually stay in and get stuff done. It happens sometimes." }
+      ]
+    },
+    {
+      "id": "stu-f2",
+      "afterScenario": 4,
+      "title": "The Classroom",
+      "prompt": "The professor asks a question to the whole class. You know the answer.",
+      "choices": [
+        { "id": "stu-f2a", "text": "Raise my hand. Why not." },
+        { "id": "stu-f2b", "text": "Wait to see if someone else says it first" },
+        { "id": "stu-f2c", "text": "I know it but there's no way I'm volunteering" },
+        { "id": "stu-f2d", "text": "Start to raise my hand, then put it back down" }
+      ]
+    },
+    {
+      "id": "stu-f3",
+      "afterScenario": 6,
+      "title": "The Library",
+      "prompt": "You walk into the library and every seat is taken except the one next to someone you vaguely know.",
+      "choices": [
+        { "id": "stu-f3a", "text": "Sit down and say hey. It's just a seat." },
+        { "id": "stu-f3b", "text": "Sit down, headphones in, pretend I didn't see them" },
+        { "id": "stu-f3c", "text": "Find a different spot even if it's worse" },
+        { "id": "stu-f3d", "text": "Leave and go somewhere else entirely" }
+      ]
+    }
+  ],
+  "entrepreneur": [
+    {
+      "id": "ent-f1",
+      "afterScenario": 2,
+      "title": "The Dinner Question",
+      "prompt": "You're at dinner and someone asks \"so what's new?\"",
+      "choices": [
+        { "id": "ent-f1a", "text": "Tell them about the thing I'm working on. This is my opening." },
+        { "id": "ent-f1b", "text": "Keep it vague. It's not ready to talk about yet." },
+        { "id": "ent-f1c", "text": "Mention my day job. The project stays private for now." },
+        { "id": "ent-f1d", "text": "\"Not much, you?\" and redirect" }
+      ]
+    },
+    {
+      "id": "ent-f2",
+      "afterScenario": 4,
+      "title": "The Competitor",
+      "prompt": "You see an ad for something weirdly similar to your idea.",
+      "choices": [
+        { "id": "ent-f2a", "text": "Click on it. I need to know everything about them." },
+        { "id": "ent-f2b", "text": "Start making a mental list of how mine is different" },
+        { "id": "ent-f2c", "text": "Text someone: \"Look at this. Should I be worried?\"" },
+        { "id": "ent-f2d", "text": "Close the app. Ignorance is bliss right now." }
+      ]
+    },
+    {
+      "id": "ent-f3",
+      "afterScenario": 6,
+      "title": "The Feedback",
+      "prompt": "Someone you respect gives you honest feedback on your idea and it's not all positive.",
+      "choices": [
+        { "id": "ent-f3a", "text": "Ask follow-up questions. I want specifics." },
+        { "id": "ent-f3b", "text": "Thank them, go home, start adjusting" },
+        { "id": "ent-f3c", "text": "Thank them, go home, stare at the ceiling" },
+        { "id": "ent-f3d", "text": "Push back. I think they missed something." }
+      ]
+    }
+  ],
+  "parent": [
+    {
+      "id": "par-f1",
+      "afterScenario": 2,
+      "title": "The Solo Drive",
+      "prompt": "You're in the car alone. No kids.",
+      "choices": [
+        { "id": "par-f1a", "text": "Turn the music up. Loud." },
+        { "id": "par-f1b", "text": "Sit in silence for a minute. Just silence." },
+        { "id": "par-f1c", "text": "Call someone I've been meaning to catch up with" },
+        { "id": "par-f1d", "text": "Drive-through. I've earned this." }
+      ]
+    },
+    {
+      "id": "par-f2",
+      "afterScenario": 4,
+      "title": "The Pickup Line",
+      "prompt": "Another parent at pickup is going on about their kid's coding camp, travel soccer, and Mandarin lessons.",
+      "choices": [
+        { "id": "par-f2a", "text": "Nod along and ask questions. Maybe I should look into it." },
+        { "id": "par-f2b", "text": "Nod along while mentally planning dinner" },
+        { "id": "par-f2c", "text": "\"That's awesome\" and change the subject" },
+        { "id": "par-f2d", "text": "One-up them with something my kid did" }
+      ]
+    },
+    {
+      "id": "par-f3",
+      "afterScenario": 6,
+      "title": "The Kid Quote",
+      "prompt": "Your kid says something so funny you wish you could tell someone right now.",
+      "choices": [
+        { "id": "par-f3a", "text": "Text it to my partner or best friend immediately" },
+        { "id": "par-f3b", "text": "Post it. The world needs to hear this." },
+        { "id": "par-f3c", "text": "Try to memorize it. I'll definitely forget." },
+        { "id": "par-f3d", "text": "Just laugh and stay in the moment" }
+      ]
+    }
+  ],
+  "creative": [
+    {
+      "id": "cre-f1",
+      "afterScenario": 2,
+      "title": "The Afterglow",
+      "prompt": "You walk out of a museum, a concert, or a show that was genuinely incredible.",
+      "choices": [
+        { "id": "cre-f1a", "text": "Go home and start making something immediately" },
+        { "id": "cre-f1b", "text": "Call someone and talk about it for 20 minutes" },
+        { "id": "cre-f1c", "text": "Wander for a bit. Let it sit." },
+        { "id": "cre-f1d", "text": "Pull out my phone and start taking notes" }
+      ]
+    },
+    {
+      "id": "cre-f2",
+      "afterScenario": 4,
+      "title": "The Compliment",
+      "prompt": "Someone gives you a real, genuine compliment on your work.",
+      "choices": [
+        { "id": "cre-f2a", "text": "\"Thank you.\" Let it land." },
+        { "id": "cre-f2b", "text": "\"Oh, it's not that good\" before I can stop myself" },
+        { "id": "cre-f2c", "text": "\"Thanks! Here's what I'd change though...\"" },
+        { "id": "cre-f2d", "text": "Screenshot it. I'm saving this for a bad day." }
+      ]
+    },
+    {
+      "id": "cre-f3",
+      "afterScenario": 6,
+      "title": "The Late Night",
+      "prompt": "It's 1am. You're in the zone. You have stuff tomorrow morning.",
+      "choices": [
+        { "id": "cre-f3a", "text": "Keep going. The zone doesn't come on command." },
+        { "id": "cre-f3b", "text": "Set a timer. 30 more minutes, then I'm done." },
+        { "id": "cre-f3c", "text": "Stop, but leave everything exactly where it is for tomorrow" },
+        { "id": "cre-f3d", "text": "Keep going. Hate myself in the morning. Worth it." }
+      ]
+    }
+  ]
+}

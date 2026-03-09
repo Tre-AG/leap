@@ -1,0 +1,101 @@
+{
+  "classId": "professional",
+  "scenarios": [
+    {
+      "id": "pro-1",
+      "title": "The Monday Morning",
+      "subtitle": "How you start your week says a lot about you.",
+      "prompt": "It's Monday morning. You have a full week ahead. Meetings, deadlines, and a few things you've been putting off. What's your move?",
+      "choices": [
+        { "id": "pro-1a", "text": "Open my calendar and map out the entire week before doing anything else", "tags": ["high-structure", "proactive", "planning-oriented"] },
+        { "id": "pro-1b", "text": "Glance at what's coming up and start with whatever's due first", "tags": ["moderate-structure", "deadline-driven", "practical"] },
+        { "id": "pro-1c", "text": "Dive straight into my inbox. That's where the fires are", "tags": ["low-structure", "reactive", "email-dependent"] },
+        { "id": "pro-1d", "text": "Honestly? Hope for the best and figure it out as I go", "tags": ["low-structure", "avoidant", "overwhelm-prone"] }
+      ]
+    },
+    {
+      "id": "pro-2",
+      "title": "The Difficult Email",
+      "subtitle": "We've all stared at a draft for way too long.",
+      "prompt": "You need to send a tricky email. Pushing back on a deadline, giving feedback, or asking for something awkward. What do you do?",
+      "choices": [
+        { "id": "pro-2a", "text": "Write it carefully, reread it five times, then finally hit send", "tags": ["communication-perfectionist", "high-effort-writing", "tone-anxious"] },
+        { "id": "pro-2b", "text": "Draft something quick and just get it over with", "tags": ["communication-efficient", "low-patience", "action-oriented"] },
+        { "id": "pro-2c", "text": "Ask a coworker or friend to read it first", "tags": ["collaboration-seeking", "second-opinion-dependent", "social-processor"] },
+        { "id": "pro-2d", "text": "Put it off and hope the situation resolves itself", "tags": ["communication-avoidant", "procrastination-prone", "conflict-averse"] }
+      ]
+    },
+    {
+      "id": "pro-3",
+      "title": "The Meeting Aftermath",
+      "subtitle": "What happens after the meeting matters more than the meeting.",
+      "prompt": "You just got out of a long meeting with action items and important details. What happens next?",
+      "choices": [
+        { "id": "pro-3a", "text": "I took detailed notes and I'll organize them right after", "tags": ["high-capture", "organized", "documentation-oriented"] },
+        { "id": "pro-3b", "text": "I'll remember the important stuff. No need to write everything down", "tags": ["low-capture", "memory-reliant", "overconfident-retention"] },
+        { "id": "pro-3c", "text": "I jotted a few things on a sticky note or in my phone", "tags": ["partial-capture", "scattered-systems", "informal-tracking"] },
+        { "id": "pro-3d", "text": "Wait, there were action items?", "tags": ["very-low-capture", "disengaged", "overwhelm-indicator"] }
+      ]
+    },
+    {
+      "id": "pro-4",
+      "title": "The Skill Gap",
+      "subtitle": "There's always something you wish you were better at.",
+      "prompt": "There's something at work you know you should get better at. Maybe a tool, a skill, or a type of task. How do you typically handle it?",
+      "choices": [
+        { "id": "pro-4a", "text": "Research it on my own time. YouTube, articles, courses", "tags": ["self-directed-learner", "high-initiative", "time-investing"] },
+        { "id": "pro-4b", "text": "Figure it out as I go when I actually need it", "tags": ["just-in-time-learner", "practical", "low-patience-for-theory"] },
+        { "id": "pro-4c", "text": "Ask someone who already knows how", "tags": ["social-learner", "delegation-minded", "relationship-oriented"] },
+        { "id": "pro-4d", "text": "Keep meaning to learn it but never find the time", "tags": ["growth-stalled", "time-poor", "aspiration-gap"] }
+      ]
+    },
+    {
+      "id": "pro-5",
+      "title": "The Opportunity",
+      "subtitle": "When there's a chance to step up...",
+      "prompt": "Your team is working on a problem and there's a chance for you to contribute something beyond your usual role. What's your instinct?",
+      "choices": [
+        { "id": "pro-5a", "text": "I'd love to but I don't feel like I have enough expertise", "tags": ["confidence-gap", "potential-untapped", "knowledge-barrier"] },
+        { "id": "pro-5b", "text": "I usually have ideas but struggle to articulate them well", "tags": ["ideas-rich", "communication-bottleneck", "presentation-gap"] },
+        { "id": "pro-5c", "text": "I jump in. I like contributing even if my idea isn't fully formed", "tags": ["high-initiative", "confident", "rough-around-edges"] },
+        { "id": "pro-5d", "text": "I'd contribute more if I had time to prepare something good", "tags": ["quality-focused", "time-constrained", "perfectionism-adjacent"] }
+      ]
+    },
+    {
+      "id": "pro-6",
+      "title": "The Repetitive Task",
+      "subtitle": "The thing you do every week that makes you sigh.",
+      "prompt": "There's a task at work you do over and over. Weekly reports, updating spreadsheets, sending similar emails. How do you deal with it?",
+      "choices": [
+        { "id": "pro-6a", "text": "I've built a system or template to make it faster", "tags": ["systems-thinker", "efficiency-oriented", "automation-ready"] },
+        { "id": "pro-6b", "text": "I just grind through it every time", "tags": ["brute-force", "low-optimization", "routine-tolerant"] },
+        { "id": "pro-6c", "text": "I rush through it and it probably shows", "tags": ["quality-sacrificing", "time-pressured", "shortcut-taker"] },
+        { "id": "pro-6d", "text": "I genuinely forget or put it off until someone asks", "tags": ["avoidant", "accountability-gap", "needs-automation-most"] }
+      ]
+    },
+    {
+      "id": "pro-7",
+      "title": "The Afternoon Chaos",
+      "subtitle": "By mid-afternoon, things usually look like...",
+      "prompt": "By mid-afternoon you've got unread emails, messages, open tabs, meeting notes, and a half-finished task. What's the state of things?",
+      "choices": [
+        { "id": "pro-7a", "text": "I'm mostly on top of it. Things are organized", "tags": ["high-organization", "low-friction-current", "optimization-candidate"] },
+        { "id": "pro-7b", "text": "It's messy but I know where everything is... mostly", "tags": ["controlled-chaos", "functional-disorganization", "search-dependent"] },
+        { "id": "pro-7c", "text": "I've lost track of at least one thing that's going to bite me later", "tags": ["slipping-through-cracks", "overwhelm-moderate", "capture-failure"] },
+        { "id": "pro-7d", "text": "I feel overwhelmed but I just keep going", "tags": ["overwhelm-high", "coping-not-managing", "burnout-adjacent"] }
+      ]
+    },
+    {
+      "id": "pro-8",
+      "title": "The End of the Day",
+      "subtitle": "When work is over... is it really over?",
+      "prompt": "Your workday is over. What's the thing that follows you home?",
+      "choices": [
+        { "id": "pro-8a", "text": "A to-do list of personal stuff I couldn't get to during the day", "tags": ["personal-admin-backlog", "time-poor-personal", "work-crowds-life"] },
+        { "id": "pro-8b", "text": "Work I didn't finish that I'll probably think about all evening", "tags": ["work-spillover", "boundary-issues", "completion-anxiety"] },
+        { "id": "pro-8c", "text": "Nothing specific but a general feeling of being behind", "tags": ["ambient-stress", "unclear-priorities", "lacks-visibility"] },
+        { "id": "pro-8d", "text": "I'm pretty good at shutting off when the day is done", "tags": ["healthy-boundaries", "compartmentalized", "work-contained"] }
+      ]
+    }
+  ]
+}
