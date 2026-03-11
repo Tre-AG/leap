@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f8fbf8;
+  --foreground: #2d3436;
+  --leaf: #4a7c59;
+  --leaf-dark: #3a6147;
+  --lily: #6db36b;
+  --lily-light: #8dc88b;
+  --pond: #e8f5e9;
+  --pond-light: #f0f9f0;
+  --bark: #5d4e37;
+  --cream: #faf8f5;
+  --shadow: rgba(74, 124, 89, 0.08);
+  --shadow-md: rgba(74, 124, 89, 0.12);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-leaf: var(--leaf);
+  --color-leaf-dark: var(--leaf-dark);
+  --color-lily: var(--lily);
+  --color-lily-light: var(--lily-light);
+  --color-pond: var(--pond);
+  --color-pond-light: var(--pond-light);
+  --color-bark: var(--bark);
+  --color-cream: var(--cream);
+  --font-sans: var(--font-nunito);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-nunito), sans-serif;
+}
+
+/* Smooth page transitions */
+.page-enter {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms ease-out, transform 300ms ease-out;
+}
+
+/* Choice card hover effects */
+.choice-card {
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.choice-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--shadow-md);
+}
+
+.choice-card:active {
+  transform: translateY(0);
+}
+
+/* Selected state */
+.choice-card-selected {
+  border-color: var(--leaf);
+  background-color: var(--pond-light);
+  box-shadow: 0 0 0 2px var(--leaf);
+}
+
+/* Custom slider styling */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 8px;
+  border-radius: 4px;
+  background: var(--pond);
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--leaf);
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--leaf);
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}

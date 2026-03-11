@@ -84,33 +84,141 @@
       "Administrative tasks"
     ]
   },
-  "timeDrains": [
-    "Email",
-    "Scheduling & calendar management",
-    "Writing documents or reports",
-    "Preparing for meetings",
-    "Data entry or updating spreadsheets",
-    "Searching for information or files",
-    "Creating presentations",
-    "Social media or marketing",
-    "Invoicing or expense tracking",
-    "Taking and organizing notes",
-    "Following up with people",
-    "Formatting or editing documents"
-  ],
+  "timeDrains": {
+    "student": [
+      "Studying for exams",
+      "Writing papers and essays",
+      "Reading assigned material",
+      "Group project coordination",
+      "Searching for sources and references",
+      "Taking and organizing notes",
+      "Formatting citations and bibliographies",
+      "Applying for jobs or internships",
+      "Managing class schedules",
+      "Keeping up with emails and messages",
+      "Reviewing and editing my own work",
+      "Figuring out concepts I don't understand"
+    ],
+    "professional": [
+      "Email",
+      "Scheduling and calendar management",
+      "Writing documents or reports",
+      "Preparing for meetings",
+      "Data entry or updating spreadsheets",
+      "Searching for information or files",
+      "Creating presentations",
+      "Following up with people",
+      "Formatting or editing documents",
+      "Taking and organizing meeting notes",
+      "Expense reports or invoicing",
+      "Status updates and check-ins"
+    ],
+    "entrepreneur": [
+      "Social media and content creation",
+      "Researching competitors and markets",
+      "Writing copy for my website, product, or emails",
+      "Figuring out tools and software I need",
+      "Invoicing and tracking finances",
+      "Building or updating my website",
+      "Responding to customer or client messages",
+      "Creating pitch decks or proposals",
+      "Learning skills I don't have yet",
+      "Networking and outreach",
+      "Administrative tasks (contracts, legal, filing)",
+      "Planning what to work on next"
+    ],
+    "parent": [
+      "Meal planning and grocery shopping",
+      "Coordinating schedules for the whole family",
+      "School-related logistics (forms, events, communication)",
+      "Household chores and maintenance",
+      "Helping with homework",
+      "Managing medical appointments",
+      "Budgeting and paying bills",
+      "Planning birthday parties and events",
+      "Researching activities, camps, or programs for kids",
+      "Keeping track of everything in my head",
+      "Personal errands that keep piling up",
+      "Communicating and coordinating with my partner"
+    ],
+    "creative": [
+      "Editing and revisions",
+      "Marketing and self-promotion",
+      "Managing client communication",
+      "Organizing files and projects",
+      "Invoicing and tracking payments",
+      "Researching trends and inspiration",
+      "Learning new tools or techniques",
+      "Formatting and preparing work for publishing or sharing",
+      "Scheduling and time management",
+      "Administrative tasks (contracts, taxes, bookkeeping)",
+      "Updating my portfolio or website",
+      "Finding new clients or opportunities"
+    ]
+  },
   "maxTimeDrains": 5,
-  "wishlist": [
-    "Someone to handle my email",
-    "A personal assistant for scheduling",
-    "Help coming up with ideas",
-    "Someone to organize all my files and notes",
-    "A way to learn new skills faster",
-    "Help writing things that sound polished",
-    "A way to stay on top of everything without constant effort",
-    "Someone to handle the boring repetitive stuff",
-    "Help making better decisions faster",
-    "A way to contribute more at work"
-  ],
+  "wishlist": {
+    "student": [
+      "Someone to help me start papers and essays",
+      "A study partner available anytime",
+      "Help understanding difficult concepts fast",
+      "Someone to organize all my notes",
+      "A way to prepare for exams more efficiently",
+      "Help making my writing sound better",
+      "A way to manage my schedule without thinking about it",
+      "Someone to help me figure out my career",
+      "Help staying focused and not procrastinating",
+      "A way to get feedback on my work before submitting"
+    ],
+    "professional": [
+      "Someone to handle my email",
+      "A personal assistant for scheduling",
+      "Help coming up with ideas",
+      "Someone to organize all my files and notes",
+      "Help writing things that sound polished",
+      "A way to stay on top of everything without constant effort",
+      "Someone to handle the boring repetitive stuff",
+      "Help making better decisions faster",
+      "A way to contribute more at work",
+      "Help preparing for meetings in less time"
+    ],
+    "entrepreneur": [
+      "Someone to handle social media content for me",
+      "Help figuring out if my idea is viable",
+      "A way to build a website without hiring someone",
+      "Someone to write copy that actually sounds good",
+      "Help finding and reaching potential customers",
+      "A way to manage finances without being an accountant",
+      "Someone to handle admin so I can focus on building",
+      "Help creating a professional brand on a budget",
+      "A way to learn business skills faster",
+      "Someone to give me honest feedback on my work"
+    ],
+    "parent": [
+      "Someone to plan meals for the week",
+      "A way to keep the whole family calendar in one place",
+      "Help managing the mental load without it all being in my head",
+      "Someone to handle household admin (bills, insurance, appointments)",
+      "A way to help my kids with homework I don't remember",
+      "Help finding activities and programs for my kids",
+      "A way to get things done faster so I have time for myself",
+      "Someone to organize the chaos",
+      "Help making decisions without overthinking everything",
+      "A way to coordinate with my partner without things falling through"
+    ],
+    "creative": [
+      "Someone to handle the business side so I can just create",
+      "Help getting my work in front of more people",
+      "A way to finish projects I keep abandoning",
+      "Someone to give me honest feedback anytime",
+      "Help writing about my work (bios, descriptions, pitches)",
+      "A way to stay inspired when I'm stuck",
+      "Someone to organize my files and projects",
+      "Help pricing my work and negotiating",
+      "A way to learn new techniques faster",
+      "Someone to handle client communication for me"
+    ]
+  },
   "maxWishlist": 3,
   "readiness": {
     "techComfort": {
