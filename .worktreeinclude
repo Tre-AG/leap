@@ -1,0 +1,3 @@
+# Files to symlink/copy into new worktrees.
+# These are gitignored and contain local config or secrets.
+.env.local
