@@ -40,14 +40,14 @@
     },
     {
       "id": "cre-4",
-      "title": "The Unglamorous Work",
-      "subtitle": "The part that makes it finished.",
-      "prompt": "The fun part is done. Now it's editing, revising, cleaning up. The part that actually makes it finished.",
+      "title": "The Unfinished Projects",
+      "subtitle": "Be honest.",
+      "prompt": "You get home and open your files. There's the current project, but also three others you never finished.",
       "choices": [
-        { "id": "cre-4a", "text": "Sit down and do it properly. This is part of the craft.", "tags": ["disciplined-finisher", "detail-oriented", "process-complete"], "reaction": "The craft includes the boring parts." },
-        { "id": "cre-4b", "text": "Push through it but hate every second.", "tags": ["grudging-finisher", "admin-resentful", "energy-drain"], "reaction": "Gritting teeth. Getting it done." },
-        { "id": "cre-4c", "text": "Rush through it. Good enough is good enough.", "tags": ["rusher", "quality-sacrificing", "next-project-oriented"], "reaction": "Ship it." },
-        { "id": "cre-4d", "text": "Avoid it. It sits there unfinished.", "tags": ["avoidant", "backlog-accumulating", "completion-gap"], "reaction": "Joining the collection." }
+        { "id": "cre-4a", "text": "Close them. I'm finishing this one first.", "tags": ["completer", "disciplined", "follow-through-strong"], "reaction": "Blinders on." },
+        { "id": "cre-4b", "text": "Look through them. Maybe one of these is worth picking back up.", "tags": ["slow-finisher", "rotating-attention", "eventual-completer"], "reaction": "The archive calls." },
+        { "id": "cre-4c", "text": "Start thinking about a new idea instead. Here we go again.", "tags": ["serial-starter", "completion-struggle", "shiny-object"], "reaction": "Here we go again." },
+        { "id": "cre-4d", "text": "Feel the weight of all of it. Nothing ever gets done.", "tags": ["completion-blocked", "sharing-blocked", "perfectionism-paralysis"], "reaction": "It's heavier than it should be." }
       ]
     },
     {
@@ -76,38 +76,26 @@
     },
     {
       "id": "cre-7",
-      "title": "The Unfinished Projects",
-      "subtitle": "Be honest.",
-      "prompt": "You get home and open your files. There's the current project, but also three others you never finished.",
+      "title": "The Finish Line",
+      "subtitle": "Almost there.",
+      "prompt": "You're close to done. All that's left is the unglamorous stuff: editing, cleanup, the details. Not perfect, but close. You can feel the finish line.",
       "choices": [
-        { "id": "cre-7a", "text": "Close them. I'm finishing this one first.", "tags": ["completer", "disciplined", "follow-through-strong"], "reaction": "Blinders on." },
-        { "id": "cre-7b", "text": "Look through them. Maybe one of these is worth picking back up.", "tags": ["slow-finisher", "rotating-attention", "eventual-completer"], "reaction": "The archive calls." },
-        { "id": "cre-7c", "text": "Start thinking about a new idea instead. Here we go again.", "tags": ["serial-starter", "completion-struggle", "shiny-object"], "reaction": "Here we go again." },
-        { "id": "cre-7d", "text": "Feel the weight of all of it. Nothing ever gets done.", "tags": ["completion-blocked", "sharing-blocked", "perfectionism-paralysis"], "reaction": "It's heavier than it should be." }
+        { "id": "cre-7a", "text": "Lock in and push through the last stretch.", "tags": ["completer", "disciplined", "follow-through-strong"], "reaction": "Almost. Almost." },
+        { "id": "cre-7b", "text": "Keep tweaking. It's not ready yet.", "tags": ["perfectionism-prone", "overthinking", "never-done"], "reaction": "One more pass. Then one more." },
+        { "id": "cre-7c", "text": "Step away from it. I need fresh eyes before I call it done.", "tags": ["break-taker", "process-trusting", "quality-focused"], "reaction": "Distance is a tool." },
+        { "id": "cre-7d", "text": "Lose motivation right at the end. This always happens.", "tags": ["completion-blocked", "energy-drain", "pattern-aware"], "reaction": "So close. So familiar." }
       ]
     },
     {
       "id": "cre-8",
-      "title": "The Finish Line",
-      "subtitle": "Almost there.",
-      "prompt": "Weeks later. One of your projects is almost done. Not perfect, but close. You can feel the finish line.",
-      "choices": [
-        { "id": "cre-8a", "text": "Lock in and push through the last stretch.", "tags": ["completer", "disciplined", "follow-through-strong"], "reaction": "Almost. Almost." },
-        { "id": "cre-8b", "text": "Keep tweaking. It's not ready yet.", "tags": ["perfectionism-prone", "overthinking", "never-done"], "reaction": "One more pass. Then one more." },
-        { "id": "cre-8c", "text": "Step away from it. I need fresh eyes before I call it done.", "tags": ["break-taker", "process-trusting", "quality-focused"], "reaction": "Distance is a tool." },
-        { "id": "cre-8d", "text": "Lose motivation right at the end. This always happens.", "tags": ["completion-blocked", "energy-drain", "pattern-aware"], "reaction": "So close. So familiar." }
-      ]
-    },
-    {
-      "id": "cre-9",
       "title": "The Finished Product",
       "subtitle": "It's done.",
       "prompt": "You finally finish something. It's done. You're looking at it.",
       "choices": [
-        { "id": "cre-9a", "text": "Start sharing it. Time to put it out there.", "tags": ["visibility-comfortable", "sharing-ready", "confident"], "reaction": "It's yours. Now it's theirs too." },
-        { "id": "cre-9b", "text": "Already thinking about what I'd do differently next time.", "tags": ["growth-focused", "self-critical", "always-improving"], "reaction": "Never fully satisfied. That's the engine." },
-        { "id": "cre-9c", "text": "Sit with it for a while. This feels good.", "tags": ["present", "satisfied-direction", "process-trusting"], "reaction": "You made this." },
-        { "id": "cre-9d", "text": "It's done but I'm not sure it's good enough to show anyone.", "tags": ["sharing-blocked", "vulnerability-averse", "imposter-syndrome"], "reaction": "It's done. That's enough for now." }
+        { "id": "cre-8a", "text": "Start sharing it. Time to put it out there.", "tags": ["visibility-comfortable", "sharing-ready", "confident"], "reaction": "It's yours. Now it's theirs too." },
+        { "id": "cre-8b", "text": "Already thinking about what I'd do differently next time.", "tags": ["growth-focused", "self-critical", "always-improving"], "reaction": "Never fully satisfied. That's the engine." },
+        { "id": "cre-8c", "text": "Sit with it for a while. This feels good.", "tags": ["present", "satisfied-direction", "process-trusting"], "reaction": "You made this." },
+        { "id": "cre-8d", "text": "It's done but I'm not sure it's good enough to show anyone.", "tags": ["sharing-blocked", "vulnerability-averse", "imposter-syndrome"], "reaction": "It's done. That's enough for now." }
       ]
     }
   ]
