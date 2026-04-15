@@ -40,6 +40,7 @@ interface GameContextType {
   setTimeWillingness: (willingness: string) => void;
   nextStep: () => void;
   prevStep: () => void;
+  undoComplete: () => void;
   totalSteps: number;
   reset: () => void;
 }
@@ -214,6 +215,13 @@ export function GameProvider({ children }: { children: ReactNode }) {
     }));
   }, []);
 
+  const undoComplete = useCallback(() => {
+    setState((prev) => ({
+      ...prev,
+      isComplete: false,
+    }));
+  }, []);
+
   const reset = useCallback(() => {
     setState({
       characterClass: null,
@@ -240,6 +248,7 @@ export function GameProvider({ children }: { children: ReactNode }) {
         setTimeWillingness,
         nextStep,
         prevStep,
+        undoComplete,
         totalSteps: steps.length,
         reset,
       }}

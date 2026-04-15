@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { useGame } from "@/context/GameContext";
 import type { Recommendations } from "@/types";
@@ -12,16 +12,64 @@ import NextSteps from "@/components/results/NextSteps";
 
 type ResultsSection = "loading" | "profile" | "opportunities" | "quickWins" | "nextSteps";
 
+async function fetchWithRetry(
+  profile: unknown
+): Promise<Recommendations> {
+  const doFetch = async (): Promise<Recommendations> => {
+    const res = await fetch("/api/recommendations", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(profile),
+    });
+
+    if (!res.ok) throw new Error("Failed to generate recommendations");
+
+    const data = await res.json();
+    if (!data || typeof data !== "object" || !Array.isArray(data.opportunities)) {
+      throw new Error("Malformed response");
+    }
+    return data as Recommendations;
+  };
+
+  try {
+    return await doFetch();
+  } catch {
+    // Silent auto-retry after 1 second
+    await new Promise((r) => setTimeout(r, 1000));
+    return await doFetch();
+  }
+}
+
 export default function ResultsPage() {
   const router = useRouter();
-  const { state, reset } = useGame();
+  const { state, reset, undoComplete } = useGame();
   const { characterClass, profile } = state;
 
   const [recommendations, setRecommendations] =
     useState<Recommendations | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(true);
   const [section, setSection] = useState<ResultsSection>("loading");
   const [quickWinIndex, setQuickWinIndex] = useState(0);
+  const fetchAttempted = useRef(false);
+
+  const runFetch = useCallback(async () => {
+    setError(null);
+    setLoading(true);
+    setSection("loading");
+
+    try {
+      const data = await fetchWithRetry(profile);
+      setRecommendations(data);
+      setSection("profile");
+    } catch {
+      setError(
+        "Something went wrong generating your results. This usually resolves on the next try."
+      );
+    } finally {
+      setLoading(false);
+    }
+  }, [profile]);
 
   useEffect(() => {
     if (!characterClass) {
@@ -29,28 +77,21 @@ export default function ResultsPage() {
       return;
     }
 
-    const fetchRecommendations = async () => {
-      try {
-        const res = await fetch("/api/recommendations", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(profile),
-        });
+    if (!fetchAttempted.current) {
+      fetchAttempted.current = true;
+      runFetch();
+    }
+  }, [characterClass, router, runFetch]);
 
-        if (!res.ok) throw new Error("Failed to generate recommendations");
+  const handleGoBack = () => {
+    undoComplete();
+    router.push("/play");
+  };
 
-        const data: Recommendations = await res.json();
-        setRecommendations(data);
-        setSection("profile");
-      } catch {
-        setError(
-          "Something went wrong generating your recommendations. Please try again."
-        );
-      }
-    };
-
-    fetchRecommendations();
-  }, [characterClass, profile, router]);
+  const handleStartOver = () => {
+    reset();
+    router.push("/");
+  };
 
   if (!characterClass) return null;
 
@@ -86,12 +127,7 @@ export default function ResultsPage() {
     if (prev) setSection(prev);
   };
 
-  const handleStartOver = () => {
-    reset();
-    router.push("/");
-  };
-
-  // Loading state
+  // Loading & error state
   if (section === "loading") {
     return (
       <div className="flex min-h-screen flex-col items-center justify-center px-6">
@@ -107,15 +143,23 @@ export default function ResultsPage() {
           />
           {error ? (
             <>
-              <p className="mb-4 text-center text-base text-red-500">
+              <p className="mb-6 max-w-sm text-center text-base text-red-500">
                 {error}
               </p>
-              <button
-                onClick={handleStartOver}
-                className="rounded-2xl bg-leaf px-8 py-3 font-bold text-white"
-              >
-                Start Over
-              </button>
+              <div className="flex gap-3">
+                <button
+                  onClick={runFetch}
+                  className="rounded-2xl bg-leaf px-8 py-3 font-bold text-white shadow-md transition-all hover:bg-leaf-dark hover:shadow-lg"
+                >
+                  Try again
+                </button>
+                <button
+                  onClick={handleGoBack}
+                  className="rounded-2xl bg-white px-8 py-3 font-bold text-foreground/60 shadow-sm transition-all hover:shadow-md"
+                >
+                  Go back
+                </button>
+              </div>
             </>
           ) : (
             <>
