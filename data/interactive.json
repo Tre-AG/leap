@@ -125,18 +125,16 @@
       "Planning events"
     ],
     "creative": [
+      "Personal projects (just for fun)",
       "Creating new work",
-      "Client projects",
-      "Marketing & self-promotion",
-      "Managing finances",
-      "Learning new techniques",
-      "Portfolio maintenance",
-      "Networking & outreach",
-      "Content creation",
       "Editing & revisions",
       "Research & inspiration",
-      "Scheduling",
-      "Administrative tasks"
+      "Learning new skills or techniques",
+      "Content creation",
+      "Sharing or posting my work",
+      "Client or commission work",
+      "Organizing my files and projects",
+      "Administrative tasks (invoicing, contracts, etc.)"
     ]
   },
   "timeDrains": {
@@ -197,18 +195,19 @@
       "Communicating and coordinating with my partner"
     ],
     "creative": [
-      "Editing and revisions",
-      "Marketing and self-promotion",
-      "Managing client communication",
-      "Organizing files and projects",
-      "Invoicing and tracking payments",
-      "Researching trends and inspiration",
-      "Learning new tools or techniques",
-      "Formatting and preparing work for publishing or sharing",
-      "Scheduling and time management",
-      "Administrative tasks (contracts, taxes, bookkeeping)",
-      "Updating my portfolio or website",
-      "Finding new clients or opportunities"
+      "Staring at a blank page, not knowing where to start",
+      "Redoing the same section over and over",
+      "Researching references and examples",
+      "Formatting, exporting, or resizing work for different platforms",
+      "Organizing versions and drafts",
+      "Writing descriptions, captions, or artist statements about my work",
+      "Figuring out new software",
+      "The boring technical parts (file formats, specs, resolution, settings)",
+      "Making rough drafts before the real thing",
+      "Going back and forth between tools during a project",
+      "Cleaning up or organizing my workspace before I can start",
+      "Sourcing materials, assets, or supplies",
+      "Backing up and saving work in the right places"
     ]
   },
   "maxTimeDrains": 5,
@@ -262,16 +261,16 @@
       "A way to coordinate with my partner without things falling through"
     ],
     "creative": [
-      "Someone to handle the business side so I can just create",
-      "Help getting my work in front of more people",
-      "A way to finish projects I keep abandoning",
+      "A way to get past the blank page faster",
       "Someone to give me honest feedback anytime",
-      "Help writing about my work (bios, descriptions, pitches)",
+      "A way to finish projects I keep abandoning",
+      "Help figuring out what's not working in a piece",
       "A way to stay inspired when I'm stuck",
-      "Someone to organize my files and projects",
-      "Help pricing my work and negotiating",
       "A way to learn new techniques faster",
-      "Someone to handle client communication for me"
+      "Help with the boring technical parts so I can focus on creating",
+      "Someone to organize my files, drafts, and versions",
+      "A way to try out ideas quickly before committing",
+      "Help writing about my work (descriptions, captions, statements)"
     ]
   },
   "maxWishlist": 3,
