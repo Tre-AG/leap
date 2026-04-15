@@ -38,6 +38,7 @@ export interface ReadinessConfig {
     max: number;
     labelLow: string;
     labelHigh: string;
+    showNumbers?: boolean;
   };
   aiUsage: string[];
   timeWillingness: string[];

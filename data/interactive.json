@@ -224,8 +224,9 @@
     "techComfort": {
       "min": 1,
       "max": 5,
-      "labelLow": "I Google how to Google things",
-      "labelHigh": "I automate my coffee maker"
+      "labelLow": "Not much",
+      "labelHigh": "A lot",
+      "showNumbers": true
     },
     "aiUsage": [
       "Never used AI tools",

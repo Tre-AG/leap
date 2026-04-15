@@ -33,6 +33,23 @@ export default function Readiness({ config, onSubmit }: ReadinessProps) {
         <label className="mb-3 block text-sm font-semibold text-foreground/70">
           How comfortable are you with technology?
         </label>
+        {config.techComfort.showNumbers && (
+          <div className="mb-1 flex justify-between px-0.5">
+            {Array.from(
+              { length: config.techComfort.max - config.techComfort.min + 1 },
+              (_, i) => config.techComfort.min + i
+            ).map((n) => (
+              <span
+                key={n}
+                className={`text-xs font-semibold ${
+                  n === techComfort ? "text-leaf-dark" : "text-foreground/30"
+                }`}
+              >
+                {n}
+              </span>
+            ))}
+          </div>
+        )}
         <input
           type="range"
           min={config.techComfort.min}
