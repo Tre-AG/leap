@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import type { FlavorMoment, CharacterClass } from "@/types";
+import ChoiceCard from "./ChoiceCard";
 import CharacterImage from "./CharacterImage";
 
 interface FlavorScreenProps {
@@ -9,6 +11,7 @@ interface FlavorScreenProps {
   classId: CharacterClass;
   onChoice: (choiceId: string) => void;
   onBack?: () => void;
+  backgroundImage?: string;
 }
 
 export default function FlavorScreen({
@@ -16,53 +19,76 @@ export default function FlavorScreen({
   classId,
   onChoice,
   onBack,
+  backgroundImage,
 }: FlavorScreenProps) {
   const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [reactionText, setReactionText] = useState<string | null>(null);
+  const [bgError, setBgError] = useState(false);
 
   const handleSelect = (choiceId: string) => {
     if (selectedId) return;
     setSelectedId(choiceId);
+    const choice = flavor.choices.find((c) => c.id === choiceId);
+    if (choice?.reaction) {
+      setReactionText(choice.reaction);
+    }
     setTimeout(() => {
       onChoice(choiceId);
-    }, 400);
+    }, choice?.reaction ? 1800 : 400);
   };
 
   return (
     <div className="mx-auto w-full max-w-lg px-6">
-      {/* Character */}
-      <div className="mb-6 flex justify-center">
-        <CharacterImage classId={classId} size={100} />
-      </div>
+      {/* Class background */}
+      {backgroundImage && !bgError && (
+        <Image
+          src={backgroundImage}
+          alt=""
+          fill
+          className="pointer-events-none fixed inset-0 z-0 object-cover opacity-20"
+          onError={() => setBgError(true)}
+        />
+      )}
+      {/* Decorative card wrapper for storybook feel */}
+      <div className="relative overflow-hidden rounded-3xl bg-white/70 px-6 py-8 shadow-lg backdrop-blur-sm">
 
-      {/* Title */}
-      <h2 className="mb-2 text-center text-lg font-bold text-bark">
-        {flavor.title}
-      </h2>
+        {/* Character */}
+        <div className="mb-4 flex justify-center">
+          <CharacterImage classId={classId} size={100} pose={flavor.frogPose} />
+        </div>
 
-      {/* Prompt */}
-      <p
-        className="mb-8 text-center text-base italic leading-relaxed text-foreground/70"
-        style={{ textWrap: "balance" }}
-      >
-        {flavor.prompt}
-      </p>
+        {/* Title */}
+        <h2 className="mb-1 text-center text-xl font-bold text-leaf-dark">
+          {flavor.title}
+        </h2>
 
-      {/* Choices - slightly different style for flavor moments */}
-      <div className="flex flex-col gap-3">
-        {flavor.choices.map((choice, i) => (
-          <button
-            key={choice.id}
-            onClick={() => handleSelect(choice.id)}
-            className={`w-full rounded-2xl border-2 px-5 py-4 text-left text-base leading-relaxed transition-all ${
-              selectedId === choice.id
-                ? "border-bark bg-cream shadow-md"
-                : "border-transparent bg-white/80 shadow-sm hover:bg-cream hover:shadow-md"
-            }`}
-            style={{ animationDelay: `${i * 60}ms` }}
-          >
-            {choice.text}
-          </button>
-        ))}
+        {/* Prompt */}
+        <p
+          className="mb-8 text-center text-base leading-relaxed text-foreground/90"
+          style={{ textWrap: "balance" }}
+        >
+          {flavor.prompt}
+        </p>
+
+        {/* Choices */}
+        <div className="flex flex-col gap-3">
+          {flavor.choices.map((choice, i) => (
+            <ChoiceCard
+              key={choice.id}
+              text={choice.text}
+              selected={selectedId === choice.id}
+              onClick={() => handleSelect(choice.id)}
+              index={i}
+            />
+          ))}
+        </div>
+
+        {/* Micro-reaction */}
+        {reactionText && (
+          <p className="reaction-text mt-6 text-center text-base italic text-foreground/70">
+            {reactionText}
+          </p>
+        )}
       </div>
 
       {/* Back button */}
@@ -70,7 +96,7 @@ export default function FlavorScreen({
         <div className="mt-4 flex justify-center">
           <button
             onClick={onBack}
-            className="text-sm font-medium text-foreground/40 transition-colors hover:text-foreground/70"
+            className="text-base font-medium text-foreground/70 transition-colors hover:text-foreground/90"
           >
             ← Go back
           </button>

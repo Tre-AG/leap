@@ -1,100 +1,113 @@
 {
   "classId": "creative",
+  "intro": "Sunday afternoon. The apartment is quiet. You've got nothing scheduled.",
   "scenarios": [
     {
       "id": "cre-1",
-      "title": "The Creative Process",
-      "subtitle": "How it starts for you.",
-      "prompt": "You're starting a new creative project. What does the beginning usually look like?",
+      "title": "The Starting Point",
+      "subtitle": "How it begins.",
+      "prompt": "You've been thinking about a new project for a while. You sit down to start it.",
       "choices": [
-        { "id": "cre-1a", "text": "I dive right in. I figure things out as I create", "tags": ["intuitive", "momentum-driven", "discovery-based"] },
-        { "id": "cre-1b", "text": "I plan it out first. Research, sketches, outlines, then I start", "tags": ["structured-creative", "research-first", "methodical"] },
-        { "id": "cre-1c", "text": "I have the idea but getting started is the hardest part", "tags": ["start-blocker", "perfectionism-prone", "overthinking"] },
-        { "id": "cre-1d", "text": "I wait for inspiration. I can't force it", "tags": ["inspiration-dependent", "flow-chaser", "inconsistent-output"] }
+        { "id": "cre-1a", "text": "Dive in. I'll figure it out as I go.", "tags": ["intuitive", "momentum-driven", "discovery-based"], "reaction": "Blank page. Not for long." },
+        { "id": "cre-1b", "text": "Open a blank doc and start planning. Research first, create later.", "tags": ["structured-creative", "research-first", "methodical"], "reaction": "Research first. Smart." },
+        { "id": "cre-1c", "text": "Stare at the screen. The idea is there but I can't get it out.", "tags": ["start-blocker", "perfectionism-prone", "overthinking"], "reaction": "It stares back." },
+        { "id": "cre-1d", "text": "Browse other people's work first. I need something to spark it.", "tags": ["inspiration-dependent", "flow-chaser", "inconsistent-output"], "reaction": "Inspiration. Or procrastination. Fine line." }
       ]
     },
     {
       "id": "cre-2",
-      "title": "The Feedback Problem",
-      "subtitle": "Is it any good?",
-      "prompt": "You've made something and you want to know if it's good. What do you do?",
+      "title": "The Messy Middle",
+      "subtitle": "The part nobody posts about.",
+      "prompt": "You're an hour in. The initial excitement is fading and now it's just the work. The messy, slow part.",
       "choices": [
-        { "id": "cre-2a", "text": "Share it with trusted people and ask for honest feedback", "tags": ["feedback-seeking", "community-connected", "open-to-critique"] },
-        { "id": "cre-2b", "text": "Post it and see how people react. Engagement tells me what I need to know", "tags": ["audience-validated", "metrics-driven", "public-feedback"] },
-        { "id": "cre-2c", "text": "Compare it to others' work and usually feel like mine isn't as good", "tags": ["comparison-prone", "self-critical", "imposter-syndrome"] },
-        { "id": "cre-2d", "text": "I don't usually share. It feels too personal", "tags": ["private-creator", "vulnerability-averse", "sharing-blocked"] }
+        { "id": "cre-2a", "text": "Keep pushing. This is where it actually gets made.", "tags": ["disciplined-finisher", "detail-oriented", "process-complete"], "reaction": "This is where it actually gets made." },
+        { "id": "cre-2b", "text": "Take a break and come back to it later.", "tags": ["break-taker", "reset-seeker", "process-trusting"], "reaction": "Sometimes the best move is walking away." },
+        { "id": "cre-2c", "text": "Start over. This isn't going the way I pictured it.", "tags": ["perfectionism-prone", "restart-tendency", "vision-driven"], "reaction": "Ctrl+A. Delete. Here we go again." },
+        { "id": "cre-2d", "text": "Get distracted by a different idea that suddenly feels more exciting.", "tags": ["serial-starter", "shiny-object", "completion-struggle"], "reaction": "Shiny object acquired." }
       ]
     },
     {
       "id": "cre-3",
-      "title": "The Unglamorous Work",
-      "subtitle": "The part nobody posts about.",
-      "prompt": "Every creative project has boring parts. Editing, revisions, organizing files, formatting. How do you handle it?",
+      "title": "The Feedback Problem",
+      "subtitle": "Is it any good?",
+      "prompt": "You've been working on this for a few days. It's starting to take shape. You're not sure if it's good.",
       "choices": [
-        { "id": "cre-3a", "text": "I'm pretty good about it. I edit thoroughly and keep things organized", "tags": ["disciplined-finisher", "detail-oriented", "process-complete"] },
-        { "id": "cre-3b", "text": "I do it but I hate every second. It's where my creative energy goes to die", "tags": ["grudging-finisher", "admin-resentful", "energy-drain"] },
-        { "id": "cre-3c", "text": "I rush through it. Good enough is good enough", "tags": ["rusher", "quality-sacrificing", "next-project-oriented"] },
-        { "id": "cre-3d", "text": "I avoid it and it piles up. Folders full of unedited, unorganized work", "tags": ["avoidant", "backlog-accumulating", "completion-gap"] }
+        { "id": "cre-3a", "text": "Send it to someone I trust and ask what they think.", "tags": ["feedback-seeking", "community-connected", "open-to-critique"], "reaction": "Waiting for the reply is the hard part." },
+        { "id": "cre-3b", "text": "Post it somewhere and see how people react.", "tags": ["audience-validated", "metrics-driven", "public-feedback"], "reaction": "Into the void it goes." },
+        { "id": "cre-3c", "text": "Compare it to similar work online. Mine feels worse.", "tags": ["comparison-prone", "self-critical", "imposter-syndrome"], "reaction": "That's never a fair fight." },
+        { "id": "cre-3d", "text": "Keep it to myself. It's not ready for anyone else to see.", "tags": ["private-creator", "vulnerability-averse", "sharing-blocked"], "reaction": "Not yet. Not ready." }
       ]
     },
     {
       "id": "cre-4",
-      "title": "The Time to Create",
-      "subtitle": "Finding it, making it, protecting it.",
-      "prompt": "When it comes to finding time for your creative work, what's the reality?",
+      "title": "The Unglamorous Work",
+      "subtitle": "The part that makes it finished.",
+      "prompt": "The fun part is done. Now it's editing, revising, cleaning up. The part that actually makes it finished.",
       "choices": [
-        { "id": "cre-4a", "text": "I make it a priority. Regular schedule or routine for creating", "tags": ["creation-prioritized", "routine-established", "disciplined"] },
-        { "id": "cre-4b", "text": "I squeeze it in. Lunch breaks, late nights, weekends", "tags": ["time-scarce", "passion-persistent", "stealing-moments"] },
-        { "id": "cre-4c", "text": "It depends on mood and energy. Sometimes prolific, sometimes weeks go by", "tags": ["inconsistent", "energy-dependent", "burst-creator"] },
-        { "id": "cre-4d", "text": "I don't create as much as I want to. Life gets in the way", "tags": ["creation-starved", "guilt-carrying", "aspiration-gap"] }
+        { "id": "cre-4a", "text": "Sit down and do it properly. This is part of the craft.", "tags": ["disciplined-finisher", "detail-oriented", "process-complete"], "reaction": "The craft includes the boring parts." },
+        { "id": "cre-4b", "text": "Push through it but hate every second.", "tags": ["grudging-finisher", "admin-resentful", "energy-drain"], "reaction": "Gritting teeth. Getting it done." },
+        { "id": "cre-4c", "text": "Rush through it. Good enough is good enough.", "tags": ["rusher", "quality-sacrificing", "next-project-oriented"], "reaction": "Ship it." },
+        { "id": "cre-4d", "text": "Avoid it. It sits there unfinished.", "tags": ["avoidant", "backlog-accumulating", "completion-gap"], "reaction": "Joining the collection." }
       ]
     },
     {
       "id": "cre-5",
-      "title": "The Creative Block",
-      "subtitle": "When nothing's working.",
-      "prompt": "You're stuck. The ideas aren't coming, the work feels stale, or you can't get motivated. What do you do?",
+      "title": "The Time Problem",
+      "subtitle": "Life gets in the way.",
+      "prompt": "A busy week hits. Work, errands, life. You haven't touched the project in days.",
       "choices": [
-        { "id": "cre-5a", "text": "Push through. Discipline matters more than inspiration", "tags": ["discipline-driven", "grind-mentality", "output-focused"] },
-        { "id": "cre-5b", "text": "Step away and do something else until it passes", "tags": ["break-taker", "reset-seeker", "process-trusting"] },
-        { "id": "cre-5c", "text": "Consume other people's work to get inspired", "tags": ["input-seeker", "inspiration-absorber", "reference-driven"] },
-        { "id": "cre-5d", "text": "I spiral. Start wondering if I'm even good at this", "tags": ["block-to-crisis", "confidence-fragile", "existential-doubt"] }
+        { "id": "cre-5a", "text": "Wake up early or stay up late. I make time no matter what.", "tags": ["creation-prioritized", "routine-established", "disciplined"], "reaction": "You make time. That's the deal." },
+        { "id": "cre-5b", "text": "Squeeze in 20 minutes here and there when I can.", "tags": ["time-scarce", "passion-persistent", "stealing-moments"], "reaction": "Twenty minutes is twenty minutes." },
+        { "id": "cre-5c", "text": "Wait until the weekend. I need a real block of time.", "tags": ["inconsistent", "energy-dependent", "burst-creator"], "reaction": "Saturday. That's the window." },
+        { "id": "cre-5d", "text": "The longer I'm away from it the harder it is to go back.", "tags": ["creation-starved", "guilt-carrying", "aspiration-gap"], "reaction": "The gap widens." }
       ]
     },
     {
       "id": "cre-6",
-      "title": "The Tools of the Trade",
-      "subtitle": "Your creative toolkit.",
-      "prompt": "When it comes to the tools and software for your creative work, how do you feel?",
+      "title": "The Creative Block",
+      "subtitle": "When nothing's working.",
+      "prompt": "The week clears. You sit back down to work on it. Nothing. The ideas aren't coming. You're just staring.",
       "choices": [
-        { "id": "cre-6a", "text": "I know my tools well. Invested time in learning them", "tags": ["tool-proficient", "invested", "workflow-established"] },
-        { "id": "cre-6b", "text": "I use the basics but there's more I could learn", "tags": ["tool-functional", "surface-level", "growth-potential"] },
-        { "id": "cre-6c", "text": "I feel behind. Tools and techniques I should learn but haven't", "tags": ["tool-anxious", "skill-gap", "falling-behind"] },
-        { "id": "cre-6d", "text": "I keep things simple on purpose. Don't need fancy tools", "tags": ["tool-minimalist", "craft-focused", "anti-complexity"] }
+        { "id": "cre-6a", "text": "Force it. Write something, make something, even if it's bad.", "tags": ["discipline-driven", "grind-mentality", "output-focused"], "reaction": "Bad is better than blank." },
+        { "id": "cre-6b", "text": "Walk away. It'll come back when it's ready.", "tags": ["break-taker", "reset-seeker", "process-trusting"], "reaction": "Trust the process." },
+        { "id": "cre-6c", "text": "Go look at other people's work for inspiration.", "tags": ["input-seeker", "inspiration-absorber", "reference-driven"], "reaction": "Input mode." },
+        { "id": "cre-6d", "text": "Start wondering if I'm even good at this.", "tags": ["block-to-crisis", "confidence-fragile", "existential-doubt"], "reaction": "You are. This part just sucks." }
       ]
     },
     {
       "id": "cre-7",
       "title": "The Unfinished Projects",
       "subtitle": "Be honest.",
-      "prompt": "Be honest. How many half-finished creative projects do you have sitting around right now?",
+      "prompt": "You get home and open your files. There's the current project, but also three others you never finished.",
       "choices": [
-        { "id": "cre-7a", "text": "Not many. I finish what I start before moving on", "tags": ["completer", "disciplined", "follow-through-strong"] },
-        { "id": "cre-7b", "text": "A few. I circle back eventually", "tags": ["slow-finisher", "rotating-attention", "eventual-completer"] },
-        { "id": "cre-7c", "text": "More than I'd like to admit. Great at starting, not at finishing", "tags": ["serial-starter", "completion-struggle", "shiny-object"] },
-        { "id": "cre-7d", "text": "Everything is unfinished. I've never completed and shared something I'm proud of", "tags": ["completion-blocked", "sharing-blocked", "perfectionism-paralysis"] }
+        { "id": "cre-7a", "text": "Close them. I'm finishing this one first.", "tags": ["completer", "disciplined", "follow-through-strong"], "reaction": "Blinders on." },
+        { "id": "cre-7b", "text": "Look through them. Maybe one of these is worth picking back up.", "tags": ["slow-finisher", "rotating-attention", "eventual-completer"], "reaction": "The archive calls." },
+        { "id": "cre-7c", "text": "Start thinking about a new idea instead. Here we go again.", "tags": ["serial-starter", "completion-struggle", "shiny-object"], "reaction": "Here we go again." },
+        { "id": "cre-7d", "text": "Feel the weight of all of it. Nothing ever gets done.", "tags": ["completion-blocked", "sharing-blocked", "perfectionism-paralysis"], "reaction": "It's heavier than it should be." }
       ]
     },
     {
       "id": "cre-8",
-      "title": "The Dream",
-      "subtitle": "No constraints. What does it look like?",
-      "prompt": "If you could spend your time doing exactly the creative work you want, no constraints, what would that look like?",
+      "title": "The Finish Line",
+      "subtitle": "Almost there.",
+      "prompt": "Weeks later. One of your projects is almost done. Not perfect, but close. You can feel the finish line.",
       "choices": [
-        { "id": "cre-8a", "text": "Close to what I'm doing. Just more of it and getting better", "tags": ["satisfied-direction", "growth-focused", "more-of-same"] },
-        { "id": "cre-8b", "text": "I'd go deeper into one thing instead of juggling multiple projects", "tags": ["focus-seeking", "depth-over-breadth", "niche-aspiring"] },
-        { "id": "cre-8c", "text": "I'd try something completely different from what I'm doing now", "tags": ["pivot-curious", "exploration-driven", "restless"] },
-        { "id": "cre-8d", "text": "I don't know. I just want to create and I want it to matter", "tags": ["purpose-seeking", "meaning-driven", "vision-unclear"] }
+        { "id": "cre-8a", "text": "Lock in and push through the last stretch.", "tags": ["completer", "disciplined", "follow-through-strong"], "reaction": "Almost. Almost." },
+        { "id": "cre-8b", "text": "Keep tweaking. It's not ready yet.", "tags": ["perfectionism-prone", "overthinking", "never-done"], "reaction": "One more pass. Then one more." },
+        { "id": "cre-8c", "text": "Step away from it. I need fresh eyes before I call it done.", "tags": ["break-taker", "process-trusting", "quality-focused"], "reaction": "Distance is a tool." },
+        { "id": "cre-8d", "text": "Lose motivation right at the end. This always happens.", "tags": ["completion-blocked", "energy-drain", "pattern-aware"], "reaction": "So close. So familiar." }
+      ]
+    },
+    {
+      "id": "cre-9",
+      "title": "The Finished Product",
+      "subtitle": "It's done.",
+      "prompt": "You finally finish something. It's done. You're looking at it.",
+      "choices": [
+        { "id": "cre-9a", "text": "Start sharing it. Time to put it out there.", "tags": ["visibility-comfortable", "sharing-ready", "confident"], "reaction": "It's yours. Now it's theirs too." },
+        { "id": "cre-9b", "text": "Already thinking about what I'd do differently next time.", "tags": ["growth-focused", "self-critical", "always-improving"], "reaction": "Never fully satisfied. That's the engine." },
+        { "id": "cre-9c", "text": "Sit with it for a while. This feels good.", "tags": ["present", "satisfied-direction", "process-trusting"], "reaction": "You made this." },
+        { "id": "cre-9d", "text": "It's done but I'm not sure it's good enough to show anyone.", "tags": ["sharing-blocked", "vulnerability-averse", "imposter-syndrome"], "reaction": "It's done. That's enough for now." }
       ]
     }
   ]

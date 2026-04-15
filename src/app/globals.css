@@ -68,6 +68,16 @@ body {
   box-shadow: 0 0 0 2px var(--leaf);
 }
 
+/* Micro-reaction fade-in */
+@keyframes reaction-fade-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.reaction-text {
+  animation: reaction-fade-in 0.5s ease-in forwards;
+}
+
 /* Custom slider styling */
 input[type="range"] {
   -webkit-appearance: none;

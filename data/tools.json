@@ -1,18 +1,38 @@
 {
-  "lastUpdated": "2026-02",
+  "lastUpdated": "2026-04",
   "tools": [
     {
       "id": "chatgpt",
       "name": "ChatGPT",
       "provider": "OpenAI",
       "category": "ai-assistant",
-      "cost": { "free": true, "paid": "$20/mo Plus plan" },
+      "cost": { "free": true, "paid": "$20/mo Plus plan (includes GPT-5 access)" },
       "ecosystem": ["standalone", "web", "mobile"],
       "skillFloor": "very-low",
       "maturity": "established",
       "bestFor": ["email drafting", "brainstorming", "writing help", "explaining concepts", "quick research", "learning new skills"],
       "caveats": ["Free tier has usage limits during peak times", "Output quality varies with prompt quality", "Don't share sensitive personal or company data without understanding privacy settings"],
-      "teachingPoints": ["Most people use it like Google. The real power is in conversation.", "Follow up, ask for alternatives, give it context about who you are and what you need.", "Tell it what you didn't like about the first answer."]
+      "teachingPoints": ["Most people use it like Google. The real power is in conversation.", "Follow up, ask for alternatives, give it context about who you are and what you need.", "Tell it what you didn't like about the first answer."],
+      "usageMethods": {
+        "promptFormulas": [
+          "I'm a {your role} working on {situation}. My goal is {outcome}. The audience is {who will read this}. Before you start, ask me any clarifying questions you need. Then {your actual request}.",
+          "Explain {topic} to {specific person} who knows {their background} but not {technical area}. Use analogies they'd relate to.",
+          "Here's my {draft/plan/idea}: {paste}. Act as an honest friend who isn't afraid to question my assumptions. Where is this weak?",
+          "I need to write a {type of document} about {topic}. It should be {length} and {tone}. The reader is {audience}. Here's my rough draft: {paste}"
+        ],
+        "techniques": [
+          "Fill out Custom Instructions in Settings → Personalization once. Every conversation inherits your tone and context preferences without repeating yourself.",
+          "Use the Projects feature to group related conversations with shared context — perfect for ongoing work like a class, client, or project.",
+          "Switch models based on the task: GPT-5 is fastest for everyday use, reasoning models handle complex step-by-step problems better.",
+          "Upload files directly instead of pasting text — PDFs, spreadsheets, images, even zipped folders of documents."
+        ],
+        "commonMistakes": [
+          "Don't accept the first answer. Iterate with 'shorter,' 'more specific,' 'different angle,' or 'rewrite more casually.'",
+          "Don't ask vague questions. 'Write me an email' produces filler; 'Write a 100-word email to my team lead pushing back our launch, casual-professional tone' produces something usable.",
+          "Don't paste passwords, banking details, client info, or internal financials — treat it like a shared work channel."
+        ],
+        "quickStart": "Go to chat.openai.com, create a free account, and try a conversation-style prompt with your next real task — don't treat it like a search engine."
+      }
     },
     {
       "id": "claude",
@@ -25,7 +45,27 @@
       "maturity": "established",
       "bestFor": ["writing-heavy workflows", "document review", "long-form content", "nuanced communication tasks", "analyzing uploaded documents"],
       "caveats": ["Free tier has message limits", "Slightly smaller plugin ecosystem than ChatGPT", "Same privacy considerations as any AI tool"],
-      "teachingPoints": ["Particularly strong at analyzing uploaded documents.", "Great at maintaining consistent tone across long pieces of writing.", "Can take rough notes and turn them into polished output."]
+      "teachingPoints": ["Particularly strong at analyzing uploaded documents.", "Great at maintaining consistent tone across long pieces of writing.", "Can take rough notes and turn them into polished output."],
+      "usageMethods": {
+        "promptFormulas": [
+          "Here is a {document type}: {paste or upload}. Summarize the key points, then answer this question about it: {your question}.",
+          "I need to turn these rough notes into a polished {output type}. Audience: {who}. Tone: {formal/casual/etc}. Here are my notes: {paste}.",
+          "<context>{paste your background info or document}</context>\n<instructions>Based on the above, {your actual request}. Format as {desired format}.</instructions>",
+          "Read through this {document} carefully. If anything is unclear, ask me questions before responding. Then {your request}."
+        ],
+        "techniques": [
+          "Put your document or data BEFORE your instructions — Claude processes context better when the reference material comes first.",
+          "Use XML-style tags like <context> and <instructions> to clearly separate different parts of your prompt. This improves response quality noticeably.",
+          "Be explicit about what you want. Claude is more literal than ChatGPT — saying 'go above and beyond' or 'be creative' actually works here.",
+          "Upload long documents directly. Claude handles 100+ page documents well, making it ideal for reviewing contracts, reports, or research papers."
+        ],
+        "commonMistakes": [
+          "Don't assume it will read between the lines — be explicit about what you want. If you want a bold recommendation, say so.",
+          "Don't paste sensitive data like passwords, client details, or internal financials.",
+          "Don't skip iterating. Ask it to 'tighten this up,' 'make it more direct,' or 'try a completely different approach.'"
+        ],
+        "quickStart": "Go to claude.ai, create a free account, upload a document you're working with, and ask it a specific question about that document."
+      }
     },
     {
       "id": "gemini",
@@ -38,7 +78,24 @@
       "maturity": "established",
       "bestFor": ["people deep in the Google ecosystem", "Gmail drafting", "Docs editing", "Sheets analysis"],
       "caveats": ["Real value is in the Workspace integration but that requires a paid plan", "Integration quality varies by app, strongest in Gmail and Docs"],
-      "teachingPoints": ["If you already use Gmail and Google Docs daily, the Workspace integration can feel like magic.", "The standalone free version is also solid for general tasks."]
+      "teachingPoints": ["If you already use Gmail and Google Docs daily, the Workspace integration can feel like magic.", "The standalone free version is also solid for general tasks."],
+      "usageMethods": {
+        "promptFormulas": [
+          "In Gmail: 'Draft a reply that {accepts/declines/asks for clarification} in a {tone} tone. Key point: {what to say}.'",
+          "In Google Docs: 'Rewrite this section for {audience}. Make it {shorter/more formal/clearer}.'",
+          "In Google Sheets: 'Create a formula that {what you need calculated} based on columns {A, B, C}.'"
+        ],
+        "techniques": [
+          "The real value is inside Gmail, Docs, and Sheets — not the standalone chat. Start there if you're already in the Google ecosystem.",
+          "Use '@' in Gmail to pull context from other emails or Drive files directly into your prompt.",
+          "In Google Sheets, Gemini can generate formulas, create charts, and analyze data patterns — describe what you want in plain English."
+        ],
+        "commonMistakes": [
+          "Don't use standalone Gemini if you're not paying for the Workspace integration — at that point ChatGPT or Claude is a better free option.",
+          "Don't expect the same depth as ChatGPT or Claude for long-form writing — Gemini's strength is in Workspace integration, not standalone chat."
+        ],
+        "quickStart": "If you use Gmail daily, open an email you need to reply to and look for the 'Help me write' button — that's where Gemini shines."
+      }
     },
     {
       "id": "copilot",
@@ -51,7 +108,24 @@
       "maturity": "established",
       "bestFor": ["people in Microsoft-heavy workplaces", "Outlook email help", "Word document drafting", "Excel analysis"],
       "caveats": ["Full Office integration requires Microsoft 365 Copilot license which is expensive and usually employer-provided", "Free standalone version is decent but not differentiated enough from ChatGPT"],
-      "teachingPoints": ["If your company already provides Copilot, you're leaving value on the table by not using it.", "Start in Outlook or Word where it's most mature."]
+      "teachingPoints": ["If your company already provides Copilot, you're leaving value on the table by not using it.", "Start in Outlook or Word where it's most mature."],
+      "usageMethods": {
+        "promptFormulas": [
+          "In Outlook: 'Draft a reply that {what to communicate}. Keep it under {length} and use a {tone} tone.'",
+          "In Word: 'Write a first draft of a {document type} about {topic}. Include sections on {key points}.'",
+          "In PowerPoint: 'Create a presentation about {topic} with {number} slides. Audience: {who}.'"
+        ],
+        "techniques": [
+          "Start in Outlook or Word — these integrations are the most mature and reliable.",
+          "In Word, use Copilot to generate a rough first draft, then edit manually. It's faster than starting from scratch.",
+          "In Teams meetings, Copilot can summarize what's been discussed and list action items in real time."
+        ],
+        "commonMistakes": [
+          "Don't pay for the standalone version if you don't have Microsoft 365 — ChatGPT or Claude is better as a standalone AI assistant.",
+          "Don't expect Excel Copilot to handle complex formulas perfectly yet — always verify its work with your data."
+        ],
+        "quickStart": "If your company provides Microsoft 365 Copilot, open Outlook and try 'Draft with Copilot' on your next email reply."
+      }
     },
     {
       "id": "grammarly",
@@ -64,7 +138,20 @@
       "maturity": "established",
       "bestFor": ["communication perfectionists", "efficient communicators who might miss tone issues", "anyone whose time drain is email or document writing"],
       "caveats": ["Free tier is genuinely useful, many people don't need Premium", "AI rewrite features overlap with ChatGPT", "Can occasionally over-correct"],
-      "teachingPoints": ["The real value is the passive tone detection. It tells you when your email sounds too harsh or too passive before you send it.", "Great for people who spend too long wordsmithing."]
+      "teachingPoints": ["The real value is the passive tone detection. It tells you when your email sounds too harsh or too passive before you send it.", "Great for people who spend too long wordsmithing."],
+      "usageMethods": {
+        "promptFormulas": [],
+        "techniques": [
+          "Install the browser extension and just write normally — it works passively in Gmail, Google Docs, Slack, and LinkedIn without extra steps.",
+          "Pay attention to the tone suggestions more than the grammar fixes. Catching 'this sounds aggressive' before you send is the real value.",
+          "Set your communication preferences (formality, tone, intent) in the Grammarly profile so suggestions match your style."
+        ],
+        "commonMistakes": [
+          "Don't blindly accept every suggestion — Grammarly sometimes over-corrects casual writing into stiff corporate language.",
+          "Don't pay for Premium just for grammar. The free tier catches most errors. Premium is worth it for tone and clarity features."
+        ],
+        "quickStart": "Install the browser extension at grammarly.com and it'll automatically check your writing in Gmail and Google Docs — no setup needed."
+      }
     },
     {
       "id": "hemingway",
@@ -77,7 +164,20 @@
       "maturity": "established",
       "bestFor": ["people who write long reports or documents", "pairs well with AI-drafted content to tighten it up"],
       "caveats": ["Very simple tool, does one thing", "Not a replacement for AI writing assistance, more of a complement"],
-      "teachingPoints": ["Run AI-drafted content through Hemingway to make it clearer and more direct."]
+      "teachingPoints": ["Run AI-drafted content through Hemingway to make it clearer and more direct."],
+      "usageMethods": {
+        "promptFormulas": [],
+        "techniques": [
+          "Use it as a second pass after AI-drafted content. ChatGPT or Claude writes the draft, Hemingway tightens it.",
+          "Aim for Grade 9 or lower readability for most professional writing. If the score is higher, simplify your sentences.",
+          "Focus on the highlighted sentences — yellow means hard to read, red means very hard. Rewrite those first."
+        ],
+        "commonMistakes": [
+          "Don't use it as your only writing tool — it catches complexity but not tone, accuracy, or missing content.",
+          "Don't try to eliminate every highlight. Some complex sentences are necessary — aim to reduce, not remove."
+        ],
+        "quickStart": "Go to hemingwayapp.com, paste something you've written (or AI-generated text), and see which sentences are flagged as hard to read."
+      }
     },
     {
       "id": "otter",
@@ -90,7 +190,21 @@
       "maturity": "established",
       "bestFor": ["anyone who identified meetings or note-taking as a time drain", "memory-reliant people who lose meeting details", "people with work-spillover"],
       "caveats": ["Free tier has time limits (300 min/month, 30 min per conversation)", "Recordings stored in Otter's cloud, consider company policy", "Always get consent before recording"],
-      "teachingPoints": ["The magic is the auto-generated action items. After a meeting, you get a list of who committed to what.", "For people who forget action items or rely on memory, this is transformative."]
+      "teachingPoints": ["The magic is the auto-generated action items. After a meeting, you get a list of who committed to what.", "For people who forget action items or rely on memory, this is transformative."],
+      "usageMethods": {
+        "promptFormulas": [],
+        "techniques": [
+          "After each meeting, review the auto-generated action items first — that's where the real value is, not the full transcript.",
+          "Use the search feature to find specific topics across past meetings instead of scrolling through notes.",
+          "Share the summary (not the full transcript) with attendees as a quick follow-up."
+        ],
+        "commonMistakes": [
+          "Always get consent before recording — announce it at the start of the meeting or in the invite.",
+          "Don't rely on it for perfect accuracy with heavy accents or crosstalk. Skim the transcript for key decisions.",
+          "Don't ignore the action items summary — that's the feature that saves real time, not the raw transcript."
+        ],
+        "quickStart": "Connect Otter to your Zoom or Google Meet account, let it join your next meeting, and review the action items it generates afterward."
+      }
     },
     {
       "id": "fireflies",
@@ -103,7 +217,20 @@
       "maturity": "growing",
       "bestFor": ["similar to Otter", "particularly strong for people who need to search back through past meetings"],
       "caveats": ["Cloud storage, consent required", "Free tier is more limited than Otter's"],
-      "teachingPoints": ["Strong search functionality across past meetings."]
+      "teachingPoints": ["Strong search functionality across past meetings.", "Granola and Otter have become more popular general-purpose meeting tools in 2026, but Fireflies remains the best choice for teams that need advanced search across past meetings."],
+      "usageMethods": {
+        "promptFormulas": [],
+        "techniques": [
+          "Use the cross-meeting search to find every time a specific topic, client, or decision was discussed across all your meetings.",
+          "Set up topic trackers to automatically flag when key subjects come up in conversations.",
+          "Share meeting channels with your team so everyone has searchable access to past discussions."
+        ],
+        "commonMistakes": [
+          "Don't use Fireflies just for transcription — Otter or Granola may be simpler for that. Its strength is search across meetings.",
+          "Always get consent before recording, especially with external participants."
+        ],
+        "quickStart": "Connect Fireflies to your calendar, let it record a few meetings, then try searching for a topic across those transcripts."
+      }
     },
     {
       "id": "notion",
@@ -116,7 +243,23 @@
       "maturity": "established",
       "bestFor": ["systems-thinkers who want a unified workspace", "self-directed learners who will invest time in setup"],
       "caveats": ["Steep learning curve for non-technical users", "Can become a productivity trap, spending more time organizing than doing work", "NOT good for overwhelmed or low-structure people, it'll make things worse"],
-      "teachingPoints": ["If someone is already a Notion user, the AI features are a natural extension.", "If they're not, don't recommend Notion just for AI, the overhead isn't worth it."]
+      "teachingPoints": ["If someone is already a Notion user, the AI features are a natural extension.", "If they're not, don't recommend Notion just for AI, the overhead isn't worth it."],
+      "usageMethods": {
+        "promptFormulas": [
+          "In a Notion page, type /ai and then: 'Summarize the key decisions from this meeting note.'",
+          "In a Notion page: 'Turn these bullet points into a professional project update email for {audience}.'"
+        ],
+        "techniques": [
+          "Use Notion AI within pages you already work in — highlight text and ask it to improve, summarize, or translate.",
+          "Start with one of Notion's templates rather than building a system from scratch. The template gallery has hundreds of ready-made setups.",
+          "Use the AI autofill feature in databases to automatically generate summaries or tags for new entries."
+        ],
+        "commonMistakes": [
+          "Don't adopt Notion just for the AI features — the overhead of learning Notion isn't worth it unless you'll use the full workspace.",
+          "Don't spend more time organizing your Notion setup than doing actual work. Start simple and add complexity only when needed."
+        ],
+        "quickStart": "If you already use Notion, open any page, highlight some text, and click 'Ask AI' to see what it can do with your existing content."
+      }
     },
     {
       "id": "todoist",
@@ -129,7 +272,20 @@
       "maturity": "established",
       "bestFor": ["people with controlled chaos who need a simple capture system", "not a heavy system, just a reliable place to put things"],
       "caveats": ["Free tier limited to 5 projects", "Not an AI-forward tool, it's a great traditional tool with some AI features"],
-      "teachingPoints": ["Simple, reliable place to capture tasks. Type a task, done."]
+      "teachingPoints": ["Simple, reliable place to capture tasks. Type a task, done."],
+      "usageMethods": {
+        "promptFormulas": [],
+        "techniques": [
+          "Capture first, organize later. Type the task the moment you think of it — you can sort it into a project afterward.",
+          "Use natural language for due dates: 'every Monday,' 'next Friday,' 'in 3 days' — Todoist understands all of these.",
+          "Install the mobile app and browser extension so you can capture tasks from anywhere without context-switching."
+        ],
+        "commonMistakes": [
+          "Don't overthink your project structure. A simple Inbox + a few projects is enough. Complex systems create more work than they save.",
+          "Don't ignore the Inbox — review it daily and move tasks to the right project or they pile up."
+        ],
+        "quickStart": "Download the app, add your first five to-dos with due dates using natural language like 'tomorrow' or 'next Monday,' and you're done."
+      }
     },
     {
       "id": "sanebox",
@@ -142,7 +298,20 @@
       "maturity": "established",
       "bestFor": ["anyone whose top time drain is email", "reactive or email-dependent planners", "people with overwhelm who need noise reduction"],
       "caveats": ["No free tier, paid only after trial", "Some people uncomfortable giving third party access to email", "Takes 1-2 weeks to learn your preferences"],
-      "teachingPoints": ["This is set it and forget it. Works in the background.", "For people overwhelmed by email volume, this removes the noise without requiring new habits."]
+      "teachingPoints": ["This is set it and forget it. Works in the background.", "For people overwhelmed by email volume, this removes the noise without requiring new habits."],
+      "usageMethods": {
+        "promptFormulas": [],
+        "techniques": [
+          "Set it up and then leave it alone for 1-2 weeks. It needs time to learn which emails matter to you.",
+          "Drag misclassified emails back to your inbox (or into SaneLater) to train it — it learns from every correction.",
+          "Use the SaneBlackHole folder: drag emails from senders you never want to see again, and they'll vanish forever."
+        ],
+        "commonMistakes": [
+          "Don't judge it in the first few days — it takes 1-2 weeks to learn your patterns and get accurate.",
+          "Don't forget to check your SaneLater folder occasionally at first. Important emails may land there while it's still learning."
+        ],
+        "quickStart": "Start the 14-day free trial, connect your email, and let it run for two weeks — it works in the background without changing your habits."
+      }
     },
     {
       "id": "calendly",
@@ -155,20 +324,46 @@
       "maturity": "established",
       "bestFor": ["anyone whose time drain is scheduling", "client-facing professionals", "people who do a lot of meeting coordination"],
       "caveats": ["Free tier limited to one event type", "Some people find it impersonal to send a Calendly link", "More for external or client scheduling than internal team use"],
-      "teachingPoints": ["Eliminates the back-and-forth of scheduling. Set your availability, share a link."]
+      "teachingPoints": ["Eliminates the back-and-forth of scheduling. Set your availability, share a link."],
+      "usageMethods": {
+        "promptFormulas": [],
+        "techniques": [
+          "Set up one basic meeting type first (like '30-minute meeting') and start using it immediately. Add more types later.",
+          "Add buffer time between meetings in your settings so you never end up in back-to-back calls.",
+          "Put your Calendly link in your email signature so people can book without you lifting a finger."
+        ],
+        "commonMistakes": [
+          "Don't overcomplicate with multiple event types right away. One is enough to start getting value.",
+          "Don't forget to sync your personal calendar too — otherwise Calendly might book over personal appointments."
+        ],
+        "quickStart": "Create a free account, set up one '30-minute meeting' event type with your availability, and share the link next time someone asks to meet."
+      }
     },
     {
       "id": "reclaim",
       "name": "Reclaim.ai",
       "provider": "Reclaim",
       "category": "scheduling",
-      "cost": { "free": true, "paid": "$10/mo Starter" },
+      "cost": { "free": true, "paid": "$10/mo Starter, $18/mo Business" },
       "ecosystem": ["google-calendar", "outlook"],
-      "skillFloor": "moderate",
-      "maturity": "growing",
-      "bestFor": ["high-structure planners who want their calendar to be smarter", "people with work-spillover who need help protecting personal time"],
-      "caveats": ["Requires investment in setup to work well", "Best for people already living in their calendar", "Not for low-structure people, it'll feel like too much overhead"],
-      "teachingPoints": ["AI-powered calendar that automatically schedules habits, tasks, and breaks around your meetings."]
+      "skillFloor": "low",
+      "maturity": "established",
+      "bestFor": ["professionals whose calendars are chaos", "people with focus-time that keeps getting eaten by meetings", "anyone who wants their tasks auto-scheduled around meetings"],
+      "caveats": ["Requires Google Calendar or Outlook", "Takes a week or two of calibration to learn your preferences"],
+      "teachingPoints": ["Auto-protects focus time by blocking it on your calendar so meetings can't steal it.", "Schedules tasks, habits, and breaks automatically based on priority.", "Now the dominant AI scheduling tool after Clockwise shut down in March 2026."],
+      "usageMethods": {
+        "promptFormulas": [],
+        "techniques": [
+          "Set up 'Habits' for recurring blocks like focus time, lunch, or exercise — Reclaim will defend them against meeting invites.",
+          "Add your tasks with estimated durations and Reclaim will auto-schedule them around your meetings.",
+          "Let it calibrate for a week or two before judging. It learns your patterns and gets smarter about when to protect time."
+        ],
+        "commonMistakes": [
+          "Don't manually override its blocks constantly — that teaches it your protected time doesn't matter, and it'll stop defending it.",
+          "Don't expect perfection in the first week. Give it time to learn your schedule and priorities."
+        ],
+        "quickStart": "Connect your calendar, set up one 'Focus Time' habit for 2 hours daily, and watch Reclaim automatically block and defend that time."
+      }
     },
     {
       "id": "zapier",
@@ -181,7 +376,21 @@
       "maturity": "established",
       "bestFor": ["systems-thinkers and efficiency-oriented people ready for the next level", "people with repetitive tasks across multiple tools", "tech comfort 3+ recommended"],
       "caveats": ["Free tier is very limited", "Can get complex and expensive quickly", "Not for overwhelmed users, it adds a new system to manage"],
-      "teachingPoints": ["Start with one simple automation and build from there.", "The biggest mistake is trying to automate everything at once."]
+      "teachingPoints": ["Start with one simple automation and build from there.", "The biggest mistake is trying to automate everything at once."],
+      "usageMethods": {
+        "promptFormulas": [],
+        "techniques": [
+          "Start with one simple 'Zap' that solves a real annoyance — like auto-saving Gmail attachments to Google Drive.",
+          "Use the pre-built templates in Zapier's library rather than creating automations from scratch.",
+          "Test every Zap with real data before turning it on. A misconfigured automation can create more mess than it solves."
+        ],
+        "commonMistakes": [
+          "Don't try to automate everything at once. Pick your single most repetitive task and automate that first.",
+          "Don't build complex multi-step Zaps before mastering simple two-step ones. Complexity compounds fast.",
+          "Don't forget to monitor your Zaps after setup — they can break silently when connected apps change."
+        ],
+        "quickStart": "Sign up free, browse the template library for an automation that matches a task you do manually every week, and turn it on."
+      }
     },
     {
       "id": "notebooklm",
@@ -194,7 +403,24 @@
       "maturity": "growing",
       "bestFor": ["people who deal with lots of documents", "self-directed learners", "people whose time drain is searching for information"],
       "caveats": ["Google product, consider data privacy if uploading sensitive company documents", "Works best with text-heavy documents"],
-      "teachingPoints": ["Think of it as a research assistant that's read everything you've given it.", "Instead of searching through 50 pages, just ask a question."]
+      "teachingPoints": ["Think of it as a research assistant that's read everything you've given it.", "Instead of searching through 50 pages, just ask a question."],
+      "usageMethods": {
+        "promptFormulas": [
+          "Based on the sources I've uploaded, {your question about the material}.",
+          "Compare what {source 1} says about {topic} with what {source 2} says. Where do they agree and disagree?",
+          "Create a study guide covering the key concepts from all my uploaded materials."
+        ],
+        "techniques": [
+          "Upload your sources first — NotebookLM can only reference what you've given it, which means it can't hallucinate facts that aren't in your materials.",
+          "Use the Audio Overview feature to generate a podcast-style conversation about your materials. Great for absorbing content while commuting.",
+          "Ask it to cite specific sources in its answers so you can verify and dig deeper into the original material."
+        ],
+        "commonMistakes": [
+          "Don't expect it to know things beyond your uploaded sources — that's actually its strength (no hallucination), not a limitation.",
+          "Don't upload sensitive company documents without checking your organization's data policies for Google products."
+        ],
+        "quickStart": "Go to notebooklm.google.com, create a notebook, upload a PDF or doc you need to understand, and ask it a question about the content."
+      }
     },
     {
       "id": "canva",
@@ -207,7 +433,327 @@
       "maturity": "established",
       "bestFor": ["anyone who creates presentations, social media content, or visual documents", "especially strong for people who identified creating presentations as a time drain"],
       "caveats": ["Free tier is genuinely useful", "The AI features are growing but not yet the primary draw, the templates and ease of use are the real value"],
-      "teachingPoints": ["The template system makes it easy to create good-looking things without design skills."]
+      "teachingPoints": ["The template system makes it easy to create good-looking things without design skills."],
+      "usageMethods": {
+        "promptFormulas": [],
+        "techniques": [
+          "Always start from a template, then customize. Designing from scratch in Canva defeats the purpose — the templates are the value.",
+          "Use Magic Write to generate text content directly inside your design, then edit to match your voice.",
+          "Use the Brand Kit (Pro feature) to save your colors, fonts, and logo so every design stays on-brand automatically."
+        ],
+        "commonMistakes": [
+          "Don't try to design from scratch — browse templates first and customize from there. That's how Canva is meant to be used.",
+          "Don't use Canva for complex photo editing or illustration — it's a layout and design tool, not Photoshop."
+        ],
+        "quickStart": "Go to canva.com, search for a template that matches what you need (social post, presentation, flyer), and customize it with your content."
+      }
+    },
+    {
+      "id": "perplexity",
+      "name": "Perplexity",
+      "provider": "Perplexity AI",
+      "category": "research",
+      "cost": { "free": true, "paid": "$20/mo Pro" },
+      "ecosystem": ["standalone", "web", "mobile", "browser-extension"],
+      "skillFloor": "very-low",
+      "maturity": "established",
+      "bestFor": ["research with cited sources", "essay research", "fact-checking", "current events", "competitor analysis", "market validation"],
+      "caveats": ["Not as strong for creative writing or brainstorming as ChatGPT/Claude", "Free tier has daily query limits on advanced Pro search"],
+      "teachingPoints": ["Every claim links to a source, so you can verify before citing.", "Use it specifically when you need accurate, current, verifiable information, not general conversation.", "Follow-up questions in the same thread drill deeper into specific sources."],
+      "usageMethods": {
+        "promptFormulas": [
+          "What are the most recent {findings/trends/developments} in {topic}? I need sources I can cite.",
+          "Compare {option A} vs {option B} for {use case}. Include pros, cons, and link to sources.",
+          "Is it true that {claim}? Show me the evidence for and against."
+        ],
+        "techniques": [
+          "Use Perplexity specifically when you need cited, verifiable information — not for brainstorming or creative work (use ChatGPT/Claude for that).",
+          "Ask follow-up questions in the same thread to drill deeper into specific sources or claims.",
+          "Click through to the cited sources to verify claims yourself — the citations are the whole point of using Perplexity over other AI tools."
+        ],
+        "commonMistakes": [
+          "Don't use it like ChatGPT for conversation or creative writing — it's a research tool, not a general assistant.",
+          "Don't cite Perplexity's summary as your source. Click through to the original sources it links and cite those instead."
+        ],
+        "quickStart": "Go to perplexity.ai and search for something you'd normally Google but want cited sources for — you'll see the difference immediately."
+      }
+    },
+    {
+      "id": "granola",
+      "name": "Granola",
+      "provider": "Granola",
+      "category": "meeting",
+      "cost": { "free": true, "paid": "$14/mo" },
+      "ecosystem": ["mac", "windows", "zoom", "google-meet", "teams"],
+      "skillFloor": "very-low",
+      "maturity": "growing",
+      "bestFor": ["executives and managers in back-to-back meetings", "people who prefer taking rough notes themselves", "knowledge workers who want polished notes without a meeting bot"],
+      "caveats": ["Free tier limits meeting history to 30 days", "You still take rough notes during the meeting — it's not fully hands-off"],
+      "teachingPoints": ["Unlike Otter or Fireflies, there's no bot joining your call. It captures audio from your device.", "You jot down key points during the meeting; the AI cleans them up and fills in context from the transcript afterward.", "Broke out in 2026 as the meeting tool of choice among execs and founders."],
+      "usageMethods": {
+        "promptFormulas": [],
+        "techniques": [
+          "Take rough notes during the meeting — just key points, decisions, and action items. The AI fills in the rest from the audio transcript.",
+          "Review and edit the AI-enhanced notes right after the meeting while context is fresh. The more you edit, the better it learns your style.",
+          "Use the template feature to format notes consistently across recurring meetings (standups, 1:1s, client calls)."
+        ],
+        "commonMistakes": [
+          "Don't expect fully hands-off notes — you still take rough notes during the meeting. The AI enhances them, not replaces them.",
+          "Don't skip reviewing the AI-enhanced notes. They're good but occasionally miss nuance that your rough notes captured."
+        ],
+        "quickStart": "Install the desktop app, join your next meeting, and jot a few bullet points — after the meeting, watch Granola turn them into polished notes."
+      }
+    },
+    {
+      "id": "gamma",
+      "name": "Gamma",
+      "provider": "Gamma",
+      "category": "presentation",
+      "cost": { "free": true, "paid": "$10/mo Plus, $20/mo Pro" },
+      "ecosystem": ["standalone", "web"],
+      "skillFloor": "very-low",
+      "maturity": "established",
+      "bestFor": ["pitch decks", "presentations", "anyone who needs a polished deck without spending hours in PowerPoint", "founders pitching investors"],
+      "caveats": ["The free tier includes Gamma branding on exports", "AI-generated decks still need human polish to feel unique"],
+      "teachingPoints": ["Describe your company or topic and it generates a first-draft deck in minutes.", "Iterate slide by slide instead of starting from a blank PowerPoint.", "For founders, this is the biggest time-saver on pitch deck creation in 2026."],
+      "usageMethods": {
+        "promptFormulas": [
+          "Create a {number}-slide {pitch deck/presentation/proposal} about {topic}. Audience: {who}. Key points to cover: {list}.",
+          "I'm pitching {company/idea} to {audience}. Our value proposition is {what}. Include slides on problem, solution, market size, and team."
+        ],
+        "techniques": [
+          "Describe your topic or company and let Gamma generate the full deck first, then iterate on individual slides.",
+          "Use 'Rewrite' on individual slides to try different angles rather than editing text manually.",
+          "Export to PowerPoint if you need to make final tweaks in a traditional tool or share with people who prefer .pptx."
+        ],
+        "commonMistakes": [
+          "Don't try to design individual slides from scratch — let Gamma generate the structure, then refine.",
+          "Don't skip the human polish. AI-generated decks look professional but generic — add your specific data, stories, and personality."
+        ],
+        "quickStart": "Go to gamma.app, describe your presentation topic in a few sentences, and generate a complete first-draft deck in under two minutes."
+      }
+    },
+    {
+      "id": "sense",
+      "name": "Sense",
+      "provider": "Sense",
+      "category": "family-organization",
+      "cost": { "free": true, "paid": "$5/mo Premium" },
+      "ecosystem": ["ios", "android", "google-calendar", "apple-calendar"],
+      "skillFloor": "very-low",
+      "maturity": "growing",
+      "bestFor": ["parents drowning in school and sports emails", "families juggling multiple kids' schedules", "anyone who forwards school flyers and hopes to remember later"],
+      "caveats": ["Still newer than Cozi or Google Calendar, active development", "Works best when both parents adopt it together"],
+      "teachingPoints": ["Forward any school or sports email to Sense and it auto-extracts events into your family calendar.", "Eliminates the mental load of manually typing every practice time, field trip, and permission slip.", "Set it up once, and it runs itself."],
+      "usageMethods": {
+        "promptFormulas": [],
+        "techniques": [
+          "Forward school and sports emails directly to your Sense inbox — it auto-extracts dates, times, and locations into calendar events.",
+          "Set it up with both parents so everyone sees the same family calendar and nothing falls through the cracks.",
+          "Connect it to Google Calendar or Apple Calendar so events show up alongside your work schedule."
+        ],
+        "commonMistakes": [
+          "Don't only set it up on one parent's phone — the value multiplies when both parents have access.",
+          "Don't try to manually add events. The whole point is forwarding emails and letting Sense extract the details."
+        ],
+        "quickStart": "Download the app, forward your next school or sports email to Sense, and watch it auto-create a calendar event with all the details."
+      }
+    },
+    {
+      "id": "saner-ai",
+      "name": "Saner.AI",
+      "provider": "Saner",
+      "category": "planning",
+      "cost": { "free": true, "paid": "$15/mo" },
+      "ecosystem": ["standalone", "web", "ios", "android"],
+      "skillFloor": "very-low",
+      "maturity": "growing",
+      "bestFor": ["parents and professionals carrying too much mental load", "people whose brain feels constantly 'on'", "anyone with too many scattered thoughts across notes apps and reminders"],
+      "caveats": ["Newer tool, still evolving", "Not a replacement for a full calendar or task manager"],
+      "teachingPoints": ["Dump thoughts, reminders, and to-dos in plain language; the AI structures and resurfaces them when relevant.", "Specifically positioned at the 'invisible checklist' problem parents and busy professionals deal with.", "Think of it as a calm assistant rather than another app to manage."],
+      "usageMethods": {
+        "promptFormulas": [],
+        "techniques": [
+          "Dump thoughts, reminders, and to-dos in plain language without organizing them. Saner structures and resurfaces them when relevant.",
+          "Use it as a brain dump throughout the day — capture everything and let the AI sort out what matters when it matters.",
+          "Check in once a day to see what Saner has surfaced as important. It gets better at timing as it learns your patterns."
+        ],
+        "commonMistakes": [
+          "Don't try to organize your inputs — the whole point is that you dump messy thoughts and Saner structures them for you.",
+          "Don't use it as a replacement for your calendar or task manager. It handles the 'invisible checklist' stuff those tools miss."
+        ],
+        "quickStart": "Download the app and dump every thought, reminder, and to-do in your head right now — don't organize, just capture. Saner handles the rest."
+      }
+    },
+    {
+      "id": "descript",
+      "name": "Descript",
+      "provider": "Descript",
+      "category": "audio-video-editing",
+      "cost": { "free": true, "paid": "$16/mo Creator, $30/mo Pro" },
+      "ecosystem": ["mac", "windows", "standalone"],
+      "skillFloor": "low",
+      "maturity": "established",
+      "bestFor": ["podcasters", "YouTube creators", "anyone editing audio or video who hates traditional timelines"],
+      "caveats": ["Free tier limits export quality and length", "Voice cloning features require paid plan"],
+      "teachingPoints": ["Edit audio and video by editing a text transcript — delete a word, the audio deletes with it.", "Removes filler words ('um', 'like') automatically across a whole recording.", "Beloved by podcasters because it turns a 3-hour editing job into 30 minutes."],
+      "usageMethods": {
+        "promptFormulas": [],
+        "techniques": [
+          "Use the filler word removal feature first — click one button to remove every 'um,' 'uh,' and 'like' across your entire recording.",
+          "Edit by reading the transcript. Delete sentences or words from the text and the audio/video cuts automatically.",
+          "Use the 'Overdub' feature to fix mispronunciations by retyping the word — it regenerates the audio in your voice."
+        ],
+        "commonMistakes": [
+          "Don't start with traditional timeline editing. The entire point of Descript is editing through the transcript — start there.",
+          "Don't skip the filler word removal step. It's a one-click feature that saves hours and immediately improves quality."
+        ],
+        "quickStart": "Download Descript, import a recording, and hit the filler word removal button — you'll see hours of editing work disappear in seconds."
+      }
+    },
+    {
+      "id": "midjourney",
+      "name": "Midjourney",
+      "provider": "Midjourney",
+      "category": "image-generation",
+      "cost": { "free": false, "paid": "$10/mo Basic, $30/mo Standard, $60/mo Pro" },
+      "ecosystem": ["web", "discord"],
+      "skillFloor": "moderate",
+      "maturity": "established",
+      "bestFor": ["creators who need distinctive, high-quality visual imagery", "channel art", "thumbnails that need to stand out", "editorial and artistic images"],
+      "caveats": ["No free tier — paid only", "Steeper learning curve than Canva or DALL·E; requires learning to prompt visually", "Output quality depends heavily on prompt skill"],
+      "teachingPoints": ["Highest-quality stylized AI image generation available.", "Not the right tool for functional graphics (Canva is better for that) — this is for when you want something visually distinctive.", "Worth the learning curve if visual identity matters for your creative work."],
+      "usageMethods": {
+        "promptFormulas": [
+          "{subject}, {style} style, {mood} lighting, {composition} --ar {aspect ratio}",
+          "{subject} in the style of {artist or art movement}, {color palette}, {detail level} --ar 16:9",
+          "Professional {photo type} of {subject}, {environment}, {lighting style}, photorealistic --ar 3:2"
+        ],
+        "techniques": [
+          "Think visually: describe style, mood, composition, and lighting rather than just the subject. 'A frog' gets generic results; 'a frog on a lily pad, watercolor, soft morning light, overhead angle' gets art.",
+          "Use the --ar flag to set aspect ratios (16:9 for headers, 1:1 for social, 3:2 for photos) and --stylize to control how artistic vs. literal the output is.",
+          "Generate 4 variations, pick the closest one, then use 'Vary (Subtle)' or 'Vary (Strong)' to iterate rather than re-prompting from scratch."
+        ],
+        "commonMistakes": [
+          "Don't describe what you want to see functionally ('a logo for my company') — Midjourney creates artistic images, not functional designs. Use Canva for that.",
+          "Don't write essay-length prompts. Short, vivid descriptions with style and mood keywords outperform long instructions."
+        ],
+        "quickStart": "Go to midjourney.com, subscribe to the Basic plan, and try generating an image with a short visual description including style and mood keywords."
+      }
+    },
+    {
+      "id": "elevenlabs",
+      "name": "ElevenLabs",
+      "provider": "ElevenLabs",
+      "category": "voice-audio",
+      "cost": { "free": true, "paid": "$5/mo Starter, $11/mo Creator, $22/mo Pro" },
+      "ecosystem": ["standalone", "web", "api"],
+      "skillFloor": "very-low",
+      "maturity": "established",
+      "bestFor": ["creators who need voiceovers without a studio", "YouTube narrations", "audiobook creators", "explainer videos", "founders making product demos"],
+      "caveats": ["Free tier limited to 10,000 characters per month", "Voice cloning has ethical considerations — get consent"],
+      "teachingPoints": ["Realistic enough that most viewers can't tell it's AI.", "Hundreds of voices and 50+ languages, so you can match tone and audience.", "The standard for AI voiceovers in 2026."],
+      "usageMethods": {
+        "promptFormulas": [],
+        "techniques": [
+          "Browse the voice library and pick a voice that matches your content's tone and audience before generating anything.",
+          "Break long scripts into shorter paragraphs for more natural pacing — one long block tends to sound monotone.",
+          "Use the speech-to-speech feature to record yourself with the right emotion and pacing, then convert to a polished AI voice."
+        ],
+        "commonMistakes": [
+          "Don't clone someone's voice without their explicit consent — this is both an ethical and legal issue.",
+          "Don't use one voice for everything. Match the voice to the content: warm and conversational for tutorials, authoritative for presentations."
+        ],
+        "quickStart": "Go to elevenlabs.io, pick a voice from the library, paste a short script, and generate your first voiceover — it takes about 30 seconds."
+      }
+    },
+    {
+      "id": "quizlet",
+      "name": "Quizlet",
+      "provider": "Quizlet",
+      "category": "study",
+      "cost": { "free": true, "paid": "$8/mo Plus" },
+      "ecosystem": ["standalone", "web", "ios", "android"],
+      "skillFloor": "very-low",
+      "maturity": "established",
+      "bestFor": ["students preparing for exams", "anyone needing active recall and spaced repetition", "students whose classes have lots of terminology"],
+      "caveats": ["Free tier has ads and limited AI features", "Shared study sets vary in quality — verify before relying on them"],
+      "teachingPoints": ["The AI tutor (Q-Chat) asks you questions in a conversational format rather than flipping cards.", "AI-generated practice tests can simulate exam conditions based on your study sets.", "Massive library of shared study sets means you're rarely starting from zero."],
+      "usageMethods": {
+        "promptFormulas": [
+          "In Q-Chat: 'Quiz me on {topic} from my study set. Start with the concepts I've gotten wrong before.'",
+          "In Q-Chat: 'Explain {concept} in simpler terms and give me an example I can relate to.'"
+        ],
+        "techniques": [
+          "Use Q-Chat (AI tutor) for conversational quizzing instead of just flipping cards — it adapts to what you struggle with.",
+          "Generate AI practice tests from your study sets to simulate exam conditions before the real thing.",
+          "Search the shared study set library before creating your own — someone has likely already made one for your course."
+        ],
+        "commonMistakes": [
+          "Don't just passively flip through cards. Use the 'Learn' mode or Q-Chat for active recall, which is proven to improve retention.",
+          "Don't trust shared study sets blindly — verify the content against your course materials before studying."
+        ],
+        "quickStart": "Search for your course or textbook on Quizlet, find a relevant study set, and try Q-Chat to quiz yourself conversationally."
+      }
+    },
+    {
+      "id": "mindgrasp",
+      "name": "Mindgrasp",
+      "provider": "Mindgrasp",
+      "category": "study",
+      "cost": { "free": true, "paid": "$10/mo Pro" },
+      "ecosystem": ["standalone", "web", "chrome-extension", "ios", "android"],
+      "skillFloor": "very-low",
+      "maturity": "growing",
+      "bestFor": ["students who want an all-in-one study platform", "students with heavy reading loads", "students who record lectures"],
+      "caveats": ["Free tier has usage limits on uploads and AI features", "Quality of generated flashcards varies — review before studying"],
+      "teachingPoints": ["Upload a lecture, PDF, or video and it auto-generates notes, summaries, flashcards, and quizzes.", "Includes a 24/7 AI tutor trained on your uploaded materials.", "5M+ students use it; popular on TikTok and Instagram study communities."],
+      "usageMethods": {
+        "promptFormulas": [
+          "After uploading: 'Generate flashcards for the key terms in this {lecture/chapter/PDF}.'",
+          "With the AI tutor: 'I don't understand {concept from uploaded material}. Explain it step by step.'"
+        ],
+        "techniques": [
+          "Upload a lecture recording or PDF and let Mindgrasp auto-generate notes, flashcards, and quizzes — then review and edit them.",
+          "Use the AI tutor to ask follow-up questions about your uploaded materials when you're stuck on a concept.",
+          "Review AI-generated flashcards before studying them — quality varies and you'll learn better if you correct errors first."
+        ],
+        "commonMistakes": [
+          "Don't study AI-generated flashcards without reviewing them first — some may be inaccurate or miss key nuance from the source material.",
+          "Don't rely on it as your only study method. Use it to generate materials, then study actively with recall and practice."
+        ],
+        "quickStart": "Upload your next lecture recording or class PDF and let Mindgrasp generate a complete study set — notes, flashcards, and a practice quiz — automatically."
+      }
+    },
+    {
+      "id": "lovable",
+      "name": "Lovable",
+      "provider": "Lovable",
+      "category": "no-code-building",
+      "cost": { "free": true, "paid": "$20/mo Starter, $100/mo Pro" },
+      "ecosystem": ["standalone", "web", "github"],
+      "skillFloor": "low",
+      "maturity": "growing",
+      "bestFor": ["non-technical founders who need a landing page or prototype", "entrepreneurs who want to ship a working product without hiring a developer", "people who can describe what they want but can't code"],
+      "caveats": ["Best for prototypes and landing pages, not complex production apps", "Free tier limits messages per day"],
+      "teachingPoints": ["Describe what you want in plain English and it generates a working React app.", "Can ship a landing page in hours instead of weeks.", "Particularly popular with non-technical founders in 2026."],
+      "usageMethods": {
+        "promptFormulas": [
+          "Build a {type of page/app} for {company/idea}. It should have: {list key sections or features}. The style should be {modern/minimal/bold/etc}.",
+          "Create a landing page for {product}. Include a hero section with {value proposition}, a features section with {3 features}, and a signup form.",
+          "I'm building {idea}. Start with a simple prototype that lets users {core action}. Keep it clean and mobile-friendly."
+        ],
+        "techniques": [
+          "Describe what you want in plain English — be specific about sections, features, and style. The more detail, the better the first draft.",
+          "Iterate on individual components rather than regenerating the whole page. Ask it to 'change the hero section' or 'add a pricing table.'",
+          "Use it for prototypes and landing pages. For complex apps, use Lovable to build the initial version, then hand off to a developer."
+        ],
+        "commonMistakes": [
+          "Don't expect it to build complex production apps. It's best for prototypes, MVPs, and landing pages.",
+          "Don't give vague descriptions. 'Make me a website' produces generic output; 'landing page for a dog walking app with booking, testimonials, and pricing' produces something useful."
+        ],
+        "quickStart": "Go to lovable.dev, describe your landing page or app idea in a few sentences, and have a working prototype in minutes."
+      }
     }
   ]
 }

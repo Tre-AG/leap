@@ -10,9 +10,10 @@ interface ReadinessProps {
     aiUsage: string,
     timeWillingness: string
   ) => void;
+  onBack?: () => void;
 }
 
-export default function Readiness({ config, onSubmit }: ReadinessProps) {
+export default function Readiness({ config, onSubmit, onBack }: ReadinessProps) {
   const [techComfort, setTechComfort] = useState(3);
   const [aiUsage, setAiUsage] = useState("");
   const [timeWillingness, setTimeWillingness] = useState("");
@@ -24,13 +25,13 @@ export default function Readiness({ config, onSubmit }: ReadinessProps) {
       <h2 className="mb-2 text-center text-xl font-bold text-leaf-dark">
         Almost There
       </h2>
-      <p className="mb-8 text-center text-sm text-foreground/50">
-        Just a few quick things to calibrate your recommendations.
+      <p className="mb-8 text-center text-base text-foreground/70">
+        How familiar are you with AI?
       </p>
 
       {/* Tech Comfort Slider */}
       <div className="mb-8">
-        <label className="mb-3 block text-sm font-semibold text-foreground/70">
+        <label className="mb-3 block text-base font-semibold text-foreground/80">
           How comfortable are you with technology?
         </label>
         {config.techComfort.showNumbers && (
@@ -58,7 +59,7 @@ export default function Readiness({ config, onSubmit }: ReadinessProps) {
           onChange={(e) => setTechComfort(Number(e.target.value))}
           className="w-full"
         />
-        <div className="mt-1 flex justify-between text-xs text-foreground/40">
+        <div className="mt-1 flex justify-between text-sm text-foreground/70">
           <span>{config.techComfort.labelLow}</span>
           <span>{config.techComfort.labelHigh}</span>
         </div>
@@ -66,7 +67,7 @@ export default function Readiness({ config, onSubmit }: ReadinessProps) {
 
       {/* AI Usage */}
       <div className="mb-8">
-        <label className="mb-3 block text-sm font-semibold text-foreground/70">
+        <label className="mb-3 block text-base font-semibold text-foreground/80">
           Have you used AI tools before?
         </label>
         <div className="flex flex-col gap-2">
@@ -77,7 +78,7 @@ export default function Readiness({ config, onSubmit }: ReadinessProps) {
               className={`rounded-xl border-2 px-4 py-3 text-left text-sm transition-all ${
                 aiUsage === option
                   ? "border-leaf bg-pond-light text-leaf-dark font-semibold"
-                  : "border-transparent bg-white text-foreground/60 shadow-sm hover:shadow-md"
+                  : "border-transparent bg-white text-foreground/70 shadow-sm hover:shadow-md"
               }`}
             >
               {option}
@@ -88,7 +89,7 @@ export default function Readiness({ config, onSubmit }: ReadinessProps) {
 
       {/* Time Willingness */}
       <div className="mb-8">
-        <label className="mb-3 block text-sm font-semibold text-foreground/70">
+        <label className="mb-3 block text-base font-semibold text-foreground/80">
           How much time would you spend trying something new?
         </label>
         <div className="flex flex-col gap-2">
@@ -99,7 +100,7 @@ export default function Readiness({ config, onSubmit }: ReadinessProps) {
               className={`rounded-xl border-2 px-4 py-3 text-left text-sm transition-all ${
                 timeWillingness === option
                   ? "border-leaf bg-pond-light text-leaf-dark font-semibold"
-                  : "border-transparent bg-white text-foreground/60 shadow-sm hover:shadow-md"
+                  : "border-transparent bg-white text-foreground/70 shadow-sm hover:shadow-md"
               }`}
             >
               {option}
@@ -121,6 +122,17 @@ export default function Readiness({ config, onSubmit }: ReadinessProps) {
           See My Results
         </button>
       </div>
+
+      {onBack && (
+        <div className="mt-4 flex justify-center">
+          <button
+            onClick={onBack}
+            className="text-base font-medium text-foreground/70 transition-colors hover:text-foreground/90"
+          >
+            ← Go back
+          </button>
+        </div>
+      )}
     </div>
   );
 }

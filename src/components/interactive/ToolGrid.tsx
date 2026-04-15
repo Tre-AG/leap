@@ -5,9 +5,10 @@ import { useState } from "react";
 interface ToolGridProps {
   tools: string[];
   onSubmit: (selected: string[]) => void;
+  onBack?: () => void;
 }
 
-export default function ToolGrid({ tools, onSubmit }: ToolGridProps) {
+export default function ToolGrid({ tools, onSubmit, onBack }: ToolGridProps) {
   const [selected, setSelected] = useState<Set<string>>(new Set());
 
   const toggle = (tool: string) => {
@@ -25,10 +26,10 @@ export default function ToolGrid({ tools, onSubmit }: ToolGridProps) {
   return (
     <div className="mx-auto w-full max-w-lg px-6">
       <h2 className="mb-2 text-center text-xl font-bold text-leaf-dark">
-        Your Tools
+        What do you use?
       </h2>
-      <p className="mb-6 text-center text-sm text-foreground/50">
-        Tap everything you use regularly.
+      <p className="mb-6 text-center text-base text-foreground/70">
+        Tap all that apply.
       </p>
 
       <div className="flex flex-wrap justify-center gap-2">
@@ -39,7 +40,7 @@ export default function ToolGrid({ tools, onSubmit }: ToolGridProps) {
             className={`rounded-full border-2 px-4 py-2 text-sm font-semibold transition-all ${
               selected.has(tool)
                 ? "border-leaf bg-pond-light text-leaf-dark"
-                : "border-transparent bg-white text-foreground/60 shadow-sm hover:shadow-md"
+                : "border-transparent bg-white text-foreground/70 shadow-sm hover:shadow-md"
             }`}
           >
             {tool}
@@ -60,6 +61,17 @@ export default function ToolGrid({ tools, onSubmit }: ToolGridProps) {
           Continue
         </button>
       </div>
+
+      {onBack && (
+        <div className="mt-4 flex justify-center">
+          <button
+            onClick={onBack}
+            className="text-base font-medium text-foreground/70 transition-colors hover:text-foreground/90"
+          >
+            ← Go back
+          </button>
+        </div>
+      )}
     </div>
   );
 }

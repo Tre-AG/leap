@@ -5,11 +5,13 @@ import { useState } from "react";
 interface ResponsibilitiesProps {
   options: string[];
   onSubmit: (selected: string[]) => void;
+  onBack?: () => void;
 }
 
 export default function Responsibilities({
   options,
   onSubmit,
+  onBack,
 }: ResponsibilitiesProps) {
   const [selected, setSelected] = useState<Set<string>>(new Set());
 
@@ -28,9 +30,9 @@ export default function Responsibilities({
   return (
     <div className="mx-auto w-full max-w-lg px-6">
       <h2 className="mb-2 text-center text-xl font-bold text-leaf-dark">
-        Your Responsibilities
+        Your Day
       </h2>
-      <p className="mb-6 text-center text-sm text-foreground/50">
+      <p className="mb-6 text-center text-base text-foreground/70">
         What are you mainly responsible for? Tap all that apply.
       </p>
 
@@ -42,7 +44,7 @@ export default function Responsibilities({
             className={`rounded-full border-2 px-4 py-2 text-sm font-semibold transition-all ${
               selected.has(option)
                 ? "border-leaf bg-pond-light text-leaf-dark"
-                : "border-transparent bg-white text-foreground/60 shadow-sm hover:shadow-md"
+                : "border-transparent bg-white text-foreground/70 shadow-sm hover:shadow-md"
             }`}
           >
             {option}
@@ -63,6 +65,17 @@ export default function Responsibilities({
           Continue
         </button>
       </div>
+
+      {onBack && (
+        <div className="mt-4 flex justify-center">
+          <button
+            onClick={onBack}
+            className="text-base font-medium text-foreground/70 transition-colors hover:text-foreground/90"
+          >
+            ← Go back
+          </button>
+        </div>
+      )}
     </div>
   );
 }

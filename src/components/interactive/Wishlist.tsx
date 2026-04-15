@@ -6,9 +6,10 @@ interface WishlistProps {
   options: string[];
   max: number;
   onSubmit: (selected: string[]) => void;
+  onBack?: () => void;
 }
 
-export default function Wishlist({ options, max, onSubmit }: WishlistProps) {
+export default function Wishlist({ options, max, onSubmit, onBack }: WishlistProps) {
   const [selected, setSelected] = useState<string[]>([]);
 
   const toggle = (option: string) => {
@@ -26,9 +27,9 @@ export default function Wishlist({ options, max, onSubmit }: WishlistProps) {
   return (
     <div className="mx-auto w-full max-w-lg px-6">
       <h2 className="mb-2 text-center text-xl font-bold text-leaf-dark">
-        Your Wishlist
+        If You Could Snap Your Fingers...
       </h2>
-      <p className="mb-2 text-center text-base text-foreground/70">
+      <p className="mb-2 text-center text-base text-foreground/80">
         If you could snap your fingers and have any of these, which would you pick?
       </p>
       <p className="mb-6 text-center text-sm text-foreground/40">
@@ -69,6 +70,17 @@ export default function Wishlist({ options, max, onSubmit }: WishlistProps) {
           Continue
         </button>
       </div>
+
+      {onBack && (
+        <div className="mt-4 flex justify-center">
+          <button
+            onClick={onBack}
+            className="text-base font-medium text-foreground/70 transition-colors hover:text-foreground/90"
+          >
+            ← Go back
+          </button>
+        </div>
+      )}
     </div>
   );
 }

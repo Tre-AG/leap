@@ -1,17 +1,25 @@
-import Image from "next/image";
-import Link from "next/link";
+"use client";
 
-const characters = [
-  { src: "/characters/Student.png", alt: "Student", label: "Student" },
-  { src: "/characters/Professional.png", alt: "Professional", label: "Pro" },
-  { src: "/characters/Entrepreneur.png", alt: "Entrepreneur", label: "Founder" },
-  { src: "/characters/Parent.png", alt: "Parent", label: "Parent" },
-  { src: "/characters/Creative.png", alt: "Creative", label: "Creative" },
-];
+import { useRouter } from "next/navigation";
+import Image from "next/image";
+import { CHARACTER_CLASSES, type CharacterClass } from "@/types";
+import { useGame } from "@/context/GameContext";
 
 export default function Home() {
+  const { setCharacterClass } = useGame();
+  const router = useRouter();
+
+  const handleSelect = (classId: CharacterClass) => {
+    setCharacterClass(classId);
+    router.push("/play");
+  };
+
+  // Split into top row (3) and bottom row (2) for centering
+  const topRow = CHARACTER_CLASSES.slice(0, 3);
+  const bottomRow = CHARACTER_CLASSES.slice(3);
+
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center px-6 py-12">
+    <div className="flex min-h-screen flex-col items-center px-6 py-12">
       {/* Floating background accents */}
       <div className="pointer-events-none fixed inset-0 overflow-hidden">
         <div className="absolute -top-20 -right-20 h-64 w-64 rounded-full bg-pond/30" />
@@ -20,65 +28,81 @@ export default function Home() {
         <div className="absolute bottom-1/4 left-1/3 h-40 w-40 rounded-full bg-lily-light/10" />
       </div>
 
-      <main className="relative z-10 flex max-w-lg flex-col items-center text-center">
-        {/* Title */}
-        <h1 className="mb-3 text-5xl font-extrabold tracking-tight text-leaf-dark sm:text-6xl">
-          Leap
-        </h1>
-        <p className="mb-2 text-lg font-medium text-foreground/70">
-          Discover how AI can actually help you.
-        </p>
-        <p className="mb-10 text-base text-foreground/50">
-          No jargon. No tech knowledge required.
-        </p>
+      <main className="relative z-10 w-full max-w-2xl">
+        {/* Header */}
+        <div className="mb-10 text-center">
+          <h1 className="mb-3 text-5xl font-extrabold tracking-tight text-leaf-dark sm:text-6xl">
+            Leap
+          </h1>
+          <p className="mb-2 text-lg font-medium text-foreground/70">
+            Discover how AI can actually help you.
+          </p>
+          <p className="text-base text-foreground/70">
+            No jargon. No tech knowledge required.
+          </p>
+        </div>
 
-        {/* Character lineup with square backgrounds */}
-        <div className="mb-10 flex items-center justify-center gap-3 sm:gap-4">
-          {characters.map((char, i) => (
-            <div
-              key={char.alt}
-              className="group flex flex-col items-center"
-              style={{ animationDelay: `${i * 100}ms` }}
-            >
-              <div className="mb-2 flex h-20 w-20 items-center justify-center rounded-2xl bg-white shadow-md transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-lg sm:h-24 sm:w-24">
-                <Image
-                  src={char.src}
-                  alt={char.alt}
-                  width={80}
-                  height={80}
-                  className="h-16 w-16 object-contain drop-shadow-sm sm:h-20 sm:w-20"
-                />
-              </div>
-              <span className="text-xs font-semibold text-foreground/40">
-                {char.label}
-              </span>
+        {/* Character selection */}
+        <h2 className="mb-6 text-center text-xl font-bold text-foreground/80">
+          Pick the one that sounds most like you
+        </h2>
+
+        {/* Top row - 3 cards */}
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+          {topRow.map((cls) => (
+            <CharacterCard
+              key={cls.id}
+              cls={cls}
+              onSelect={() => handleSelect(cls.id)}
+            />
+          ))}
+        </div>
+
+        {/* Bottom row - 2 cards, centered */}
+        <div className="mt-4 flex justify-center gap-4">
+          {bottomRow.map((cls) => (
+            <div key={cls.id} className="w-full max-w-[calc(33.333%-0.5rem)] sm:w-[calc(33.333%-0.5rem)]">
+              <CharacterCard
+                cls={cls}
+                onSelect={() => handleSelect(cls.id)}
+              />
             </div>
           ))}
         </div>
 
-        {/* Description card */}
-        <div className="mb-8 rounded-2xl bg-white/60 px-6 py-5 shadow-sm backdrop-blur-sm">
-          <p
-            className="text-base leading-relaxed text-foreground/60"
-            style={{ textWrap: "balance" }}
-          >
-            Take a 5-minute journey. Answer a few questions about your life.
-            Get personalized recommendations for tools that save you real time.
-          </p>
-        </div>
-
-        {/* CTA */}
-        <Link
-          href="/select"
-          className="rounded-2xl bg-leaf px-10 py-4 text-lg font-bold text-white shadow-lg transition-all hover:bg-leaf-dark hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0"
-        >
-          Get Started
-        </Link>
-
-        <p className="mt-6 text-sm text-foreground/30">
+        <p className="mt-8 text-center text-base text-foreground/70">
           Free. Takes about 5 minutes.
         </p>
       </main>
     </div>
+  );
+}
+
+function CharacterCard({
+  cls,
+  onSelect,
+}: {
+  cls: (typeof CHARACTER_CLASSES)[number];
+  onSelect: () => void;
+}) {
+  return (
+    <button
+      onClick={onSelect}
+      className="group flex w-full flex-col items-center rounded-3xl border-2 border-transparent bg-white p-6 shadow-md transition-all duration-200 hover:-translate-y-1 hover:shadow-lg hover:border-pond"
+    >
+      <div className="mb-4 transition-transform duration-300 group-hover:scale-110">
+        <Image
+          src={cls.image}
+          alt={cls.name}
+          width={140}
+          height={140}
+          className="object-contain drop-shadow-sm"
+        />
+      </div>
+      <h3 className="mb-1 text-lg font-bold text-foreground">
+        {cls.name}
+      </h3>
+      <p className="text-base text-foreground/70">{cls.description}</p>
+    </button>
   );
 }

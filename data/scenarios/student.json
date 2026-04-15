@@ -1,100 +1,113 @@
 {
   "classId": "student",
+  "intro": "Your alarm goes off. You don't remember setting it that early.",
   "scenarios": [
     {
       "id": "stu-1",
       "title": "The Assignment",
       "subtitle": "A week out. The clock is ticking.",
-      "prompt": "You've got a big assignment due in a week. How do you handle it?",
+      "prompt": "You check your phone. There's a reminder you set for yourself. Big assignment, due next week.",
       "choices": [
-        { "id": "stu-1a", "text": "Break it into pieces and start early. I like being ahead", "tags": ["high-structure", "proactive", "planning-oriented"] },
-        { "id": "stu-1b", "text": "I'll start a few days before. Enough time without overdoing it", "tags": ["moderate-structure", "steady", "practical"] },
-        { "id": "stu-1c", "text": "I know I'll procrastinate, but I always pull it off last minute", "tags": ["low-structure", "procrastinator", "pressure-performer"] },
-        { "id": "stu-1d", "text": "I honestly forget about it until it's almost too late", "tags": ["low-structure", "avoidant", "overwhelm-prone"] }
+        { "id": "stu-1a", "text": "Get up and open the laptop. Might as well start while it's quiet.", "tags": ["high-structure", "proactive", "planning-oriented"], "reaction": "The screen lights up. It's early." },
+        { "id": "stu-1b", "text": "Note it, put the phone down. I'll deal with it after class.", "tags": ["moderate-structure", "steady", "practical"], "reaction": "The phone goes dark. Back to sleep." },
+        { "id": "stu-1c", "text": "Clear the notification and roll over. Future me can handle it.", "tags": ["low-structure", "procrastinator", "pressure-performer"], "reaction": "Future you is going to love that." },
+        { "id": "stu-1d", "text": "I don't remember setting that reminder either.", "tags": ["low-structure", "avoidant", "overwhelm-prone"], "reaction": "Cool. Cool cool cool." }
       ]
     },
     {
       "id": "stu-2",
       "title": "The Difficult Concept",
       "subtitle": "When the material just isn't clicking.",
-      "prompt": "You're studying something and you just don't get it. What's your move?",
+      "prompt": "Class just ended. You were completely lost the entire time. Everyone else seemed fine.",
       "choices": [
-        { "id": "stu-2a", "text": "Reread the material and look up other sources until it clicks", "tags": ["self-directed", "persistent", "research-oriented"] },
-        { "id": "stu-2b", "text": "Watch a YouTube video. Someone out there explains it better", "tags": ["visual-learner", "external-resource-seeker", "passive-intake"] },
-        { "id": "stu-2c", "text": "Ask a classmate or go to office hours", "tags": ["social-learner", "help-seeker", "relationship-oriented"] },
-        { "id": "stu-2d", "text": "Skip it and hope it's not on the exam", "tags": ["avoidant", "selective-effort", "risk-taker"] }
+        { "id": "stu-2a", "text": "Reread the slides after class and dig around online until it clicks.", "tags": ["self-directed", "persistent", "research-oriented"], "reaction": "You open the slides. Start from the top." },
+        { "id": "stu-2b", "text": "Find a YouTube video. Someone out there explains it better.", "tags": ["visual-learner", "external-resource-seeker", "passive-intake"], "reaction": "Three million results. One of them has to make sense." },
+        { "id": "stu-2c", "text": "Text a classmate or show up to office hours.", "tags": ["social-learner", "help-seeker", "relationship-oriented"], "reaction": "Message sent." },
+        { "id": "stu-2d", "text": "Skip it. If it's on the exam, that's a problem for later.", "tags": ["avoidant", "selective-effort", "risk-taker"], "reaction": "Bold strategy." }
       ]
     },
     {
       "id": "stu-3",
       "title": "The Group Project",
       "subtitle": "Everyone's favorite assignment.",
-      "prompt": "You're assigned a group project. What role do you usually end up playing?",
+      "prompt": "The professor puts you in a group of four for a project worth 30% of your grade. You don't know any of them. The first meeting is tonight.",
       "choices": [
-        { "id": "stu-3a", "text": "I take charge and organize everything. Someone has to", "tags": ["leader", "organizer", "high-responsibility"] },
-        { "id": "stu-3b", "text": "I do my part well but don't want to run the whole thing", "tags": ["contributor", "reliable", "independent-worker"] },
-        { "id": "stu-3c", "text": "I'm the ideas person. Great in the brainstorm, less great on the follow-through", "tags": ["creative", "ideator", "execution-gap"] },
-        { "id": "stu-3d", "text": "I'm not proud of it, but I'm mostly hoping the group carries me", "tags": ["low-accountability", "passive", "minimal-effort"] }
+        { "id": "stu-3a", "text": "Make a group chat and send an agenda before anyone else does.", "tags": ["leader", "organizer", "high-responsibility"], "reaction": "You're typing before anyone else has saved the contact." },
+        { "id": "stu-3b", "text": "Show up, volunteer for a section, and handle my part.", "tags": ["contributor", "reliable", "independent-worker"], "reaction": "In and out. Clean." },
+        { "id": "stu-3c", "text": "Throw out a bunch of ideas in the first meeting. Figure out the rest later.", "tags": ["creative", "ideator", "execution-gap"], "reaction": "The ideas are flying. The plan is not." },
+        { "id": "stu-3d", "text": "Show up, nod along, and hope someone else takes the lead.", "tags": ["low-accountability", "passive", "minimal-effort"], "reaction": "Participation: technically present." }
       ]
     },
     {
       "id": "stu-4",
       "title": "The Exam",
-      "subtitle": "The big one is coming up.",
-      "prompt": "You've got a big exam coming up. How do you usually prepare?",
+      "subtitle": "It's that time.",
+      "prompt": "A few weeks in. You've got a big exam coming up and your notes are a mess.",
       "choices": [
-        { "id": "stu-4a", "text": "I make study guides, flashcards, and review notes well in advance", "tags": ["high-preparation", "systematic", "organized-learner"] },
-        { "id": "stu-4b", "text": "I review my notes a couple times and hope the main ideas stuck", "tags": ["moderate-preparation", "passive-review", "confidence-based"] },
-        { "id": "stu-4c", "text": "I cram the night before. It's stressful but it works (mostly)", "tags": ["low-preparation", "crammer", "pressure-performer"] },
-        { "id": "stu-4d", "text": "I kind of wing it and see what happens", "tags": ["minimal-preparation", "avoidant", "low-investment"] }
+        { "id": "stu-4a", "text": "Make study guides and flashcards. Lock in early.", "tags": ["high-preparation", "systematic", "organized-learner"], "reaction": "The highlighters come out." },
+        { "id": "stu-4b", "text": "Reread my notes a couple times and hope the main ideas stuck.", "tags": ["moderate-preparation", "passive-review", "confidence-based"], "reaction": "Familiar enough. Probably." },
+        { "id": "stu-4c", "text": "Cram the night before. It's stressful but it works. Mostly.", "tags": ["low-preparation", "crammer", "pressure-performer"], "reaction": "The coffee's on. Sleep is a suggestion." },
+        { "id": "stu-4d", "text": "Wing it and see what happens.", "tags": ["minimal-preparation", "avoidant", "low-investment"], "reaction": "Brave." }
+      ]
+    },
+    {
+      "id": "stu-4b",
+      "title": "The Exam Room",
+      "subtitle": "No turning back now.",
+      "prompt": "You're sitting in the exam. You know some stuff, blank on others.",
+      "choices": [
+        { "id": "stu-4ba", "text": "Work through what I know first, come back to the rest.", "tags": ["strategic", "calm-under-pressure", "methodical"], "reaction": "Pen moving. Skip, skip, come back." },
+        { "id": "stu-4bb", "text": "Start from the top and go straight through.", "tags": ["linear", "steady", "routine-oriented"], "reaction": "Question one. Here we go." },
+        { "id": "stu-4bc", "text": "Spend too long on the hard ones. Run out of time.", "tags": ["perfectionist", "time-management-gap", "anxious"], "reaction": "You look at the clock. Yikes." },
+        { "id": "stu-4bd", "text": "Write something for everything. Partial credit is the goal.", "tags": ["pragmatic", "survival-mode", "good-enough"], "reaction": "Partial credit never hurt anybody." }
       ]
     },
     {
       "id": "stu-5",
       "title": "The Blank Page",
       "subtitle": "Cursor blinking. Nothing written.",
-      "prompt": "You need to write a paper or essay. You're staring at a blank document. What happens?",
+      "prompt": "A few days later. You have a paper due Friday. You're staring at an empty document. The cursor is blinking.",
       "choices": [
-        { "id": "stu-5a", "text": "I outline first, then write section by section. Structure keeps me on track", "tags": ["structured-writer", "outline-first", "methodical"] },
-        { "id": "stu-5b", "text": "I just start writing and figure out the structure as I go", "tags": ["freeform-writer", "discovery-based", "momentum-driven"] },
-        { "id": "stu-5c", "text": "I write the intro last because I never know how to start", "tags": ["start-blocker", "middle-out", "intro-anxious"] },
-        { "id": "stu-5d", "text": "I stare at it for way too long, write a sentence, delete it, repeat", "tags": ["paralyzed-writer", "perfectionism-block", "high-anxiety"] }
+        { "id": "stu-5a", "text": "Start with an outline. Section by section, I'll get through it.", "tags": ["structured-writer", "outline-first", "methodical"], "reaction": "Section one. Okay. You can do this." },
+        { "id": "stu-5b", "text": "Just start typing and see what comes out.", "tags": ["freeform-writer", "discovery-based", "momentum-driven"], "reaction": "Words on the page. Not good ones yet. But words." },
+        { "id": "stu-5c", "text": "Write the intro last. I never know how to start.", "tags": ["start-blocker", "middle-out", "intro-anxious"], "reaction": "Nobody knows how to start these anyway." },
+        { "id": "stu-5d", "text": "Write a sentence. Delete it. Write another one. Delete that too.", "tags": ["paralyzed-writer", "perfectionism-block", "high-anxiety"], "reaction": "The cursor blinks. It's very patient." }
       ]
     },
     {
       "id": "stu-6",
-      "title": "The Career Question",
+      "title": "The Career Fair",
       "subtitle": "The question everyone keeps asking.",
-      "prompt": "Someone asks you 'what do you want to do after graduation?' What's going through your head?",
+      "prompt": "You're at a career fair. Someone at a booth asks \"so what are you interested in?\"",
       "choices": [
-        { "id": "stu-6a", "text": "I have a clear plan. I know what field and what steps to take", "tags": ["career-clear", "goal-oriented", "planning-ahead"] },
-        { "id": "stu-6b", "text": "I have a general direction but the specifics are fuzzy", "tags": ["career-leaning", "exploring", "directionally-aware"] },
-        { "id": "stu-6c", "text": "I have too many interests and can't narrow it down", "tags": ["career-scattered", "multi-interested", "decision-paralysis"] },
-        { "id": "stu-6d", "text": "I try not to think about it honestly", "tags": ["career-avoidant", "anxious", "overwhelmed-by-future"] }
+        { "id": "stu-6a", "text": "I tell them exactly what I'm going for. I've got a plan.", "tags": ["career-clear", "goal-oriented", "planning-ahead"], "reaction": "They nod. They've got a pamphlet for that." },
+        { "id": "stu-6b", "text": "Give a general answer. I know the direction but not the details.", "tags": ["career-leaning", "exploring", "directionally-aware"], "reaction": "Close enough. They hand you a card." },
+        { "id": "stu-6c", "text": "Say something vague and grab a brochure. I'm still figuring it out.", "tags": ["career-scattered", "multi-interested", "decision-paralysis"], "reaction": "Into the tote bag it goes." },
+        { "id": "stu-6d", "text": "Walk past most of the booths. I'm not ready for this conversation.", "tags": ["career-avoidant", "anxious", "overwhelmed-by-future"], "reaction": "Headphones in. Keep moving." }
       ]
     },
     {
       "id": "stu-7",
       "title": "The Overwhelm",
-      "subtitle": "Everything is due at once.",
-      "prompt": "It's midterms week. Exams, papers, and a project all due within days. How are you handling it?",
+      "subtitle": "Everything at once.",
+      "prompt": "It's midterms week. You've got two exams, a paper, and the group project all due within the next five days. You sit down at your desk.",
       "choices": [
-        { "id": "stu-7a", "text": "I made a schedule weeks ago. Stressed but on track", "tags": ["high-planning", "proactive-stress-management", "ahead-of-deadlines"] },
-        { "id": "stu-7b", "text": "I'm triaging. Figuring out what's worth the most and prioritizing", "tags": ["strategic", "triage-oriented", "practical-under-pressure"] },
-        { "id": "stu-7c", "text": "I'm doing everything at once and nothing well", "tags": ["scattered", "multitasking", "stress-reactive"] },
-        { "id": "stu-7d", "text": "I'm spiraling and considering dropping something", "tags": ["overwhelm-crisis", "anxiety-driven", "near-breaking-point"] }
+        { "id": "stu-7a", "text": "Pull out my planner and map out every hour between now and Friday.", "tags": ["high-planning", "proactive-stress-management", "ahead-of-deadlines"], "reaction": "Friday. That's the finish line." },
+        { "id": "stu-7b", "text": "Figure out what's worth the most points and start there.", "tags": ["strategic", "triage-oriented", "practical-under-pressure"], "reaction": "Triage mode." },
+        { "id": "stu-7c", "text": "Open everything at once and bounce between them.", "tags": ["scattered", "multitasking", "stress-reactive"], "reaction": "Twelve tabs. Three documents. Zero progress." },
+        { "id": "stu-7d", "text": "Stare at the wall for a minute. This is a lot.", "tags": ["overwhelm-crisis", "anxiety-driven", "near-breaking-point"], "reaction": "Just a minute." }
       ]
     },
     {
       "id": "stu-8",
-      "title": "The Skill They Want",
-      "subtitle": "Something you've been meaning to get better at.",
-      "prompt": "There's a skill you wish you were better at, for school, career, or personal interest. How do you usually approach learning new things?",
+      "title": "The Spark",
+      "subtitle": "Something catches your eye.",
+      "prompt": "Midterms are over. You're scrolling through your phone and see someone your age who built something cool. An app, a project, a brand. You think \"I want to learn how to do that.\"",
       "choices": [
-        { "id": "stu-8a", "text": "I find courses, tutorials, and books. I like learning systematically", "tags": ["systematic-learner", "course-seeker", "structured-growth"] },
-        { "id": "stu-8b", "text": "I learn by doing. Just throw me in and I'll figure it out", "tags": ["experiential-learner", "hands-on", "trial-and-error"] },
-        { "id": "stu-8c", "text": "I watch other people do it and pick up what I can", "tags": ["observational-learner", "passive-absorption", "example-driven"] },
-        { "id": "stu-8d", "text": "I keep meaning to start but I never get around to it", "tags": ["growth-stalled", "aspiration-gap", "activation-barrier"] }
+        { "id": "stu-8a", "text": "Look up a course or tutorial and start that night.", "tags": ["systematic-learner", "course-seeker", "structured-growth"], "reaction": "Tab one of many." },
+        { "id": "stu-8b", "text": "Save the post and tell myself I'll get to it over break.", "tags": ["growth-stalled", "aspiration-gap", "activation-barrier"], "reaction": "Saved. Right next to the other 47." },
+        { "id": "stu-8c", "text": "Watch a few videos about it and move on.", "tags": ["observational-learner", "passive-absorption", "example-driven"], "reaction": "The algorithm takes it from here." },
+        { "id": "stu-8d", "text": "Think about it for a while, then keep scrolling.", "tags": ["experiential-learner", "hands-on", "trial-and-error"], "reaction": "The thought lingers. The thumb doesn't." }
       ]
     }
   ]

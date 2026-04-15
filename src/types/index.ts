@@ -9,6 +9,7 @@ export interface Choice {
   id: string;
   text: string;
   tags?: string[];
+  reaction?: string;
 }
 
 export interface Scenario {
@@ -17,10 +18,13 @@ export interface Scenario {
   subtitle: string;
   prompt: string;
   choices: Choice[];
+  frogPose?: string;
 }
 
 export interface ScenarioFile {
   classId: CharacterClass;
+  intro: string;
+  backgroundImage?: string;
   scenarios: Scenario[];
 }
 
@@ -30,6 +34,7 @@ export interface FlavorMoment {
   title: string;
   prompt: string;
   choices: Choice[];
+  frogPose?: string;
 }
 
 export interface ReadinessConfig {
@@ -45,7 +50,7 @@ export interface ReadinessConfig {
 }
 
 export interface InteractiveConfig {
-  tools: string[];
+  tools: Record<CharacterClass, string[]>;
   responsibilities: Record<CharacterClass, string[]>;
   timeDrains: Record<CharacterClass, string[]>;
   maxTimeDrains: number;
@@ -57,6 +62,13 @@ export interface InteractiveConfig {
 export interface ToolCost {
   free: boolean;
   paid: string;
+}
+
+export interface ToolUsageMethods {
+  promptFormulas: string[];
+  techniques: string[];
+  commonMistakes: string[];
+  quickStart: string;
 }
 
 export interface Tool {
@@ -71,6 +83,7 @@ export interface Tool {
   bestFor: string[];
   caveats: string[];
   teachingPoints: string[];
+  usageMethods: ToolUsageMethods;
 }
 
 export interface ToolsFile {
@@ -93,7 +106,7 @@ export interface UserProfile {
 }
 
 // Step types for the play flow
-export type StepType = "scenario" | "flavor" | "interactive";
+export type StepType = "intro" | "scenario" | "flavor" | "interactive";
 export type InteractiveScreen =
   | "tools"
   | "responsibilities"

@@ -19,7 +19,7 @@ export default function OpportunityCard({
       <h3 className="mb-2 text-lg font-bold text-leaf-dark">
         {opportunity.title}
       </h3>
-      <p className="text-sm leading-relaxed text-foreground/60">
+      <p className="text-base leading-relaxed text-foreground/70">
         {opportunity.description}
       </p>
     </div>

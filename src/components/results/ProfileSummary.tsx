@@ -21,7 +21,7 @@ export default function ProfileSummary({
       <h2 className="mb-2 text-2xl font-extrabold text-leaf-dark">
         {character?.name}
       </h2>
-      <p className="max-w-md text-base leading-relaxed text-foreground/70">
+      <p className="max-w-md text-base leading-relaxed text-foreground/80">
         {summary}
       </p>
     </div>

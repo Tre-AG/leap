@@ -3,9 +3,10 @@
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useGame } from "@/context/GameContext";
-import { getScenarios, getFlavors, getInteractiveConfig } from "@/lib/data";
+import { getScenarios, getFlavors, getIntro, getInteractiveConfig, getBackgroundImage } from "@/lib/data";
 import ProgressBar from "@/components/ProgressBar";
 import PageTransition from "@/components/PageTransition";
+import IntroScreen from "@/components/IntroScreen";
 import ScenarioScreen from "@/components/ScenarioScreen";
 import FlavorScreen from "@/components/FlavorScreen";
 import ToolGrid from "@/components/interactive/ToolGrid";
@@ -37,7 +38,7 @@ export default function PlayPage() {
   // Redirect if no class selected
   useEffect(() => {
     if (!characterClass) {
-      router.push("/select");
+      router.push("/");
     }
   }, [characterClass, router]);
 
@@ -52,10 +53,23 @@ export default function PlayPage() {
 
   const scenarios = getScenarios(characterClass);
   const flavors = getFlavors(characterClass);
+  const intro = getIntro(characterClass);
   const config = getInteractiveConfig();
+  const backgroundImage = getBackgroundImage(characterClass);
   const step = steps[currentStep];
 
   const renderStep = () => {
+    if (step.type === "intro") {
+      return (
+        <IntroScreen
+          key="intro"
+          intro={intro}
+          classId={characterClass}
+          onContinue={nextStep}
+        />
+      );
+    }
+
     if (step.type === "scenario" && step.index !== undefined) {
       const scenario = scenarios[step.index];
       return (
@@ -63,12 +77,12 @@ export default function PlayPage() {
           key={scenario.id}
           scenario={scenario}
           classId={characterClass}
-          scenarioIndex={step.index}
           onChoice={(choiceId, tags) => {
             recordScenarioChoice(scenario.id, choiceId, tags);
             nextStep();
           }}
           onBack={currentStep > 0 ? prevStep : undefined}
+          backgroundImage={backgroundImage}
         />
       );
     }
@@ -85,6 +99,7 @@ export default function PlayPage() {
             nextStep();
           }}
           onBack={currentStep > 0 ? prevStep : undefined}
+          backgroundImage={backgroundImage}
         />
       );
     }
@@ -94,11 +109,12 @@ export default function PlayPage() {
         case "tools":
           return (
             <ToolGrid
-              tools={config.tools}
+              tools={config.tools[characterClass]}
               onSubmit={(selected) => {
                 setTools(selected);
                 nextStep();
               }}
+              onBack={currentStep > 0 ? prevStep : undefined}
             />
           );
         case "responsibilities":
@@ -109,6 +125,7 @@ export default function PlayPage() {
                 setResponsibilities(selected);
                 nextStep();
               }}
+              onBack={currentStep > 0 ? prevStep : undefined}
             />
           );
         case "timeDrains":
@@ -120,6 +137,7 @@ export default function PlayPage() {
                 setTimeDrains(ranked);
                 nextStep();
               }}
+              onBack={currentStep > 0 ? prevStep : undefined}
             />
           );
         case "wishlist":
@@ -131,6 +149,7 @@ export default function PlayPage() {
                 setWishlist(ranked);
                 nextStep();
               }}
+              onBack={currentStep > 0 ? prevStep : undefined}
             />
           );
         case "readiness":
@@ -143,6 +162,7 @@ export default function PlayPage() {
                 setTimeWillingness(timeWillingness);
                 nextStep();
               }}
+              onBack={currentStep > 0 ? prevStep : undefined}
             />
           );
       }

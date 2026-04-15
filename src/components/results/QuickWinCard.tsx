@@ -25,7 +25,7 @@ export default function QuickWinCard({ win, index, total }: QuickWinCardProps) {
         <span className="rounded-full bg-pond px-3 py-1 text-xs font-bold text-leaf-dark">
           Quick Win {index + 1} of {total}
         </span>
-        <span className="text-xs text-foreground/30">
+        <span className="text-sm text-foreground/70">
           {win.toolCost}
         </span>
       </div>
@@ -34,7 +34,7 @@ export default function QuickWinCard({ win, index, total }: QuickWinCardProps) {
         {win.title}
       </h3>
 
-      <p className="mb-3 text-sm leading-relaxed text-foreground/60">
+      <p className="mb-3 text-base leading-relaxed text-foreground/70">
         {win.why}
       </p>
 
@@ -42,12 +42,13 @@ export default function QuickWinCard({ win, index, total }: QuickWinCardProps) {
         <p className="text-xs font-semibold text-leaf-dark">
           Tool: {win.tool}
         </p>
-        <p className="mt-1 text-xs text-foreground/50">
+        <p className="mt-1 text-sm text-foreground/70">
           {win.howToStart}
         </p>
       </div>
 
-      {win.examplePrompt && (
+      {win.examplePrompt &&
+        !win.examplePrompt.toLowerCase().includes("not applicable") && (
         <div className="rounded-xl bg-cream p-3">
           <div className="mb-1 flex items-center justify-between">
             <p className="text-xs font-semibold text-bark">
@@ -60,7 +61,7 @@ export default function QuickWinCard({ win, index, total }: QuickWinCardProps) {
               {copied ? "Copied!" : "Copy"}
             </button>
           </div>
-          <p className="text-xs italic leading-relaxed text-foreground/60">
+          <p className="text-sm italic leading-relaxed text-foreground/70">
             &ldquo;{win.examplePrompt}&rdquo;
           </p>
         </div>

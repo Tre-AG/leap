@@ -1,191 +1,191 @@
 {
+  "student": [
+    {
+      "id": "stu-f1",
+      "afterScenario": 3,
+      "title": "The Invitation",
+      "prompt": "Your phone buzzes. A friend wants to hang out tonight. You told yourself you'd be productive.",
+      "choices": [
+        { "id": "stu-f1a", "text": "I go. I wasn't going to be productive anyway.", "reaction": "Honest." },
+        { "id": "stu-f1b", "text": "Say no, then sit on my phone for three hours instead.", "reaction": "Productive in theory." },
+        { "id": "stu-f1c", "text": "Try to do both. Study at their place. Never works.", "reaction": "It never works." },
+        { "id": "stu-f1d", "text": "Actually stay in and get stuff done. It happens sometimes.", "reaction": "Rare but real." }
+      ]
+    },
+    {
+      "id": "stu-f2",
+      "afterScenario": 5,
+      "title": "The Post-Exam",
+      "prompt": "Exam's over. You're walking across campus and it finally hits you that it's done.",
+      "choices": [
+        { "id": "stu-f2a", "text": "Grab food. I'm starving.", "reaction": "Priorities." },
+        { "id": "stu-f2b", "text": "Call someone and vent about it.", "reaction": "It's either really good or really bad." },
+        { "id": "stu-f2c", "text": "Head to the quad and just sit for a bit.", "reaction": "Quiet." },
+        { "id": "stu-f2d", "text": "Go back to your room and sleep.", "reaction": "Earned." }
+      ]
+    },
+    {
+      "id": "stu-f3",
+      "afterScenario": 7,
+      "title": "The Food Truck",
+      "prompt": "You leave the career fair and realize you missed lunch. There's a food truck outside with a long line.",
+      "choices": [
+        { "id": "stu-f3a", "text": "Get in line. I'm not going anywhere hungry.", "reaction": "Worth the wait." },
+        { "id": "stu-f3b", "text": "Skip it and grab something on the way back.", "reaction": "Efficient." },
+        { "id": "stu-f3c", "text": "Text a friend to meet me somewhere instead.", "reaction": "Better with company." },
+        { "id": "stu-f3d", "text": "I have snacks in my bag. I came prepared.", "reaction": "Always packing." }
+      ]
+    }
+  ],
   "professional": [
     {
       "id": "pro-f1",
-      "afterScenario": 2,
-      "title": "The Elevator",
-      "prompt": "You're in the elevator. Someone you half-recognize gets in.",
+      "afterScenario": 3,
+      "title": "The Hallway",
+      "prompt": "The meeting ran long. You walk out and someone asks \"hey, got a minute?\"",
       "choices": [
-        { "id": "pro-f1a", "text": "Smile and say hi. Keep it short." },
-        { "id": "pro-f1b", "text": "Go for the full conversation. I can talk to anyone." },
-        { "id": "pro-f1c", "text": "Phone comes out. Very important email happening right now." },
-        { "id": "pro-f1d", "text": "Nod. Silence. We both understand." }
+        { "id": "pro-f1a", "text": "\"Sure, what's up?\"", "reaction": "Open door policy." },
+        { "id": "pro-f1b", "text": "\"Can you walk with me? I need coffee.\"", "reaction": "Multitasking." },
+        { "id": "pro-f1c", "text": "\"Can it wait? I've got to send something.\"", "reaction": "Boundaries. Politely." },
+        { "id": "pro-f1d", "text": "Keep walking. Pretend I didn't hear them.", "reaction": "Stealth mode." }
       ]
     },
     {
       "id": "pro-f2",
       "afterScenario": 4,
-      "title": "The Friday Ping",
-      "prompt": "Friday at 4:55. Someone pings you with a \"quick question.\"",
+      "title": "The Lunch Decision",
+      "prompt": "Nobody can decide where to go for lunch.",
       "choices": [
-        { "id": "pro-f2a", "text": "Knock it out so it's not hanging over the weekend" },
-        { "id": "pro-f2b", "text": "\"Can this wait until Monday?\"" },
-        { "id": "pro-f2c", "text": "Pretend I didn't see it" },
-        { "id": "pro-f2d", "text": "Open it, sigh, start typing" }
+        { "id": "pro-f2a", "text": "I pick. Someone has to.", "reaction": "Leadership, technically." },
+        { "id": "pro-f2b", "text": "Throw out three options and make them choose.", "reaction": "Democracy with guardrails." },
+        { "id": "pro-f2c", "text": "\"I'm fine with whatever\" and mean it.", "reaction": "Path of least resistance." },
+        { "id": "pro-f2d", "text": "Already eating at my desk.", "reaction": "Solo mission." }
       ]
     },
     {
       "id": "pro-f3",
       "afterScenario": 6,
-      "title": "The Lunch Decision",
-      "prompt": "Nobody can decide where to go for lunch.",
+      "title": "The Break",
+      "prompt": "You step outside for a minute. Fresh air.",
       "choices": [
-        { "id": "pro-f3a", "text": "I pick. Someone has to." },
-        { "id": "pro-f3b", "text": "Throw out three options and make them choose" },
-        { "id": "pro-f3c", "text": "\"I'm fine with whatever\" and mean it" },
-        { "id": "pro-f3d", "text": "Already eating at my desk" }
-      ]
-    }
-  ],
-  "student": [
-    {
-      "id": "stu-f1",
-      "afterScenario": 2,
-      "title": "The Invitation",
-      "prompt": "Your friend wants to hang out but you told yourself you'd be productive tonight.",
-      "choices": [
-        { "id": "stu-f1a", "text": "I go. I wasn't going to be productive anyway." },
-        { "id": "stu-f1b", "text": "Say no, then sit on my phone for three hours instead" },
-        { "id": "stu-f1c", "text": "Try to do both. Study at their place. Never works." },
-        { "id": "stu-f1d", "text": "Actually stay in and get stuff done. It happens sometimes." }
+        { "id": "pro-f3a", "text": "Check my phone. Just a quick scroll.", "reaction": "It's never quick." },
+        { "id": "pro-f3b", "text": "Call someone. I need to hear a voice that isn't from work.", "reaction": "Real voice. Real person." },
+        { "id": "pro-f3c", "text": "Just stand there. Don't think about anything.", "reaction": "Reset." },
+        { "id": "pro-f3d", "text": "Head back in. I don't have time for this.", "reaction": "Break denied." }
       ]
     },
     {
-      "id": "stu-f2",
-      "afterScenario": 4,
-      "title": "The Classroom",
-      "prompt": "The professor asks a question to the whole class. You know the answer.",
+      "id": "pro-f4",
+      "afterScenario": 7,
+      "title": "The Friday Ping",
+      "prompt": "Friday at 4:55. Someone pings you with a \"quick question.\"",
       "choices": [
-        { "id": "stu-f2a", "text": "Raise my hand. Why not." },
-        { "id": "stu-f2b", "text": "Wait to see if someone else says it first" },
-        { "id": "stu-f2c", "text": "I know it but there's no way I'm volunteering" },
-        { "id": "stu-f2d", "text": "Start to raise my hand, then put it back down" }
-      ]
-    },
-    {
-      "id": "stu-f3",
-      "afterScenario": 6,
-      "title": "The Library",
-      "prompt": "You walk into the library and every seat is taken except the one next to someone you vaguely know.",
-      "choices": [
-        { "id": "stu-f3a", "text": "Sit down and say hey. It's just a seat." },
-        { "id": "stu-f3b", "text": "Sit down, headphones in, pretend I didn't see them" },
-        { "id": "stu-f3c", "text": "Find a different spot even if it's worse" },
-        { "id": "stu-f3d", "text": "Leave and go somewhere else entirely" }
+        { "id": "pro-f4a", "text": "Knock it out so it's not hanging over the weekend.", "reaction": "Clean slate." },
+        { "id": "pro-f4b", "text": "\"Can this wait until Monday?\"", "reaction": "Boundaries." },
+        { "id": "pro-f4c", "text": "Pretend I didn't see it.", "reaction": "Read receipt: off." },
+        { "id": "pro-f4d", "text": "Open it, sigh, start typing.", "reaction": "Every Friday." }
       ]
     }
   ],
   "entrepreneur": [
     {
       "id": "ent-f1",
-      "afterScenario": 2,
-      "title": "The Dinner Question",
-      "prompt": "You're at dinner and someone asks \"so what's new?\"",
+      "afterScenario": 4,
+      "title": "The Saturday Afternoon",
+      "prompt": "Saturday afternoon. Your friend texts.",
       "choices": [
-        { "id": "ent-f1a", "text": "Tell them about the thing I'm working on. This is my opening." },
-        { "id": "ent-f1b", "text": "Keep it vague. It's not ready to talk about yet." },
-        { "id": "ent-f1c", "text": "Mention my day job. The project stays private for now." },
-        { "id": "ent-f1d", "text": "\"Not much, you?\" and redirect" }
+        { "id": "ent-f1a", "text": "Meet them for a bit. I need a break anyway.", "reaction": "Even builders need air." },
+        { "id": "ent-f1b", "text": "Say you're busy. Keep working.", "reaction": "Locked in." },
+        { "id": "ent-f1c", "text": "Go, but keep thinking about the idea the whole time.", "reaction": "Body leaves. Brain doesn't." },
+        { "id": "ent-f1d", "text": "Don't respond until later.", "reaction": "Seen." }
       ]
     },
     {
       "id": "ent-f2",
-      "afterScenario": 4,
-      "title": "The Competitor",
-      "prompt": "You see an ad for something weirdly similar to your idea.",
-      "choices": [
-        { "id": "ent-f2a", "text": "Click on it. I need to know everything about them." },
-        { "id": "ent-f2b", "text": "Start making a mental list of how mine is different" },
-        { "id": "ent-f2c", "text": "Text someone: \"Look at this. Should I be worried?\"" },
-        { "id": "ent-f2d", "text": "Close the app. Ignorance is bliss right now." }
-      ]
-    },
-    {
-      "id": "ent-f3",
       "afterScenario": 6,
-      "title": "The Feedback",
-      "prompt": "Someone you respect gives you honest feedback on your idea and it's not all positive.",
+      "title": "The Late Night",
+      "prompt": "You finally got it working. You step away from the laptop and realize it's 11pm.",
       "choices": [
-        { "id": "ent-f3a", "text": "Ask follow-up questions. I want specifics." },
-        { "id": "ent-f3b", "text": "Thank them, go home, start adjusting" },
-        { "id": "ent-f3c", "text": "Thank them, go home, stare at the ceiling" },
-        { "id": "ent-f3d", "text": "Push back. I think they missed something." }
+        { "id": "ent-f2a", "text": "Keep going. I'm in the zone.", "reaction": "Sleep can wait." },
+        { "id": "ent-f2b", "text": "Close it down. I need sleep.", "reaction": "Discipline." },
+        { "id": "ent-f2c", "text": "Text someone. I want to tell someone.", "reaction": "It's real enough to share." },
+        { "id": "ent-f2d", "text": "Just sit with it for a minute.", "reaction": "Quiet pride." }
       ]
     }
   ],
   "parent": [
     {
       "id": "par-f1",
-      "afterScenario": 2,
-      "title": "The Solo Drive",
-      "prompt": "You're in the car alone. No kids.",
+      "afterScenario": 3,
+      "title": "The Forgotten Lunch",
+      "prompt": "You're driving to the grocery store. Your kid calls from school. They forgot their lunch.",
       "choices": [
-        { "id": "par-f1a", "text": "Turn the music up. Loud." },
-        { "id": "par-f1b", "text": "Sit in silence for a minute. Just silence." },
-        { "id": "par-f1c", "text": "Call someone I've been meaning to catch up with" },
-        { "id": "par-f1d", "text": "Drive-through. I've earned this." }
+        { "id": "par-f1a", "text": "Turn around and bring it.", "reaction": "U-turn. Again." },
+        { "id": "par-f1b", "text": "Tell them to figure it out today.", "reaction": "Life lesson: free." },
+        { "id": "par-f1c", "text": "Call my partner and ask if they're closer.", "reaction": "Teamwork check." },
+        { "id": "par-f1d", "text": "Drop everything. Already on my way.", "reaction": "Already turning the car around." }
       ]
     },
     {
       "id": "par-f2",
-      "afterScenario": 4,
-      "title": "The Pickup Line",
-      "prompt": "Another parent at pickup is going on about their kid's coding camp, travel soccer, and Mandarin lessons.",
+      "afterScenario": 6,
+      "title": "The Hour",
+      "prompt": "Kids are finally in bed. The house is quiet again. You've got maybe an hour before you crash.",
       "choices": [
-        { "id": "par-f2a", "text": "Nod along and ask questions. Maybe I should look into it." },
-        { "id": "par-f2b", "text": "Nod along while mentally planning dinner" },
-        { "id": "par-f2c", "text": "\"That's awesome\" and change the subject" },
-        { "id": "par-f2d", "text": "One-up them with something my kid did" }
+        { "id": "par-f2a", "text": "Turn on a show. I'm done thinking.", "reaction": "Brain off." },
+        { "id": "par-f2b", "text": "Open my phone and scroll until I fall asleep.", "reaction": "The nightly ritual." },
+        { "id": "par-f2c", "text": "Actually do something I've been wanting to do for myself.", "reaction": "Finally." },
+        { "id": "par-f2d", "text": "Start on the stuff I couldn't get to during the day.", "reaction": "The second shift." }
       ]
     },
     {
       "id": "par-f3",
-      "afterScenario": 6,
-      "title": "The Kid Quote",
-      "prompt": "Your kid says something so funny you wish you could tell someone right now.",
+      "afterScenario": 7,
+      "title": "The Grocery Run",
+      "prompt": "Saturday morning. You open the fridge and realize you forgot to go grocery shopping.",
       "choices": [
-        { "id": "par-f3a", "text": "Text it to my partner or best friend immediately" },
-        { "id": "par-f3b", "text": "Post it. The world needs to hear this." },
-        { "id": "par-f3c", "text": "Try to memorize it. I'll definitely forget." },
-        { "id": "par-f3d", "text": "Just laugh and stay in the moment" }
+        { "id": "par-f3a", "text": "Make a list and go now before it gets busy.", "reaction": "Mission mode." },
+        { "id": "par-f3b", "text": "We're doing cereal today. Nobody's complaining.", "reaction": "Nobody's complaining. Yet." },
+        { "id": "par-f3c", "text": "Order groceries for delivery.", "reaction": "Future solved." },
+        { "id": "par-f3d", "text": "Take the kids with me. It'll be an adventure. Or a disaster.", "reaction": "Adventure. Or disaster." }
       ]
     }
   ],
   "creative": [
     {
       "id": "cre-f1",
-      "afterScenario": 2,
-      "title": "The Afterglow",
-      "prompt": "You walk out of a museum, a concert, or a show that was genuinely incredible.",
+      "afterScenario": 3,
+      "title": "The Show",
+      "prompt": "A friend asks if you want to check out a show this weekend. Art, music, something creative.",
       "choices": [
-        { "id": "cre-f1a", "text": "Go home and start making something immediately" },
-        { "id": "cre-f1b", "text": "Call someone and talk about it for 20 minutes" },
-        { "id": "cre-f1c", "text": "Wander for a bit. Let it sit." },
-        { "id": "cre-f1d", "text": "Pull out my phone and start taking notes" }
+        { "id": "cre-f1a", "text": "I'm in. I need to get out of my own head.", "reaction": "Fresh input." },
+        { "id": "cre-f1b", "text": "Can't. I'm in the middle of something.", "reaction": "Deep in it." },
+        { "id": "cre-f1c", "text": "Go, but bring a notebook. Everything is research.", "reaction": "Everything is material." },
+        { "id": "cre-f1d", "text": "Say maybe. Decide last minute like always.", "reaction": "Classic." }
       ]
     },
     {
       "id": "cre-f2",
-      "afterScenario": 4,
-      "title": "The Compliment",
-      "prompt": "Someone gives you a real, genuine compliment on your work.",
+      "afterScenario": 5,
+      "title": "The Old Notebook",
+      "prompt": "You're cleaning up your space and find an old sketchbook or notebook from a while back.",
       "choices": [
-        { "id": "cre-f2a", "text": "\"Thank you.\" Let it land." },
-        { "id": "cre-f2b", "text": "\"Oh, it's not that good\" before I can stop myself" },
-        { "id": "cre-f2c", "text": "\"Thanks! Here's what I'd change though...\"" },
-        { "id": "cre-f2d", "text": "Screenshot it. I'm saving this for a bad day." }
+        { "id": "cre-f2a", "text": "Flip through it. Some of this is actually pretty good.", "reaction": "Past you had range." },
+        { "id": "cre-f2b", "text": "Toss it in a drawer. I don't need to look back right now.", "reaction": "Not today." },
+        { "id": "cre-f2c", "text": "Get lost in it for an hour.", "reaction": "Time travel." },
+        { "id": "cre-f2d", "text": "Take a picture of something in there. Might use it later.", "reaction": "Filed for later." }
       ]
     },
     {
       "id": "cre-f3",
       "afterScenario": 6,
-      "title": "The Late Night",
-      "prompt": "It's 1am. You're in the zone. You have stuff tomorrow morning.",
+      "title": "The Coffee Shop",
+      "prompt": "You grab your stuff and head to a coffee shop. You don't bring your laptop.",
       "choices": [
-        { "id": "cre-f3a", "text": "Keep going. The zone doesn't come on command." },
-        { "id": "cre-f3b", "text": "Set a timer. 30 more minutes, then I'm done." },
-        { "id": "cre-f3c", "text": "Stop, but leave everything exactly where it is for tomorrow" },
-        { "id": "cre-f3d", "text": "Keep going. Hate myself in the morning. Worth it." }
+        { "id": "cre-f3a", "text": "Sit by the window and just watch people for a while.", "reaction": "The oldest form of research." },
+        { "id": "cre-f3b", "text": "Open my notebook and start doodling.", "reaction": "Hands moving. Brain following." },
+        { "id": "cre-f3c", "text": "Put headphones in and listen to something new.", "reaction": "New sound. New mood." },
+        { "id": "cre-f3d", "text": "End up on my phone the whole time anyway.", "reaction": "So much for unplugging." }
       ]
     }
   ]

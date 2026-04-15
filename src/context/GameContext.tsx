@@ -12,7 +12,9 @@ import type {
   UserProfile,
   PlayStep,
   InteractiveScreen,
+  Recommendations,
 } from "@/types";
+import { getScenarios, getFlavors } from "@/lib/data";
 
 interface GameState {
   characterClass: CharacterClass | null;
@@ -20,6 +22,7 @@ interface GameState {
   steps: PlayStep[];
   profile: UserProfile;
   isComplete: boolean;
+  recommendations: Recommendations | null;
 }
 
 interface GameContextType {
@@ -38,6 +41,7 @@ interface GameContextType {
   setTechComfort: (level: number) => void;
   setAiUsage: (usage: string) => void;
   setTimeWillingness: (willingness: string) => void;
+  setRecommendations: (recs: Recommendations) => void;
   nextStep: () => void;
   prevStep: () => void;
   undoComplete: () => void;
@@ -58,28 +62,29 @@ const emptyProfile: UserProfile = {
   timeWillingness: "",
 };
 
-// Build the ordered play sequence: scenarios with flavor moments interspersed
-function buildSteps(): PlayStep[] {
+// Build the ordered play sequence dynamically from scenario/flavor data
+function buildSteps(classId: CharacterClass): PlayStep[] {
   const steps: PlayStep[] = [];
+  const scenarios = getScenarios(classId);
+  const flavors = getFlavors(classId);
 
-  // Scenarios 1-2
-  steps.push({ type: "scenario", index: 0 });
-  steps.push({ type: "scenario", index: 1 });
-  // Flavor 1 (afterScenario: 2)
-  steps.push({ type: "flavor", index: 0 });
-  // Scenarios 3-4
-  steps.push({ type: "scenario", index: 2 });
-  steps.push({ type: "scenario", index: 3 });
-  // Flavor 2 (afterScenario: 4)
-  steps.push({ type: "flavor", index: 1 });
-  // Scenarios 5-6
-  steps.push({ type: "scenario", index: 4 });
-  steps.push({ type: "scenario", index: 5 });
-  // Flavor 3 (afterScenario: 6)
-  steps.push({ type: "flavor", index: 2 });
-  // Scenarios 7-8
-  steps.push({ type: "scenario", index: 6 });
-  steps.push({ type: "scenario", index: 7 });
+  // Intro screen
+  steps.push({ type: "intro" });
+
+  // Map afterScenario (1-indexed) -> flavor index for insertion
+  const flavorByScenario = new Map<number, number>();
+  flavors.forEach((f, i) => {
+    flavorByScenario.set(f.afterScenario, i);
+  });
+
+  // Interleave scenarios and flavors based on afterScenario values
+  for (let i = 0; i < scenarios.length; i++) {
+    steps.push({ type: "scenario", index: i });
+    const scenarioNum = i + 1; // afterScenario is 1-indexed
+    if (flavorByScenario.has(scenarioNum)) {
+      steps.push({ type: "flavor", index: flavorByScenario.get(scenarioNum)! });
+    }
+  }
 
   // Interactive screens
   const screens: InteractiveScreen[] = [
@@ -99,20 +104,21 @@ function buildSteps(): PlayStep[] {
 const GameContext = createContext<GameContextType | null>(null);
 
 export function GameProvider({ children }: { children: ReactNode }) {
-  const steps = buildSteps();
-
   const [state, setState] = useState<GameState>({
     characterClass: null,
     currentStep: 0,
-    steps,
+    steps: [],
     profile: { ...emptyProfile },
     isComplete: false,
+    recommendations: null,
   });
 
   const setCharacterClass = useCallback((cls: CharacterClass) => {
+    const steps = buildSteps(cls);
     setState((prev) => ({
       ...prev,
       characterClass: cls,
+      steps,
       profile: { ...prev.profile, characterClass: cls },
     }));
   }, []);
@@ -198,6 +204,13 @@ export function GameProvider({ children }: { children: ReactNode }) {
     }));
   }, []);
 
+  const setRecommendations = useCallback((recommendations: Recommendations) => {
+    setState((prev) => ({
+      ...prev,
+      recommendations,
+    }));
+  }, []);
+
   const nextStep = useCallback(() => {
     setState((prev) => {
       const next = prev.currentStep + 1;
@@ -226,11 +239,12 @@ export function GameProvider({ children }: { children: ReactNode }) {
     setState({
       characterClass: null,
       currentStep: 0,
-      steps,
+      steps: [],
       profile: { ...emptyProfile },
       isComplete: false,
+      recommendations: null,
     });
-  }, [steps]);
+  }, []);
 
   return (
     <GameContext.Provider
@@ -246,10 +260,11 @@ export function GameProvider({ children }: { children: ReactNode }) {
         setTechComfort,
         setAiUsage,
         setTimeWillingness,
+        setRecommendations,
         nextStep,
         prevStep,
-        undoComplete,
-        totalSteps: steps.length,
+	undoComplete,
+        totalSteps: state.steps.length,
         reset,
       }}
     >

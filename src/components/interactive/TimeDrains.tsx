@@ -6,9 +6,10 @@ interface TimeDrainsProps {
   options: string[];
   max: number;
   onSubmit: (ranked: string[]) => void;
+  onBack?: () => void;
 }
 
-export default function TimeDrains({ options, max, onSubmit }: TimeDrainsProps) {
+export default function TimeDrains({ options, max, onSubmit, onBack }: TimeDrainsProps) {
   const [ranked, setRanked] = useState<string[]>([]);
 
   const toggle = (option: string) => {
@@ -30,10 +31,10 @@ export default function TimeDrains({ options, max, onSubmit }: TimeDrainsProps) 
   return (
     <div className="mx-auto w-full max-w-lg px-6">
       <h2 className="mb-2 text-center text-xl font-bold text-leaf-dark">
-        Your Time Drains
+        What Eats Your Time
       </h2>
-      <p className="mb-6 text-center text-sm text-foreground/50">
-        What eats more time than it should? Pick your top {max} in order.
+      <p className="mb-6 text-center text-base text-foreground/70">
+        What eats more time than it should? Pick your top {max}.
       </p>
 
       <div className="flex flex-wrap justify-center gap-2">
@@ -47,8 +48,8 @@ export default function TimeDrains({ options, max, onSubmit }: TimeDrainsProps) 
                 rank > 0
                   ? "border-leaf bg-pond-light text-leaf-dark"
                   : ranked.length >= max
-                    ? "cursor-not-allowed border-transparent bg-white/50 text-foreground/30"
-                    : "border-transparent bg-white text-foreground/60 shadow-sm hover:shadow-md"
+                    ? "cursor-not-allowed border-transparent bg-white/50 text-foreground/40"
+                    : "border-transparent bg-white text-foreground/70 shadow-sm hover:shadow-md"
               }`}
             >
               {rank > 0 && (
@@ -75,6 +76,17 @@ export default function TimeDrains({ options, max, onSubmit }: TimeDrainsProps) 
           Continue
         </button>
       </div>
+
+      {onBack && (
+        <div className="mt-4 flex justify-center">
+          <button
+            onClick={onBack}
+            className="text-base font-medium text-foreground/70 transition-colors hover:text-foreground/90"
+          >
+            ← Go back
+          </button>
+        </div>
+      )}
     </div>
   );
 }

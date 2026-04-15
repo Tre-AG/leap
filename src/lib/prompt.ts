@@ -16,10 +16,24 @@ export function buildRecommendationPrompt(
     .map(([tag]) => tag);
 
   const toolKnowledge = tools
-    .map(
-      (t) =>
-        `- ${t.name} (${t.provider}): ${t.category}. Free: ${t.cost.free}. Paid: ${t.cost.paid}. Skill floor: ${t.skillFloor}. Best for: ${t.bestFor.join(", ")}. Caveats: ${t.caveats.join("; ")}. Teaching points: ${t.teachingPoints.join("; ")}`
-    )
+    .map((t) => {
+      const base = `- ${t.name} (${t.provider}): ${t.category}. Free: ${t.cost.free}. Paid: ${t.cost.paid}. Skill floor: ${t.skillFloor}. Best for: ${t.bestFor.join(", ")}. Caveats: ${t.caveats.join("; ")}. Teaching points: ${t.teachingPoints.join("; ")}`;
+      const usage = t.usageMethods;
+      const parts = [base];
+      if (usage.quickStart) {
+        parts.push(`  Quick start: ${usage.quickStart}`);
+      }
+      if (usage.promptFormulas.length > 0) {
+        parts.push(`  Prompt formulas: ${usage.promptFormulas.join(" | ")}`);
+      }
+      if (usage.techniques.length > 0) {
+        parts.push(`  Techniques: ${usage.techniques.join(" | ")}`);
+      }
+      if (usage.commonMistakes.length > 0) {
+        parts.push(`  Common mistakes: ${usage.commonMistakes.join(" | ")}`);
+      }
+      return parts.join("\n");
+    })
     .join("\n");
 
   return `You are the recommendation engine for Leap, a tool that helps everyday people discover how AI can make their lives easier. You are warm, clear, and never use jargon. You speak like a helpful friend, not a tech consultant.
@@ -72,6 +86,11 @@ RULES:
 - Generate exactly 2-3 opportunities
 - Generate exactly 3-5 quick wins, ordered from easiest to most involved
 - Quick wins should be immediately actionable this week
+- When generating each Quick Win, use the tool's usage methods data to make recommendations more actionable:
+  - The howToStart field should be based on the tool's "Quick start" value, adapted to the user's specific situation and time drains when relevant
+  - The examplePrompt field should be adapted from one of the tool's "Prompt formulas," tailored to the user's answers (their class, top time drains, wishlist items). Fill in placeholders like {topic} or {your rough notes} with wording that matches their situation. If the tool has no prompt formulas, omit examplePrompt or leave it empty.
+  - When a tool's techniques include a specific actionable tip that directly addresses the user's situation, weave it into the Quick Win description or howToStart naturally. Only when it genuinely applies.
+  - Do NOT copy the quick start or prompt formulas verbatim. Adapt them to feel personalized to this specific user.
 - Match tool recommendations to their existing ecosystem (e.g., Google users get Google-compatible tools)
 - Calibrate complexity to their tech comfort level and time willingness
 - Default to free tools. Only recommend paid tools when they are clearly the best fit and the user has budget flexibility.

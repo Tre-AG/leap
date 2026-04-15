@@ -16,7 +16,7 @@ import flavorsData from "../../data/flavors.json";
 import interactiveData from "../../data/interactive.json";
 import toolsData from "../../data/tools.json";
 
-const scenarioMap: Record<CharacterClass, { scenarios: Scenario[] }> = {
+const scenarioMap: Record<CharacterClass, { intro: string; backgroundImage?: string; scenarios: Scenario[] }> = {
   professional: professionalScenarios,
   student: studentScenarios,
   entrepreneur: entrepreneurScenarios,
@@ -26,6 +26,14 @@ const scenarioMap: Record<CharacterClass, { scenarios: Scenario[] }> = {
 
 export function getScenarios(classId: CharacterClass): Scenario[] {
   return scenarioMap[classId].scenarios;
+}
+
+export function getIntro(classId: CharacterClass): string {
+  return scenarioMap[classId].intro;
+}
+
+export function getBackgroundImage(classId: CharacterClass): string | undefined {
+  return scenarioMap[classId].backgroundImage;
 }
 
 export function getFlavors(classId: CharacterClass): FlavorMoment[] {

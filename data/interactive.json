@@ -1,16 +1,72 @@
 {
-  "tools": [
-    "Gmail", "Outlook", "Google Calendar", "Apple Calendar",
-    "Slack", "Microsoft Teams", "Zoom", "Discord",
-    "Excel", "Google Sheets", "Airtable",
-    "Word", "Google Docs", "Notion", "OneNote", "Evernote",
-    "Trello", "Asana", "Monday.com", "Linear", "Jira",
-    "Google Drive", "Dropbox", "iCloud", "OneDrive",
-    "Figma", "Canva",
-    "Pen & paper", "Sticky notes", "Physical planner",
-    "Notes app", "Reminders app",
-    "WhatsApp", "Signal", "iMessage"
-  ],
+  "tools": {
+    "student": [
+      "Gmail", "Outlook", "Google Calendar", "Apple Calendar",
+      "Slack", "Zoom", "Discord",
+      "Excel", "Google Sheets",
+      "Word", "Google Docs", "Notion", "OneNote", "Evernote",
+      "Trello", "Asana",
+      "Google Drive", "Dropbox", "iCloud",
+      "Canva",
+      "Pen & paper", "Sticky notes", "Physical planner",
+      "Notes app", "Reminders app",
+      "WhatsApp", "iMessage",
+      "Quizlet", "ChatGPT", "Google Classroom"
+    ],
+    "professional": [
+      "Gmail", "Outlook", "Google Calendar", "Apple Calendar",
+      "Slack", "Microsoft Teams", "Zoom",
+      "Excel", "Google Sheets", "Airtable",
+      "Word", "Google Docs", "Notion", "OneNote", "Evernote",
+      "Trello", "Asana", "Monday.com", "Jira",
+      "Google Drive", "Dropbox", "iCloud", "OneDrive",
+      "Canva",
+      "Pen & paper", "Sticky notes", "Physical planner",
+      "Notes app", "Reminders app",
+      "WhatsApp", "Signal", "iMessage",
+      "ChatGPT", "LinkedIn"
+    ],
+    "entrepreneur": [
+      "Gmail", "Outlook", "Google Calendar", "Apple Calendar",
+      "Slack", "Zoom", "Discord",
+      "Excel", "Google Sheets",
+      "Word", "Google Docs", "Notion", "OneNote", "Evernote",
+      "Trello", "Asana", "Monday.com",
+      "Google Drive", "Dropbox", "iCloud",
+      "Figma", "Canva",
+      "Pen & paper", "Sticky notes", "Physical planner",
+      "Notes app", "Reminders app",
+      "WhatsApp", "Signal", "iMessage",
+      "ChatGPT", "Instagram", "LinkedIn",
+      "Shopify", "Mailchimp", "Squarespace/Wix", "Venmo/PayPal"
+    ],
+    "parent": [
+      "Gmail", "Outlook", "Google Calendar", "Apple Calendar",
+      "Zoom",
+      "Excel", "Google Sheets",
+      "Word", "Google Docs", "OneNote",
+      "Google Drive", "Dropbox", "iCloud",
+      "Canva",
+      "Pen & paper", "Sticky notes", "Physical planner",
+      "Notes app", "Reminders app",
+      "WhatsApp", "iMessage",
+      "ChatGPT", "Amazon", "Instacart", "Cozi", "Venmo"
+    ],
+    "creative": [
+      "Gmail", "Outlook", "Google Calendar", "Apple Calendar",
+      "Slack", "Zoom", "Discord",
+      "Excel", "Google Sheets",
+      "Word", "Google Docs", "Notion", "OneNote", "Evernote",
+      "Trello", "Asana",
+      "Google Drive", "Dropbox", "iCloud",
+      "Figma", "Canva",
+      "Pen & paper", "Sticky notes", "Physical planner",
+      "Notes app", "Reminders app",
+      "WhatsApp", "iMessage",
+      "ChatGPT", "Instagram", "Procreate", "Adobe Creative Cloud",
+      "Pinterest", "Squarespace/Wix"
+    ]
+  },
   "responsibilities": {
     "professional": [
       "Managing a team",
@@ -223,8 +279,8 @@
     "techComfort": {
       "min": 1,
       "max": 5,
-      "labelLow": "Not much",
-      "labelHigh": "A lot",
+      "labelLow": "Not at all",
+      "labelHigh": "Very",
       "showNumbers": true
     },
     "aiUsage": [

@@ -1,6 +1,6 @@
 # Leap â€” Tool Knowledge Layer
 
-*Last updated: February 2026*
+*Last updated: April 2026*
 
 This is a living reference document that the recommendation engine draws from. Tools are organized by primary use case but many span multiple categories. The prompt uses this to match tools to specific user profiles with appropriate context.
 
@@ -34,14 +34,14 @@ These are the primary recommendation for most users. The key value isn't the too
 
 ### ChatGPT (OpenAI)
 - **What it does:** General-purpose AI assistant. Answers questions, writes drafts, brainstorms ideas, explains concepts, helps with planning â€” basically a knowledgeable thought partner available anytime.
-- **Cost:** Free tier available (GPT-4o mini). Plus plan $20/mo (GPT-4o, more capacity). Team/Enterprise plans available.
+- **Cost:** Free tier available (GPT-4o mini). Plus plan $20/mo (includes GPT-5 access). Team/Enterprise plans available.
 - **Ecosystem:** Standalone web app and mobile app. Works with everything since it's copy-paste based. Has integrations with some tools.
 - **Skill floor:** Very low. If you can type a question, you can use it.
 - **Maturity:** Established. Most widely used AI tool in the world.
 - **Reviews:** Highly rated. The default recommendation for AI beginners.
 - **Best for:** Almost everyone. Especially strong for: email drafting, brainstorming, writing help, explaining concepts, quick research, learning new skills.
 - **Caveats:** Free tier has usage limits during peak times. Output quality varies with prompt quality â€” the better you ask, the better it answers. Don't share sensitive personal/company data without understanding privacy settings.
-- **Key teaching points:** Most people use it like Google â€” one question, one answer. The real power is in conversation: follow up, ask for alternatives, give it context about who you are and what you need, tell it what you didn't like about the first answer.
+- **Key teaching points:** Most people use it like Google â€” one question, one answer. The real power is in conversation: follow up, ask for alternatives, give it context about who you are and what you need, tell it what you didn't like about the first answer. GPT-5 is now included in the Plus plan, making this the best value entry point for a premium AI assistant.
 
 ### Claude (Anthropic)
 - **What it does:** General-purpose AI assistant similar to ChatGPT. Known for longer, more nuanced responses, strong writing quality, and ability to work with uploaded documents.
@@ -76,6 +76,17 @@ These are the primary recommendation for most users. The key value isn't the too
 - **Caveats:** Full Office integration requires Microsoft 365 Copilot license which is expensive and usually employer-provided. The free standalone version is decent but not differentiated enough from ChatGPT to switch for most people.
 - **Key teaching points:** If your company already provides Copilot, you're leaving value on the table by not using it. Start in Outlook or Word where it's most mature.
 
+### Perplexity (Perplexity AI)
+- **What it does:** AI-powered research engine. Every answer comes with cited sources â€" links to the actual pages where the information came from. Think of it as the tool you reach for when accuracy and verifiability matter more than creativity.
+- **Cost:** Free tier available (limited Pro searches per day). Pro $20/mo (unlimited Pro search, file uploads, more models).
+- **Ecosystem:** Standalone web app, mobile app, and browser extension.
+- **Skill floor:** Very low. Ask a question, get an answer with sources.
+- **Maturity:** Established. Has become the default "research-grade" AI tool for many knowledge workers.
+- **Reviews:** Highly rated. Users consistently praise the source citations as the killer feature â€" especially for anyone who needs to verify what they're reading.
+- **Best for:** Research with cited sources, essay research, fact-checking, current events, competitor analysis, market validation. Particularly strong for students, journalists, and entrepreneurs who need to back up claims.
+- **Caveats:** Not as strong for creative writing or brainstorming as ChatGPT or Claude â€" this is a research tool, not a conversation partner. Free tier has daily limits on the advanced Pro search mode.
+- **Key teaching points:** Every claim links to a source, so you can verify before citing. Use it specifically when you need accurate, current, verifiable information â€" not for general conversation or creative tasks. Follow-up questions in the same thread drill deeper into specific sources.
+
 ---
 
 ## Writing & Communication
@@ -89,7 +100,7 @@ These are the primary recommendation for most users. The key value isn't the too
 - **Reviews:** Highly rated. Free tier is genuinely useful. Premium is strong for professional writing.
 - **Best for:** Communication perfectionists (saves them time on rewrites), efficient communicators (catches tone issues they might miss), anyone whose time drain is email or document writing.
 - **Caveats:** Free tier is genuinely useful â€” many people don't need Premium. The AI rewrite features overlap with ChatGPT. Can occasionally over-correct or suggest awkward phrasings.
-- **Key teaching points:** The real value is the passive tone detection â€” it tells you when your email sounds too harsh or too passive before you send it. Great for people who spend too long wordsmithing.
+- **Key teaching points:** The real value is the passive tone detection â€” it tells you when your email sounds too harsh or too passive before you send it. Great for people who spend too long wordsmithing. GrammarlyGO features have matured significantly in 2026, adding solid paraphrasing and tone rewriting â€” but the core value is still that passive, always-on tone check.
 
 ### Hemingway Editor
 - **What it does:** Highlights overly complex sentences, passive voice, and hard-to-read passages. Makes your writing clearer and more direct.
@@ -117,14 +128,26 @@ These are the primary recommendation for most users. The key value isn't the too
 - **Key teaching points:** The magic is the auto-generated action items. After a meeting, you get a list of who committed to what. For people who forget action items or rely on memory, this is transformative.
 
 ### Fireflies.ai
-- **What it does:** Similar to Otter â€” records, transcribes, and summarizes meetings. Strong search functionality across past meetings.
+- **What it does:** Records, transcribes, and summarizes meetings. Particularly strong search functionality across past meetings â€” you can find specific moments across months of recorded conversations.
 - **Cost:** Free tier (limited). Pro $18/mo. Business plan available.
 - **Ecosystem:** Works with Zoom, Google Meet, Teams, and others.
 - **Skill floor:** Low.
-- **Maturity:** Growing. Gaining significant traction.
+- **Maturity:** Growing.
 - **Reviews:** Well rated. Strong transcription and search features.
-- **Best for:** Similar to Otter. Particularly strong for people who need to search back through past meetings.
+- **Best for:** Teams that need to search back through past meetings. People who frequently reference “what was said in that meeting three weeks ago.”
 - **Caveats:** Similar to Otter â€” cloud storage, consent required. Free tier is more limited than Otter's.
+- **Key teaching points:** Granola and Otter have become more popular general-purpose meeting tools in 2026, but Fireflies remains the strongest choice for teams that need advanced search across past meetings. If you need to find a specific decision or quote from weeks ago, this is the tool.
+
+### Granola
+- **What it does:** Meeting notes without a meeting bot. Captures audio directly from your device while you take rough notes, then the AI cleans everything up and fills in context from the transcript afterward. No awkward "Granola Bot has joined the meeting" moment.
+- **Cost:** Free tier (30 days of meeting history). Paid $14/mo (unlimited history).
+- **Ecosystem:** Mac and Windows. Works with Zoom, Google Meet, and Teams.
+- **Skill floor:** Very low. Install it and take notes like you normally would.
+- **Maturity:** Growing. Broke out in early 2026 as the meeting tool of choice among executives and founders.
+- **Reviews:** Strongly positive, especially from people in back-to-back meetings who found Otter's bot presence annoying. Word-of-mouth growth has been fast.
+- **Best for:** Executives and managers in back-to-back meetings. People who prefer taking rough notes themselves rather than relying entirely on AI. Knowledge workers who want polished meeting notes without a visible bot joining their calls.
+- **Caveats:** Free tier limits meeting history to 30 days. You still take rough notes during the meeting â€" it's not fully hands-off like Otter. Works best for people who already take some notes during meetings.
+- **Key teaching points:** The key differentiator is no bot joining the call â€" it captures audio from your device. You jot down key points, and the AI fills in context from the transcript. For people who found meeting bots awkward or who got pushback from meeting participants, this is the answer.
 
 ---
 
@@ -191,14 +214,15 @@ These are the primary recommendation for most users. The key value isn't the too
 - **Caveats:** Free tier is limited to one event type. Some people find it impersonal to send a Calendly link instead of a personal email. Internal team use is less common â€” more for external/client scheduling.
 
 ### Reclaim.ai
-- **What it does:** AI-powered calendar management. Automatically schedules habits, tasks, and breaks around your meetings. Protects focus time.
-- **Cost:** Free tier (limited features). Starter $10/mo. Business plan available.
-- **Ecosystem:** Google Calendar primary. Outlook support available.
-- **Skill floor:** Moderate. Requires some setup to define priorities and habits.
-- **Maturity:** Growing. Gaining strong traction among knowledge workers.
-- **Reviews:** Well rated. Users who set it up properly love it. Some find the setup process too involved.
-- **Best for:** High-structure planners who want their calendar to be smarter. People with work-spillover who need help protecting personal time. Moderate to high tech comfort.
-- **Caveats:** Requires investment in setup to work well. Best for people already living in their calendar. Not for low-structure people â€” it'll feel like too much overhead.
+- **What it does:** AI-powered calendar management. Automatically schedules habits, tasks, and breaks around your meetings. Protects focus time by blocking it on your calendar so meetings can't steal it.
+- **Cost:** Free tier available. Starter $10/mo. Business $18/mo.
+- **Ecosystem:** Google Calendar and Outlook.
+- **Skill floor:** Low. Takes a week or two to calibrate to your preferences but setup is straightforward.
+- **Maturity:** Established. Now the dominant AI scheduling tool after Clockwise shut down in March 2026.
+- **Reviews:** Highly rated. The Clockwise shutdown drove a wave of users to Reclaim, and the product has matured to meet them.
+- **Best for:** Professionals whose calendars are chaos. People with focus time that keeps getting eaten by meetings. Anyone who wants their tasks auto-scheduled around meetings.
+- **Caveats:** Requires Google Calendar or Outlook. Takes a week or two of calibration to learn your preferences.
+- **Key teaching points:** Auto-protects focus time, schedules tasks and breaks by priority, and adapts as your calendar shifts. If someone used Clockwise before it shut down, Reclaim is the natural successor â€” and it's gotten noticeably better in early 2026.
 
 ---
 
@@ -243,6 +267,133 @@ These are the primary recommendation for most users. The key value isn't the too
 - **Reviews:** Highly rated. The gold standard for non-designer design tools.
 - **Best for:** Anyone who creates presentations, social media content, or visual documents. Especially strong for people who identified "creating presentations" as a time drain.
 - **Caveats:** Free tier is genuinely useful. The AI features are growing but not yet the primary draw â€” the templates and ease of use are the real value.
+
+---
+
+## Presentations
+
+### Gamma
+- **What it does:** AI presentation builder. Describe your company, project, or topic and it generates a full slide deck â€” layout, content, and visuals. Iterate slide by slide or regenerate the whole thing.
+- **Cost:** Free tier (includes Gamma branding on exports). Plus $10/mo. Pro $20/mo.
+- **Ecosystem:** Standalone web app. Export to PDF, PowerPoint, or share as a link.
+- **Skill floor:** Very low. If you can describe what you want, you can get a deck.
+- **Maturity:** Established. The most popular AI presentation tool as of 2026.
+- **Reviews:** Highly rated, especially by founders and sales professionals. Users consistently say it cut their deck-creation time from days to hours.
+- **Best for:** Pitch decks, presentations, anyone who needs a polished deck without spending hours in PowerPoint. Particularly strong for founders pitching investors and sales teams building client decks.
+- **Caveats:** Free tier includes Gamma branding on exports. AI-generated decks still need human polish to feel unique â€” the first draft gets you 80% of the way, but that last 20% matters for high-stakes presentations.
+- **Key teaching points:** Describe your company or topic and it generates a first-draft deck in minutes. Iterate slide by slide instead of starting from a blank PowerPoint. For founders, this is the biggest time-saver on pitch deck creation in 2026.
+
+---
+
+## Image Generation
+
+### Midjourney
+- **What it does:** AI image generation focused on high-quality, stylized visuals. Produces distinctive, artistic images that stand out from the more generic output of other image generators.
+- **Cost:** No free tier. Basic $10/mo. Standard $30/mo. Pro $60/mo.
+- **Ecosystem:** Web app and Discord bot.
+- **Skill floor:** Moderate. Requires learning to “prompt visually” â€” describing what you want in a way the model responds to well. There's a real learning curve, but the results justify it.
+- **Maturity:** Established. The quality benchmark for AI-generated imagery.
+- **Reviews:** Highly rated for output quality. Common criticism is the learning curve and lack of a free tier.
+- **Best for:** Creators who need distinctive, high-quality visual imagery. Channel art, thumbnails that need to stand out, editorial and artistic images. Not for functional graphics like social media templates â€” Canva is better for that.
+- **Caveats:** No free tier â€” paid only. Steeper learning curve than Canva or DALL-E. Output quality depends heavily on prompt skill â€” two people can get very different results from the same concept.
+- **Key teaching points:** Highest-quality stylized AI image generation available. Not the right tool for functional graphics â€” this is for when you want something visually distinctive. Worth the learning curve if visual identity matters for your creative work.
+
+---
+
+## Audio & Video
+
+### Descript
+- **What it does:** Audio and video editor that works like a text document. It transcribes your recording and lets you edit the media by editing the transcript â€” delete a word from the text, the audio and video delete with it.
+- **Cost:** Free tier (limited export quality and length). Creator $16/mo. Pro $30/mo.
+- **Ecosystem:** Mac and Windows desktop app.
+- **Skill floor:** Low. If you can edit a Google Doc, you can edit a podcast in Descript.
+- **Maturity:** Established. The default editing tool for a large segment of podcasters and YouTubers.
+- **Reviews:** Highly rated. Users consistently say it cut their editing time by 70-80%. Particularly loved by solo creators who can't afford to spend hours in traditional editing software.
+- **Best for:** Podcasters, YouTube creators, anyone editing audio or video who hates traditional timeline-based editors.
+- **Caveats:** Free tier limits export quality and length. Voice cloning features require a paid plan. Not a replacement for professional video editing software for complex projects â€” it's optimized for talking-head and narration content.
+- **Key teaching points:** Edit audio and video by editing a text transcript â€” delete a word, the audio deletes with it. Removes filler words (“um”, “like”) automatically across a whole recording. Beloved by podcasters because it turns a 3-hour editing job into 30 minutes.
+
+### ElevenLabs
+- **What it does:** AI voice generation and text-to-speech. Produces remarkably realistic voiceovers in hundreds of voices and 50+ languages. Can also clone your own voice with a short sample.
+- **Cost:** Free tier (10,000 characters/month). Starter $5/mo. Creator $11/mo. Pro $22/mo.
+- **Ecosystem:** Standalone web app and API.
+- **Skill floor:** Very low. Type or paste text, pick a voice, generate.
+- **Maturity:** Established. The standard for AI voiceovers in 2026.
+- **Reviews:** Highly rated. Users consistently note that the quality is realistic enough that most listeners can't tell it's AI-generated.
+- **Best for:** Creators who need voiceovers without a recording studio. YouTube narrations, audiobook creators, explainer videos, founders making product demos.
+- **Caveats:** Free tier is limited to 10,000 characters per month â€” enough to try it but not enough for regular production use. Voice cloning has ethical considerations â€” always get consent before cloning someone's voice.
+- **Key teaching points:** Realistic enough that most viewers can't tell it's AI. Hundreds of voices and 50+ languages, so you can match tone and audience. If you've been putting off creating video content because you don't want to record narration, this removes that blocker.
+
+---
+
+## Study Tools
+
+### Quizlet
+- **What it does:** Study platform with flashcards, practice tests, and an AI tutor. The AI tutor (Q-Chat) asks questions conversationally instead of just flipping cards â€” more like a study partner than a flash card app.
+- **Cost:** Free tier (ads, limited AI features). Plus $8/mo.
+- **Ecosystem:** Web, iOS, and Android apps.
+- **Skill floor:** Very low. Create or find a study set and start studying.
+- **Maturity:** Established. Been around for years, but the AI features are what made it relevant again in 2025-2026.
+- **Reviews:** Highly rated. The massive library of shared study sets is a major draw â€” for most courses, someone has already created the cards.
+- **Best for:** Students preparing for exams. Anyone who needs active recall and spaced repetition. Students whose classes have lots of terminology to memorize.
+- **Caveats:** Free tier has ads and limited AI features. Shared study sets vary in quality â€” always verify before relying on someone else's cards for an exam.
+- **Key teaching points:** The AI tutor asks you questions in a conversational format rather than just flipping cards. AI-generated practice tests can simulate exam conditions based on your study sets. Massive library of shared study sets means you're rarely starting from zero.
+
+### Mindgrasp
+- **What it does:** All-in-one study platform. Upload a lecture recording, PDF, or video, and it auto-generates notes, summaries, flashcards, and quizzes. Also includes a 24/7 AI tutor trained specifically on your uploaded materials.
+- **Cost:** Free tier (limited uploads and AI features). Pro $10/mo.
+- **Ecosystem:** Web app, Chrome extension, iOS, and Android.
+- **Skill floor:** Very low. Upload content, get study materials.
+- **Maturity:** Growing. 5M+ student users. Popular on TikTok and Instagram study communities, which is driving fast adoption.
+- **Reviews:** Well rated, especially by students with heavy reading loads. The auto-generated flashcards and quizzes save significant prep time.
+- **Best for:** Students who want an all-in-one study platform. Students with heavy reading loads who can't keep up with the volume. Students who record lectures and want to turn recordings into structured study materials.
+- **Caveats:** Free tier has usage limits on uploads and AI features. Quality of generated flashcards varies â€” review before studying, don't trust blindly.
+- **Key teaching points:** Upload a lecture, PDF, or video and it auto-generates notes, summaries, flashcards, and quizzes. The AI tutor is trained on your materials, so it can answer questions specific to your course content. Think of it as turning passive content consumption into active study material automatically.
+
+---
+
+## Family Organization
+
+### Sense
+- **What it does:** Family calendar tool that auto-extracts events from school and sports emails. Forward any email with a schedule, permission slip, or activity notice, and Sense pulls out the dates, times, and details and adds them to your family calendar.
+- **Cost:** Free tier available. Premium $5/mo.
+- **Ecosystem:** iOS and Android apps. Integrates with Google Calendar and Apple Calendar.
+- **Skill floor:** Very low. Forward an email, get a calendar event.
+- **Maturity:** Growing. Newer than established tools like Cozi or Google Calendar, but gaining traction fast among parents.
+- **Reviews:** Well rated, especially by parents of multiple kids who were drowning in sports schedules and school notices.
+- **Best for:** Parents drowning in school and sports emails. Families juggling multiple kids' schedules. Anyone who forwards school flyers to themselves and hopes to remember to enter them later.
+- **Caveats:** Still newer than established family calendar tools â€” active development. Works best when both parents adopt it together so everyone sees the same family calendar.
+- **Key teaching points:** Forward any school or sports email to Sense and it auto-extracts events into your family calendar. Eliminates the mental load of manually typing every practice time, field trip, and permission slip. Set it up once, and it runs itself.
+
+---
+
+## Planning & Mental Load
+
+### Saner.AI
+- **What it does:** A calm, structured place to dump thoughts, reminders, and to-dos in plain language. The AI organizes them and resurfaces them when they're relevant â€” not another to-do list app, more of a “second brain” for people whose brain feels constantly on.
+- **Cost:** Free tier available. Paid $15/mo.
+- **Ecosystem:** Web, iOS, and Android apps.
+- **Skill floor:** Very low. Type what's on your mind in plain language.
+- **Maturity:** Growing. Newer tool, still evolving, but positioned at a very specific and underserved problem.
+- **Reviews:** Positive early reviews, especially from parents and busy professionals who describe the “invisible checklist” feeling â€” the constant mental hum of things you need to remember.
+- **Best for:** Parents and professionals carrying too much mental load. People whose brain feels constantly “on.” Anyone with too many scattered thoughts across notes apps, reminders, and sticky notes.
+- **Caveats:** Newer tool, still evolving. Not a replacement for a full calendar or task manager â€” it handles the unstructured overflow that those tools don't capture.
+- **Key teaching points:** Dump thoughts, reminders, and to-dos in plain language; the AI structures and resurfaces them when relevant. Specifically positioned at the “invisible checklist” problem parents and busy professionals deal with. Think of it as a calm assistant rather than another app to manage.
+
+---
+
+## No-Code Building
+
+### Lovable
+- **What it does:** Describe what you want in plain English and it generates a working React web app â€” landing pages, prototypes, simple products. Outputs real, deployable code hosted on GitHub.
+- **Cost:** Free tier (limited messages per day). Starter $20/mo. Pro $100/mo.
+- **Ecosystem:** Standalone web app. GitHub integration for code output.
+- **Skill floor:** Low. You need to be able to describe what you want clearly, but you don't need to know how to code.
+- **Maturity:** Growing. Particularly popular with non-technical founders in 2026.
+- **Reviews:** Well rated for prototypes and landing pages. Users love the speed â€” a working landing page in hours instead of weeks. Less suitable for complex production apps.
+- **Best for:** Non-technical founders who need a landing page or prototype. Entrepreneurs who want to ship a working product without hiring a developer. People who can describe what they want but can't code.
+- **Caveats:** Best for prototypes and landing pages, not complex production apps. Free tier limits messages per day. The generated code works but isn't always how an experienced developer would write it â€” fine for MVPs, but plan to refactor if the product takes off.
+- **Key teaching points:** Describe what you want in plain English and it generates a working React app. Can ship a landing page in hours instead of weeks. For non-technical founders, this closes the gap between “I have an idea” and “I have something I can show people.”
 
 ---
 
@@ -340,6 +491,7 @@ Rough estimate for daily refresh:
 | Date | Change |
 |------|--------|
 | Feb 2026 | Initial tool knowledge layer created. Focus on Professional character class tools. |
+| April 2026 | Added Perplexity, Granola, Gamma, Sense, Saner.AI, Descript, Midjourney, ElevenLabs, Quizlet, Mindgrasp, Lovable. Removed Clockwise (shut down March 2026). Updated Reclaim, Fireflies, Grammarly, ChatGPT entries. |
 
 ---
 
