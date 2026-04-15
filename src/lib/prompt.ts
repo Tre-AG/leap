@@ -37,7 +37,7 @@ RESPONSIBILITIES: ${profile.responsibilities.join(", ") || "None selected"}
 
 TOP TIME DRAINS (ranked): ${profile.timeDrains.map((d, i) => `${i + 1}. ${d}`).join(", ") || "None selected"}
 
-WISHLIST (what they want most): ${profile.wishlist.map((w, i) => `${i + 1}. ${w}`).join(", ") || "None selected"}
+WISHLIST (what they want most): ${profile.wishlist.join(", ") || "None selected"}
 
 TECH COMFORT: ${profile.techComfort}/5
 PRIOR AI USAGE: ${profile.aiUsage || "Not specified"}
