@@ -26,7 +26,7 @@ export default function PlayPage() {
     setTimeDrains,
     setWishlist,
     setTechComfort,
-    setAiUsage,
+    setAiToolsUsed,
     setTimeWillingness,
     nextStep,
     prevStep,
@@ -156,9 +156,9 @@ export default function PlayPage() {
           return (
             <Readiness
               config={config.readiness}
-              onSubmit={(techComfort, aiUsage, timeWillingness) => {
+              onSubmit={(techComfort, aiToolsUsed, timeWillingness) => {
                 setTechComfort(techComfort);
-                setAiUsage(aiUsage);
+                setAiToolsUsed(aiToolsUsed);
                 setTimeWillingness(timeWillingness);
                 nextStep();
               }}

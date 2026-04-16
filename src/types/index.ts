@@ -45,7 +45,7 @@ export interface ReadinessConfig {
     labelHigh: string;
     showNumbers?: boolean;
   };
-  aiUsage: string[];
+  aiToolsUsed: string[];
   timeWillingness: string[];
 }
 
@@ -101,7 +101,7 @@ export interface UserProfile {
   timeDrains: string[]; // ordered by rank
   wishlist: string[]; // ordered by rank
   techComfort: number;
-  aiUsage: string;
+  aiToolsUsed: string[];
   timeWillingness: string;
 }
 

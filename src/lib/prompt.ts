@@ -54,7 +54,11 @@ TOP TIME DRAINS (ranked): ${profile.timeDrains.map((d, i) => `${i + 1}. ${d}`).j
 WISHLIST (what they want most): ${profile.wishlist.join(", ") || "None selected"}
 
 TECH COMFORT: ${profile.techComfort}/5
-PRIOR AI USAGE: ${profile.aiUsage || "Not specified"}
+AI TOOLS USED: ${
+    profile.aiToolsUsed.length > 0
+      ? `User has used these AI tools: ${profile.aiToolsUsed.join(", ")}`
+      : "User has not used any of these AI tools yet: ChatGPT, Claude, Gemini, Copilot, Perplexity"
+  }
 TIME WILLINGNESS: ${profile.timeWillingness || "Not specified"}
 
 AVAILABLE TOOLS TO RECOMMEND FROM:

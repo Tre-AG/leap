@@ -7,7 +7,7 @@ interface ReadinessProps {
   config: ReadinessConfig;
   onSubmit: (
     techComfort: number,
-    aiUsage: string,
+    aiToolsUsed: string[],
     timeWillingness: string
   ) => void;
   onBack?: () => void;
@@ -15,10 +15,16 @@ interface ReadinessProps {
 
 export default function Readiness({ config, onSubmit, onBack }: ReadinessProps) {
   const [techComfort, setTechComfort] = useState(3);
-  const [aiUsage, setAiUsage] = useState("");
+  const [aiToolsUsed, setAiToolsUsed] = useState<string[]>([]);
   const [timeWillingness, setTimeWillingness] = useState("");
 
-  const canSubmit = aiUsage !== "" && timeWillingness !== "";
+  const canSubmit = timeWillingness !== "";
+
+  const toggleAiTool = (tool: string) => {
+    setAiToolsUsed((prev) =>
+      prev.includes(tool) ? prev.filter((t) => t !== tool) : [...prev, tool]
+    );
+  };
 
   return (
     <div className="mx-auto w-full max-w-lg px-6">
@@ -65,18 +71,19 @@ export default function Readiness({ config, onSubmit, onBack }: ReadinessProps) 
         </div>
       </div>
 
-      {/* AI Usage */}
+      {/* AI Tools Used */}
       <div className="mb-8">
-        <label className="mb-3 block text-base font-semibold text-foreground/80">
-          Have you used AI tools before?
+        <label className="mb-1 block text-base font-semibold text-foreground/80">
+          Have you used any of these AI tools?
         </label>
+        <p className="mb-3 text-sm text-foreground/60">Tap all that apply.</p>
         <div className="flex flex-col gap-2">
-          {config.aiUsage.map((option) => (
+          {config.aiToolsUsed.map((option) => (
             <button
               key={option}
-              onClick={() => setAiUsage(option)}
+              onClick={() => toggleAiTool(option)}
               className={`rounded-xl border-2 px-4 py-3 text-left text-sm transition-all ${
-                aiUsage === option
+                aiToolsUsed.includes(option)
                   ? "border-leaf bg-pond-light text-leaf-dark font-semibold"
                   : "border-transparent bg-white text-foreground/70 shadow-sm hover:shadow-md"
               }`}
@@ -111,7 +118,7 @@ export default function Readiness({ config, onSubmit, onBack }: ReadinessProps) 
 
       <div className="mt-4 flex justify-center">
         <button
-          onClick={() => onSubmit(techComfort, aiUsage, timeWillingness)}
+          onClick={() => onSubmit(techComfort, aiToolsUsed, timeWillingness)}
           disabled={!canSubmit}
           className={`rounded-2xl px-10 py-4 text-lg font-bold text-white shadow-lg transition-all ${
             canSubmit

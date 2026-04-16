@@ -282,11 +282,12 @@
       "labelHigh": "Very",
       "showNumbers": true
     },
-    "aiUsage": [
-      "Never used AI tools",
-      "Tried ChatGPT a few times",
-      "Use AI occasionally",
-      "Use AI regularly"
+    "aiToolsUsed": [
+      "ChatGPT",
+      "Claude",
+      "Gemini",
+      "Copilot (Microsoft)",
+      "Perplexity"
     ],
     "timeWillingness": [
       "Just give me the 5-minute version",

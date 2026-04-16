@@ -39,7 +39,7 @@ interface GameContextType {
   setTimeDrains: (drains: string[]) => void;
   setWishlist: (wishlist: string[]) => void;
   setTechComfort: (level: number) => void;
-  setAiUsage: (usage: string) => void;
+  setAiToolsUsed: (tools: string[]) => void;
   setTimeWillingness: (willingness: string) => void;
   setRecommendations: (recs: Recommendations) => void;
   nextStep: () => void;
@@ -58,7 +58,7 @@ const emptyProfile: UserProfile = {
   timeDrains: [],
   wishlist: [],
   techComfort: 3,
-  aiUsage: "",
+  aiToolsUsed: [],
   timeWillingness: "",
 };
 
@@ -190,10 +190,10 @@ export function GameProvider({ children }: { children: ReactNode }) {
     }));
   }, []);
 
-  const setAiUsage = useCallback((aiUsage: string) => {
+  const setAiToolsUsed = useCallback((aiToolsUsed: string[]) => {
     setState((prev) => ({
       ...prev,
-      profile: { ...prev.profile, aiUsage },
+      profile: { ...prev.profile, aiToolsUsed },
     }));
   }, []);
 
@@ -258,7 +258,7 @@ export function GameProvider({ children }: { children: ReactNode }) {
         setTimeDrains,
         setWishlist,
         setTechComfort,
-        setAiUsage,
+        setAiToolsUsed,
         setTimeWillingness,
         setRecommendations,
         nextStep,
