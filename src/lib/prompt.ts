@@ -83,7 +83,7 @@ Based on this profile, generate personalized recommendations. Respond in valid J
       "tool": "The specific mainstream AI tool to use for this (e.g. 'ChatGPT' or 'Claude' or 'Gemini'). Include '(free)' or '(free tier)' after the name.",
       "toolCost": "Free",
       "howToStart": "Numbered steps. Step 1 should be opening the recommended tool. The steps should include when to paste the example prompt. Keep it to 2-4 steps, concrete and specific.",
-      "examplePrompt": "A fully written, copy-paste-ready prompt the user can try right now. This should be specific to their situation based on their class, responsibilities, and time drains. Do NOT use generic placeholders like [topic]. Instead, write the prompt as if you are the user, referencing the kinds of tasks they actually do. The prompt should be practical and immediately usable."
+      "examplePrompt": "A copy-paste-ready prompt the user can try right now. Use [brackets] for any parts the user needs to fill in with their own specifics, like [your notes from today's meeting] or [the topic you're working on]. The structure and wording of the prompt should be specific and practical, but the user's personal details should always be in brackets so they can fill them in. Do not invent fake details or scenarios."
     }
   ]
 }
@@ -107,7 +107,7 @@ SMART TOOL PICKING:
 METHODS FIRST:
 - Each Quick Win should teach the user a METHOD, not sell them a tool. The value is in what they learn to do, not what they sign up for.
 - The title should describe the outcome, not the tool. "Turn your meeting notes into action items" not "Use Otter.ai for meetings."
-- The example prompt is the most important part of each Quick Win. It should be specific, practical, and feel like it was written for this exact person. Reference their actual responsibilities, time drains, and class context.
+- The example prompt is the most important part of each Quick Win. Write a practical, well-structured prompt that teaches the user how to ask AI effectively. Use [brackets] for any parts specific to the user's situation so they can fill in their own details. Do not make up fake scenarios or insert invented details.
 - The howToStart steps should be simple and include when to use the example prompt. Always start with "Open [Tool] (free)" as step 1.
 
 GENERAL RULES:
