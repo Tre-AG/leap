@@ -1403,7 +1403,10 @@ Build a scheduled job that periodically refreshes both tool data AND usage metho
 
 ## Landing Page Redesign (March 2026)
 
-The landing page is being redesigned from a flat quiz-selector layout to an immersive, video-game-style character selection screen.
+The landing page is being redesigned from a flat quiz-selector layout to an immersive, video-game-style character selection screen. The landing page is also the **wedge page for the broader visual redesign phase** — it establishes the world (painted style, palette, typography, frog treatment, tone, texture) that every subsequent page will inherit. See the Visual Redesign Phase section for the full context.
+
+### Design Tool
+**Claude Design** (Anthropic Labs, released April 2026) will be used to design this page and every page redesigned after it. The landing page is the first Claude Design session and doubles as the world bible — whatever aesthetic locks here becomes the visual vocabulary for the entire app.
 
 ### Design Direction
 - **Full-screen illustrated pond scene** filling the entire viewport
@@ -1459,6 +1462,159 @@ The landing page is being redesigned from a flat quiz-selector layout to an imme
 - Animation logic will be React/CSS-based
 - Layout moves from grid/card layout to positioned elements on a full-screen scene
 - Mobile responsiveness will need special attention (lily pad positioning on small screens)
+
+---
+
+## Visual Redesign Phase (Planned — Post-Content Lockdown)
+
+Once the content of Leap is fairly satisfying (scenarios, flavor moments, interactive screens, results flow, tool data, methods data all calibrated), the project enters a dedicated visual redesign phase. The architecture and game flow stay the same; the visual layer gets a full pass so every page feels like a designed scene rather than a templated questionnaire.
+
+**Core goal:** each page should look somewhat unique, buttons should live where the scene calls for them rather than in a fixed slot, interactions should feel scene-specific, and the design itself should be woven into the choices.
+
+### Timing & Prerequisites
+- Do NOT start this phase until content is locked down. Visual redesigns have a nasty habit of creeping into content rewrites — resist.
+- Do NOT redesign core architecture or flow. The content/code separation, JSON-driven content layer, routing, and state management all stay.
+- Alpha testing should complete before this phase, so design decisions incorporate real user feedback about pacing, clarity, and emotional resonance.
+
+### Design Tool: Claude Design
+Claude Design (Anthropic Labs, April 2026) is the primary tool for this phase. It replaces the slow "describe to Claude Code → build → view → tweak → rebuild" loop with fast in-tool exploration (inline comments, adjustment sliders, live variant comparison), then hands off a finalized bundle to Claude Code for production implementation.
+
+**How Claude Design fits:**
+- Fast prototyping of 3-4 directions per page without code cycles
+- Inline editing and sliders for scene-specific UI tuning
+- Per-page handoff bundles to Claude Code so each page is a focused implementation task
+- Codebase-read design system (used selectively — see below)
+
+**What Claude Design is NOT:**
+- Not an automator. It does not generate the rest of the app from the landing page. Each page is its own design session.
+- Not a replacement for Nanobanana. Character art and world illustrations are still made in Nanobanana and imported into Claude Design as assets.
+- Not a substitute for the content layer. JSON files are untouched throughout this phase.
+
+**Design system onboarding — deferred:** Do NOT onboard the full Leap codebase to Claude Design's design system on day one. Start with text prompts plus uploaded assets on the landing page first, see how it feels, then onboard the codebase only after the world aesthetic is locked. Onboarding too early would bake in current Tailwind tokens and component patterns that are about to change.
+
+### Three-Layer Design Model
+
+The redesign is organized into three distinct layers with different scopes and lifespans:
+
+**Layer 1 — World (set once, rarely changes)**
+- Painted illustration style, overall tone, texture
+- Character designs (the frogs themselves, possibly redrawn/refined)
+- Color palette
+- Typography family and scale
+- Core visual language (how an interactive element looks at rest, how it looks when selected, what "alive" feels like)
+- Lives in the Claude Design system
+
+**Layer 2 — Scene (designed per page, unique)**
+- Layout, composition, button placement
+- Interaction grammar specific to the scene
+- Scene-specific props, background elements, transitions
+- Mood (a library scene ≠ a 3am desk scene ≠ a coffee shop)
+- Designed individually in Claude Design for each page
+
+**Layer 3 — Content (untouched throughout redesign)**
+- `tools.json`, `methods.json`, class-specific scenario files, `flavors.json`, `interactive.json`
+- Class definitions, choice tags, recommendation signals
+- All JSON-driven content already built up through Batches 1-3 and beyond
+
+The redesign touches Layers 1 and 2. Layer 3 stays exactly as calibrated.
+
+### Templated vs. Bespoke: The Archetype Model
+
+Pure per-scene bespoke design is beautiful but unextensible — every new scenario becomes a design project. Pure templating is extensible but makes the game feel uniform and survey-like. The answer is a middle path: **archetype families for page types that grow, bespoke for page types that are fixed.**
+
+**Page types that GROW — use archetypes:**
+- **Scenario screens** — new scenarios are added as Leap evolves (new classes, new scenario variations, tuning based on feedback). Design 3-4 scenario archetypes (e.g., Focused Scene, Environmental Scene, Split-Attention Scene, Dialogue Scene). Each new scenario picks an archetype based on its narrative vibe.
+- **Flavor moments** — tuned and added over time. Probably 2-3 archetypes.
+- **Quick Wins cards** — scale with the tool list and methods. Probably 2 archetypes (single-focus vs. comparison-style).
+- **Tool detail views** — when the post-playthrough profile page is built, individual tool cards/detail views scale with the tool list.
+
+**Page types that are FIXED — bespoke design:**
+- Landing page (pond scene)
+- Class-specific intro moments (5 total, one per class — fixed set)
+- Profile Summary reveal
+- AI Opportunities reveal
+- Results Summary (expandable)
+- Answer Review
+- What's Next / feedback page
+- Time-jump transitions (one design, reused)
+
+**How archetypes integrate with the content layer:**
+Add an `archetype` field to JSON content types that map to growing page types. Example:
+
+```json
+{
+  "id": "library-late-night",
+  "archetype": "environmental",
+  "background": "library-3am",
+  "choices": [...]
+}
+```
+
+The frontend uses the `archetype` value to select the right layout/interaction grammar at render time. Adding a new scenario becomes a content-layer operation: write the content, pick the archetype, done. No design session needed.
+
+**Design archetypes as a family, not separately.** When designing the 3-4 archetypes for a page type, design them in one Claude Design session so they can be compared side-by-side and made to feel like siblings (shared world vocabulary) rather than strangers. Within-archetype variation (different art, different backgrounds, different sub-type fields for camera angle or button treatment) can be layered on top without requiring new archetypes.
+
+**Escape hatch — rare bespoke one-offs are allowed** for moments where the design IS the storytelling (a climactic choice, a signature results reveal). Reserve these sparingly.
+
+### Scope: Pages to Redesign
+
+Rough scope list for the redesign phase. Mark each "fixed" or "growing" to decide templating approach. This list should be revisited and finalized before the phase begins.
+
+| Page | Fixed / Growing | Approach |
+|------|-----------------|----------|
+| Landing page (pond) | Fixed | Bespoke — serves as world bible |
+| Class intro moments | Fixed (5 total) | Bespoke — one per class |
+| Scenario screens | Growing | 3-4 archetypes |
+| Post-choice micro-reaction | Fixed pattern, variable content | 1-2 archetypes (resolve "too subtle" issue via design here) |
+| Flavor moments | Growing | 2-3 archetypes |
+| Time-jump transitions | Fixed | Bespoke, reusable |
+| Interactive screens (time drains, wishlist, aiToolsUsed, familiarity) | Fixed | Bespoke each |
+| Profile Summary reveal | Fixed | Bespoke |
+| AI Opportunities reveal | Fixed | Bespoke |
+| Quick Wins cards | Growing | 2 archetypes |
+| Results Summary (expandable) | Fixed | Bespoke |
+| Answer Review | Fixed | Bespoke |
+| What's Next / feedback | Fixed | Bespoke |
+
+### Priority Order for Redesign (Rough)
+
+1. **Landing page (pond)** — establishes the world
+2. **Scenario screen archetypes** — the emotional core of the game, biggest impact on "feels like a game vs. survey"
+3. **Post-choice micro-reaction** — currently flagged as too subtle, redesign solves placement + size + treatment
+4. **Class intro moments** — small specific intro moments, one per class
+5. **Quick Wins cards** — should feel like collectible item drops, not survey results
+6. **Results Summary** — reveal/unfold energy, not report energy
+7. **Interactive screens** — time drains, wishlist, aiToolsUsed, familiarity
+8. **Flavor moment archetypes** — story beats between scenarios
+9. **Profile Summary / AI Opportunities reveals** — pacing of the results flow
+10. **Time-jump transitions** — scene bridges
+11. **Answer Review + What's Next** — lower priority, functional pages
+
+### Workflow
+
+For each page or archetype family:
+1. Open a new Claude Design session
+2. Provide the content (from JSON) and the world vocabulary
+3. Explore 3-4 directions (sliders, inline comments, variant comparison)
+4. Pick a direction, refine, finalize
+5. Export a Claude Code handoff bundle
+6. Claude Code implements the page using the bundle, keeping content-layer wiring intact
+7. Iterate in-code for any final polish
+
+### Character Redesigns
+Character art (the frogs themselves) may be redrawn or refined during this phase as the visual language evolves. Nanobanana remains the source of truth for character illustration; new versions are imported into Claude Design as assets.
+
+### Tradeoffs to Accept Going In
+- **Maintenance cost of per-scene design** — adding a new FIXED page later requires a design session. Fine because fixed pages change rarely.
+- **Archetype thinness risk** — if an archetype feels thin, it may read as "re-skinned template." Mitigation: bake within-archetype variation into each archetype (different camera angles, sub-type fields, backgrounds) rather than creating more archetypes.
+- **Claude Design handoff is a new workflow pattern** — learning curve on first few pages, then it becomes the default.
+
+### Open Questions (resolve during or before the phase)
+- Will character art get a refresh pass, or stay as-is from Nanobanana Batch 1?
+- How should archetype selection work in content JSON — manual field per content item, or auto-derived from content traits?
+- Mobile-first vs. desktop-first for the redesign pass?
+- Where does sound design fit (if at all)? Subtle audio cues on choice moments, flavor moments, results reveal?
+- Do animations/transitions get designed in Claude Design, or spec'd there and built in code?
 
 ---
 
