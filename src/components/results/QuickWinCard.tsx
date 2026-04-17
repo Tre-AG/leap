@@ -42,9 +42,15 @@ export default function QuickWinCard({ win, index, total }: QuickWinCardProps) {
         <p className="text-xs font-semibold text-leaf-dark">
           Tool: {win.tool}
         </p>
-        <p className="mt-1 text-sm text-foreground/70">
-          {win.howToStart}
-        </p>
+        <div className="mt-1 flex flex-col gap-1 text-sm text-foreground/70">
+          {win.howToStart
+            .split(/(?=\d+\.\s)/)
+            .map((step) => step.trim())
+            .filter((step) => step.length > 0)
+            .map((step, i) => (
+              <p key={i}>{step}</p>
+            ))}
+        </div>
       </div>
 
       {win.examplePrompt &&
