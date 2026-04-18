@@ -5,17 +5,16 @@ import { useState } from "react";
 interface TimeDrainsProps {
   options: string[];
   max: number;
-  onSubmit: (ranked: string[]) => void;
+  onSubmit: (selected: string[]) => void;
   onBack?: () => void;
 }
 
 export default function TimeDrains({ options, max, onSubmit, onBack }: TimeDrainsProps) {
-  const [ranked, setRanked] = useState<string[]>([]);
+  const [selected, setSelected] = useState<string[]>([]);
 
   const toggle = (option: string) => {
-    setRanked((prev) => {
-      const idx = prev.indexOf(option);
-      if (idx >= 0) {
+    setSelected((prev) => {
+      if (prev.includes(option)) {
         return prev.filter((o) => o !== option);
       }
       if (prev.length >= max) return prev;
@@ -23,10 +22,7 @@ export default function TimeDrains({ options, max, onSubmit, onBack }: TimeDrain
     });
   };
 
-  const getRank = (option: string): number => {
-    const idx = ranked.indexOf(option);
-    return idx >= 0 ? idx + 1 : 0;
-  };
+  const isSelected = (option: string): boolean => selected.includes(option);
 
   return (
     <div className="mx-auto w-full max-w-lg px-6">
@@ -39,24 +35,19 @@ export default function TimeDrains({ options, max, onSubmit, onBack }: TimeDrain
 
       <div className="flex flex-wrap justify-center gap-2">
         {options.map((option) => {
-          const rank = getRank(option);
+          const active = isSelected(option);
           return (
             <button
               key={option}
               onClick={() => toggle(option)}
-              className={`relative rounded-full border-2 px-4 py-2 text-sm font-semibold transition-all ${
-                rank > 0
+              className={`rounded-full border-2 px-4 py-2 text-sm font-semibold transition-all ${
+                active
                   ? "border-leaf bg-pond-light text-leaf-dark"
-                  : ranked.length >= max
+                  : selected.length >= max
                     ? "cursor-not-allowed border-transparent bg-white/50 text-foreground/40"
                     : "border-transparent bg-white text-foreground/70 shadow-sm hover:shadow-md"
               }`}
             >
-              {rank > 0 && (
-                <span className="absolute -top-2 -right-2 flex h-5 w-5 items-center justify-center rounded-full bg-leaf text-xs font-bold text-white">
-                  {rank}
-                </span>
-              )}
               {option}
             </button>
           );
@@ -65,10 +56,10 @@ export default function TimeDrains({ options, max, onSubmit, onBack }: TimeDrain
 
       <div className="mt-8 flex justify-center">
         <button
-          onClick={() => onSubmit(ranked)}
-          disabled={ranked.length === 0}
+          onClick={() => onSubmit(selected)}
+          disabled={selected.length === 0}
           className={`rounded-2xl px-10 py-4 text-lg font-bold text-white shadow-lg transition-all ${
-            ranked.length > 0
+            selected.length > 0
               ? "bg-leaf hover:bg-leaf-dark hover:shadow-xl"
               : "cursor-not-allowed bg-foreground/20"
           }`}
