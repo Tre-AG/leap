@@ -30,7 +30,7 @@ export async function POST(request: Request) {
 
     const message = await client.messages.create({
       model: "claude-sonnet-4-20250514",
-      max_tokens: 2000,
+      max_tokens: 4000,
       temperature: 0.3,
       messages: [{ role: "user", content: prompt }],
     });
@@ -40,7 +40,14 @@ export async function POST(request: Request) {
       throw new Error("No text response from Claude");
     }
 
-    const recommendations: Recommendations = JSON.parse(textBlock.text);
+    let jsonText = textBlock.text.trim();
+    if (jsonText.startsWith("```")) {
+      jsonText = jsonText
+        .replace(/^```(?:json)?\n?/, "")
+        .replace(/\n?```$/, "");
+    }
+
+    const recommendations: Recommendations = JSON.parse(jsonText);
 
     return NextResponse.json(recommendations);
   } catch (error) {
