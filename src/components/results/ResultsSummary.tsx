@@ -134,7 +134,9 @@ function QuickWinRow({ win, index }: { win: QuickWin; index: number }) {
                       .filter((s) => s.length > 0)
                   : [String(win.howToStart)]
               ).map((step, i) => (
-                <p key={i}>{step}</p>
+                <p key={i}>
+                  {/^\d+\.\s/.test(step) ? step : `${i + 1}. ${step}`}
+                </p>
               ))}
             </div>
           </div>
