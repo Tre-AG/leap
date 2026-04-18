@@ -126,7 +126,7 @@ export interface QuickWin {
   why: string;
   tool: string;
   toolCost: string;
-  howToStart: string;
+  howToStart: string | string[];
   examplePrompt?: string;
 }
 

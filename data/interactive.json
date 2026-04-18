@@ -11,7 +11,7 @@
       "Pen & paper", "Sticky notes", "Physical planner",
       "Notes app", "Reminders app",
       "WhatsApp", "iMessage",
-      "Quizlet", "ChatGPT", "Google Classroom"
+      "Quizlet", "Google Classroom"
     ],
     "professional": [
       "Gmail", "Outlook", "Google Calendar", "Apple Calendar",
@@ -24,7 +24,7 @@
       "Pen & paper", "Sticky notes", "Physical planner",
       "Notes app", "Reminders app",
       "WhatsApp", "Signal", "iMessage",
-      "ChatGPT", "LinkedIn"
+      "LinkedIn"
     ],
     "entrepreneur": [
       "Gmail", "Outlook", "Google Calendar", "Apple Calendar",
@@ -37,7 +37,7 @@
       "Pen & paper", "Sticky notes", "Physical planner",
       "Notes app", "Reminders app",
       "WhatsApp", "Signal", "iMessage",
-      "ChatGPT", "Instagram", "LinkedIn",
+      "Instagram", "LinkedIn",
       "Shopify", "Mailchimp", "Squarespace/Wix", "Venmo/PayPal"
     ],
     "parent": [
@@ -50,7 +50,7 @@
       "Pen & paper", "Sticky notes", "Physical planner",
       "Notes app", "Reminders app",
       "WhatsApp", "iMessage",
-      "ChatGPT", "Amazon", "Instacart", "Cozi", "Venmo"
+      "Amazon", "Instacart", "Cozi", "Venmo"
     ],
     "creative": [
       "Gmail", "Outlook", "Google Calendar", "Apple Calendar",
@@ -63,7 +63,7 @@
       "Pen & paper", "Sticky notes", "Physical planner",
       "Notes app", "Reminders app",
       "WhatsApp", "iMessage",
-      "ChatGPT", "Instagram", "Procreate", "Adobe Creative Cloud",
+      "Instagram", "Procreate", "Adobe Creative Cloud",
       "Pinterest", "Squarespace/Wix"
     ]
   },

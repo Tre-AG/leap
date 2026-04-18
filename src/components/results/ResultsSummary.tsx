@@ -125,13 +125,17 @@ function QuickWinRow({ win, index }: { win: QuickWin; index: number }) {
               How to start
             </p>
             <div className="mt-1 flex flex-col gap-1 text-sm text-foreground/70">
-              {win.howToStart
-                .split(/(?=\d+\.\s)/)
-                .map((step) => step.trim())
-                .filter((step) => step.length > 0)
-                .map((step, i) => (
-                  <p key={i}>{step}</p>
-                ))}
+              {(Array.isArray(win.howToStart)
+                ? win.howToStart
+                : typeof win.howToStart === "string"
+                  ? win.howToStart
+                      .split(/(?=\d+\.\s)/)
+                      .map((s) => s.trim())
+                      .filter((s) => s.length > 0)
+                  : [String(win.howToStart)]
+              ).map((step, i) => (
+                <p key={i}>{step}</p>
+              ))}
             </div>
           </div>
           {showPrompt && (
