@@ -1228,7 +1228,11 @@ Shareable AI profiles. Mini tutorials and video walkthroughs. Newsletter. Commun
 45. Set up actual email sending for Save Results (Resend or SendGrid integration) — **deferred until post-UI/design work**
 46. **Build Automated Data Update System for both tools AND usage methods (see dedicated section below) — MANDATORY before full launch**
 47. ~~Batch 2: Creative class content rework~~ ✅ *(Apr 2026. Cut "The Unglamorous Work" scenario, folded into Finish Line. Reordered to 8-scenario arc: Starting Point → Messy Middle → Feedback Problem → Unfinished Projects → Time Problem → Creative Block → Finish Line → Finished Product. Responsibilities rewritten for creative process. Time Drains reworked from freelancer admin to creative-process friction. Wishlist reframed from business needs to creative wishes.)*
-48. Batch 3: Tools vs. methods strategic shift — **IN PROGRESS** *(3A complete: aiToolsUsed multi-select. 3B next: methods.json + prompt rewrite. 3C: Quick Win UI update. See Alpha Feedback section.)*
+48. ~~Batch 3: Tools vs. methods strategic shift~~ ✅ *(Apr 2026. 3A: replaced aiUsage with aiToolsUsed multi-select. 3B: rewrote prompt.ts for methods-first with mainstream defaults and smart tool picking, no methods.json needed. 3C: Quick Win steps formatting, howToStart array handling, step numbers, rank badge removal from TimeDrains, ChatGPT removed from tools grid, max_tokens 2000→4000, markdown fence stripping, bracketed placeholders in example prompts. See Alpha Feedback section.)*
+49. Batch 4: Creative results bias fix and interactive content expansion — **NOT STARTED** *(see Alpha Feedback section)*
+50. Alpha test — send to 5-10 close friends/family, gather feedback
+51. Iterate based on feedback
+52. Broader launch
 49. Alpha test — send to 5-10 close friends/family, gather feedback
 50. Iterate based on feedback
 51. Broader launch
@@ -1636,20 +1640,37 @@ First external playtest feedback, from a user who went through the Creative clas
 - Time Drains: replaced freelancer admin with creative-process friction (blank page, redoing sections, formatting, version management, software, technical parts, rough drafts, tool-switching, workspace cleanup, sourcing materials, backups)
 - Wishlist: replaced business items with creative wishes (blank page, feedback, finishing projects, figuring out issues, inspiration, techniques, technical help, file organization, trying ideas, writing about work)
 
-### Batch 3 — Tools vs. methods strategic shift (IN PROGRESS)
+### Batch 3 — Tools vs. methods strategic shift (COMPLETED Apr 2026)
 
 **Planning decisions (finalized Apr 2026):**
 - Hard mainstream default: ChatGPT, Claude, Gemini only unless use case genuinely requires a specialist (live transcription, image generation, etc.)
 - Smart tool picking: model picks best mainstream tool per Quick Win based on user's aiToolsUsed selections and task fit (Gemini for Google Workspace, Claude for coding, ChatGPT for brainstorming). If none selected, default to ChatGPT
-- Quick Win format: outcome headline first, personalized "why this helps you," then "Do this in [Tool] (free tier works):" with steps and inline prompts. No redundant tool line at bottom
+- Quick Win format: outcome headline first, personalized "why this helps you," then "Do this in [Tool] (free tier works):" with numbered steps and inline prompts. No redundant tool line at bottom
 - AI Opportunities section stays as higher-level framing
-- New file data/methods.json: task-type organized, tool-agnostic prompt patterns. Primary content source for Quick Wins
+- No methods.json needed. Prompt rewrite alone was sufficient to shift from tool-first to methods-first recommendations
 - Quick Wins count stays at 3-5
 
-**Sub-batches:**
+**Sub-batches (all complete):**
 - ~~Batch 3A~~ ✅ — Replaced single-select aiUsage with multi-select aiToolsUsed (ChatGPT, Claude, Gemini, Copilot, Perplexity). Zero selections valid. Commit 8b51f9d, 7 files updated
-- Batch 3B — **NEXT**: Create methods.json, rewrite prompt.ts for methods-first with mainstream defaults and smart tool picking
-- Batch 3C — Update QuickWinCard.tsx and ResultsSummary.tsx for new format
+- ~~Batch 3B~~ ✅ — Rewrote prompt.ts: methods-first framing, mainstream default rule, smart tool picking, specialist tools demoted to reference-only. Example prompts use [bracketed placeholders] instead of invented details. No new data files needed
+- ~~Batch 3C~~ ✅ — QuickWinCard and ResultsSummary updated: howToStart steps split onto separate lines with numbers, handles both string and array format. TimeDrains rank badges removed. ChatGPT removed from general tools grid (now only on AI tools multi-select). max_tokens increased 2000→4000. Markdown fence stripping added to API route
+
+**Additional fixes during Batch 3:**
+- Example prompts initially invented fake scenarios. Fixed by instructing model to use [bracketed placeholders] for user-specific details
+- howToStart field sometimes returned as array instead of string. Added defensive handling
+- API returning 500 errors due to token limit and markdown fences. Fixed with max_tokens increase and fence stripping
+
+### Batch 4 — Creative results bias fix and interactive content expansion (NOT STARTED)
+
+**Creative class results bias (prompt tuning):**
+- Results still assume user creates for a business/audience. Hobbyists and personal creators don't relate to "batch format for platforms"
+- Need prompt instruction: do not assume Creative users create for business or audience. Let their selections guide whether recommendations lean sharing/publishing vs personal process
+- Results assume specific creative mediums (writing, digital content). Need prompt instruction: do not assume a specific medium. User might write, draw, paint, make music, photograph, craft, cook, code, etc. Keep prompts medium-agnostic unless answers clearly indicate a medium
+
+**Interactive content expansion (all classes):**
+- Responsibilities and Time Drains need more options across all 5 classes
+- Current options are too narrow. Need to cast a wider net so every user finds options that apply to them
+- This is a content task requiring review and expansion per class
 
 ---
 
