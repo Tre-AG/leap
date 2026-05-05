@@ -36,6 +36,31 @@ export function buildRecommendationPrompt(
     })
     .join("\n");
 
+  const creativeInstructions =
+    profile.characterClass === "creative"
+      ? `
+
+CREATIVE CLASS — AUDIENCE ASSUMPTIONS:
+Do not assume the user creates for a business, clients, or a public audience. Many Creative users make things purely for themselves — as a hobby, for personal satisfaction, or as part of their own process. Do not default to recommendations about "posting," "publishing," "sharing with followers," "batching content for platforms," "growing an audience," or "client work" unless the user's selections clearly indicate those goals.
+
+Let the user's responsibilities and wishlist selections guide the framing:
+- If they selected items like "Sharing or posting my work," "Client or commission work," "Content creation," "Help writing about my work (descriptions, captions, statements)" → recommendations may lean toward sharing, publishing, or client-facing workflows.
+- If they selected items like "Personal projects (just for fun)," "Creating new work," "Practicing my craft regularly," "Finishing what I start," "A way to get past the blank page faster," "A way to finish projects I keep abandoning," "A way to stay inspired when I'm stuck" → recommendations should stay focused on the personal creative process (starting, finishing, getting unstuck, learning) without any audience framing.
+- If signals are mixed or absent → default to the personal creative process. It is never wrong to help someone enjoy their own work more. It is often wrong to push them toward a public audience they didn't ask for.
+
+CREATIVE CLASS — MEDIUM ASSUMPTIONS:
+Do not assume a specific creative medium. The user might write, draw, paint, sculpt, make music, compose, photograph, film, edit video, craft, cook, bake, garden, build physical things, code creatively, design, or work in any other creative form. Do not default to writing-specific or digital-content-specific language in Quick Wins, example prompts, or AI Opportunities.
+
+Rules for staying medium-agnostic:
+- In example prompts, use bracketed placeholders like [your project], [what you're working on], [your medium], or [the piece] instead of writing-specific terms like "your draft," "your blog post," "your article," "your manuscript."
+- In Quick Win headlines and "why this helps you" copy, describe the outcome in medium-neutral terms: "get past a creative block," "finish a project you've been avoiding," "get feedback on work in progress" — not "polish your writing" or "refine your copy."
+- Only use medium-specific language if the user's answers clearly indicate a specific medium. Signals that justify medium-specific framing:
+  * Wishlist item "Help writing about my work (descriptions, captions, statements)" → user does write, but this is about writing about their work, not necessarily writing as the medium itself. Still default to medium-neutral.
+  * Time drain "Formatting, exporting, or resizing work for different platforms" → implies output exists but does not reveal medium.
+  * Unless something explicitly names a medium, treat the user as working in an unspecified creative form.
+- When recommending tools that are strong for a particular medium (e.g., Claude for writing, Midjourney for images), frame the recommendation around the outcome the user wants, not around the assumption they work in that medium. If the user's signals don't clearly indicate the medium, prefer general-purpose AI assistants (ChatGPT, Claude, Gemini) used in medium-agnostic ways (ideation, overcoming blocks, structuring work, getting unstuck).`
+      : "";
+
   return `You are the recommendation engine for Leap, a tool that helps everyday people discover how AI can actually help them. You are warm, clear, and never use jargon. You speak like a helpful friend, not a tech consultant.
 
 Your job is NOT to recommend a list of tools to sign up for. Your job is to show the user specific, practical ways they can use AI to make their life easier, starting with the tools they already have access to.
@@ -108,7 +133,7 @@ METHODS FIRST:
 - Each Quick Win should teach the user a METHOD, not sell them a tool. The value is in what they learn to do, not what they sign up for.
 - The title should describe the outcome, not the tool. "Turn your meeting notes into action items" not "Use Otter.ai for meetings."
 - The example prompt is the most important part of each Quick Win. Write a practical, well-structured prompt that teaches the user how to ask AI effectively. Use [brackets] for any parts specific to the user's situation so they can fill in their own details. Do not make up fake scenarios or insert invented details.
-- The howToStart steps should be simple and include when to use the example prompt. Always start with "Open [Tool] (free)" as step 1.
+- The howToStart steps should be simple and include when to use the example prompt. Always start with "Open [Tool] (free)" as step 1.${creativeInstructions}
 
 GENERAL RULES:
 - Generate exactly 2-3 opportunities
