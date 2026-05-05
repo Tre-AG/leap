@@ -81,10 +81,15 @@
       "Marketing",
       "Scheduling & coordination",
       "Data analysis",
-      "Training or onboarding others"
+      "Training or onboarding others",
+      "Hiring and interviewing",
+      "Mentoring or coaching others",
+      "Strategy and planning",
+      "Operations and process improvement",
+      "Building my skills and network"
     ],
     "student": [
-      "Attending lectures",
+      "Attending classes",
       "Studying for exams",
       "Writing papers or essays",
       "Group projects",
@@ -95,7 +100,13 @@
       "Job searching",
       "Managing finances",
       "Scheduling",
-      "Tutoring"
+      "Part-time job",
+      "Managing my living situation",
+      "Building skills outside class",
+      "Taking care of myself",
+      "Planning my next step (college, jobs, gap year)",
+      "Maintaining friendships and relationships",
+      "Staying connected with family"
     ],
     "entrepreneur": [
       "Building a product or service",
@@ -109,20 +120,30 @@
       "Networking",
       "Client communication",
       "Invoicing & admin",
-      "Learning new skills"
+      "Learning new skills",
+      "Hiring or managing a team",
+      "Keeping customers happy and coming back",
+      "Operations and fulfillment",
+      "Legal, taxes, and compliance",
+      "Building partnerships and relationships",
+      "Fundraising or financing the business"
     ],
     "parent": [
       "School logistics",
       "Meal planning & groceries",
       "Scheduling activities",
       "Household management",
-      "Work responsibilities",
       "Medical appointments",
       "Budgeting",
       "Helping with homework",
       "Coordinating with partner",
       "Volunteering",
-      "Planning events"
+      "Planning events",
+      "Supporting my kids emotionally",
+      "Caring for aging parents or family",
+      "Managing screen time and tech for kids",
+      "Maintaining my relationship with my partner",
+      "Taking care of myself"
     ],
     "creative": [
       "Personal projects (just for fun)",
@@ -134,7 +155,10 @@
       "Sharing or posting my work",
       "Client or commission work",
       "Organizing my files and projects",
-      "Administrative tasks (invoicing, contracts, etc.)"
+      "Administrative tasks (invoicing, contracts, etc.)",
+      "Practicing my craft regularly",
+      "Finishing what I start",
+      "Collaborating with other creatives"
     ]
   },
   "timeDrains": {
@@ -150,7 +174,12 @@
       "Managing class schedules",
       "Keeping up with emails and messages",
       "Reviewing and editing my own work",
-      "Figuring out concepts I don't understand"
+      "Figuring out concepts I don't understand",
+      "Picking classes and figuring out my schedule",
+      "Dealing with financial aid, scholarships, or paperwork",
+      "Looking for jobs or internships",
+      "Coordinating with roommates or housing",
+      "Trying to stay on top of everything mentally"
     ],
     "professional": [
       "Email",
@@ -164,7 +193,12 @@
       "Formatting or editing documents",
       "Taking and organizing meeting notes",
       "Expense reports or invoicing",
-      "Status updates and check-ins"
+      "Status updates and check-ins",
+      "Reviewing other people's work",
+      "Switching between different tools and apps",
+      "Travel and expense logistics",
+      "Job hunting or interviewing",
+      "Navigating workplace dynamics"
     ],
     "entrepreneur": [
       "Social media and content creation",
@@ -178,7 +212,12 @@
       "Learning skills I don't have yet",
       "Networking and outreach",
       "Administrative tasks (contracts, legal, filing)",
-      "Planning what to work on next"
+      "Planning what to work on next",
+      "Hiring and onboarding people",
+      "Bookkeeping, taxes, and accounting",
+      "Customer support and handling issues",
+      "Working with vendors, freelancers, or contractors",
+      "Doing everything myself"
     ],
     "parent": [
       "Meal planning and grocery shopping",
@@ -192,7 +231,12 @@
       "Researching activities, camps, or programs for kids",
       "Keeping track of everything in my head",
       "Personal errands that keep piling up",
-      "Communicating and coordinating with my partner"
+      "Communicating and coordinating with my partner",
+      "Being there when my kids are struggling",
+      "Driving kids to and from things",
+      "Keeping up with school and activity communications",
+      "Looking up answers to parenting questions",
+      "Caring for aging parents or extended family"
     ],
     "creative": [
       "Staring at a blank page, not knowing where to start",
@@ -207,7 +251,10 @@
       "Going back and forth between tools during a project",
       "Cleaning up or organizing my workspace before I can start",
       "Sourcing materials, assets, or supplies",
-      "Backing up and saving work in the right places"
+      "Backing up and saving work in the right places",
+      "Comparing my work to other creatives' work",
+      "Second-guessing whether something is good enough",
+      "Waiting to feel inspired"
     ]
   },
   "maxTimeDrains": 5,
