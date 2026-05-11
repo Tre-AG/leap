@@ -1229,13 +1229,10 @@ Shareable AI profiles. Mini tutorials and video walkthroughs. Newsletter. Commun
 46. **Build Automated Data Update System for both tools AND usage methods (see dedicated section below) — MANDATORY before full launch**
 47. ~~Batch 2: Creative class content rework~~ ✅ *(Apr 2026. Cut "The Unglamorous Work" scenario, folded into Finish Line. Reordered to 8-scenario arc: Starting Point → Messy Middle → Feedback Problem → Unfinished Projects → Time Problem → Creative Block → Finish Line → Finished Product. Responsibilities rewritten for creative process. Time Drains reworked from freelancer admin to creative-process friction. Wishlist reframed from business needs to creative wishes.)*
 48. ~~Batch 3: Tools vs. methods strategic shift~~ ✅ *(Apr 2026. 3A: replaced aiUsage with aiToolsUsed multi-select. 3B: rewrote prompt.ts for methods-first with mainstream defaults and smart tool picking, no methods.json needed. 3C: Quick Win steps formatting, howToStart array handling, step numbers, rank badge removal from TimeDrains, ChatGPT removed from tools grid, max_tokens 2000→4000, markdown fence stripping, bracketed placeholders in example prompts. See Alpha Feedback section.)*
-49. Batch 4: Creative results bias fix and interactive content expansion — **NOT STARTED** *(see Alpha Feedback section)*
+49. ~~Batch 4: Creative results bias fix and interactive content expansion~~ ✅ *(May 2026. 4A: added two Creative-class-specific prompt instructions in src/lib/prompt.ts — one preventing audience/business assumptions, one preventing medium assumptions. Both gated on profile.characterClass === "creative", injected before GENERAL RULES. 4B: expanded responsibilities and timeDrains across all five classes in data/interactive.json — Parent 11→15 responsibilities and 12→17 time drains, Student 12→18/12→17 with rename "Attending lectures" → "Attending classes" and drop "Tutoring", Professional 13→18/12→17, Entrepreneur 12→18/12→17, Creative 10→13/13→16. Dropped "Work responsibilities" from Parent. Commits b17a933 and d355dad. Smoke tested: Creative hobby playthrough produced medium-agnostic, audience-free results using bracketed placeholders like [your creative project/medium]; spot-checked rendering on all four other classes.)*
 50. Alpha test — send to 5-10 close friends/family, gather feedback
 51. Iterate based on feedback
 52. Broader launch
-49. Alpha test — send to 5-10 close friends/family, gather feedback
-50. Iterate based on feedback
-51. Broader launch
 
 ---
 
@@ -1660,17 +1657,39 @@ First external playtest feedback, from a user who went through the Creative clas
 - howToStart field sometimes returned as array instead of string. Added defensive handling
 - API returning 500 errors due to token limit and markdown fences. Fixed with max_tokens increase and fence stripping
 
-### Batch 4 — Creative results bias fix and interactive content expansion (NOT STARTED)
+### Batch 4 — Creative results bias fix and interactive content expansion (COMPLETED May 2026)
 
-**Creative class results bias (prompt tuning):**
-- Results still assume user creates for a business/audience. Hobbyists and personal creators don't relate to "batch format for platforms"
-- Need prompt instruction: do not assume Creative users create for business or audience. Let their selections guide whether recommendations lean sharing/publishing vs personal process
-- Results assume specific creative mediums (writing, digital content). Need prompt instruction: do not assume a specific medium. User might write, draw, paint, make music, photograph, craft, cook, code, etc. Keep prompts medium-agnostic unless answers clearly indicate a medium
+**Batch 4A — Creative class prompt instructions (commit b17a933):**
 
-**Interactive content expansion (all classes):**
-- Responsibilities and Time Drains need more options across all 5 classes
-- Current options are too narrow. Need to cast a wider net so every user finds options that apply to them
-- This is a content task requiring review and expansion per class
+Two new class-specific prompt instructions added to `src/lib/prompt.ts`, gated on `profile.characterClass === "creative"`, injected before the GENERAL RULES section.
+
+- **Audience assumptions block:** instructs the model not to assume Creative users create for a business, clients, or a public audience. Lets the user's responsibilities and wishlist selections guide whether recommendations lean toward sharing/publishing or personal process. Defaults to personal process when signals are mixed or absent.
+- **Medium assumptions block:** instructs the model not to assume a specific creative medium (writing, drawing, music, photography, crafts, cooking, code, etc.). Requires bracketed placeholders like `[your creative project/medium]` or `[the piece]` in example prompts instead of writing-specific terms. Allows medium-specific framing only when user signals clearly indicate one.
+
+**Batch 4B — Responsibilities and Time Drains expansion (commit d355dad):**
+
+All five classes in `data/interactive.json` expanded for broader user coverage. Target range: 15–18 items per list.
+
+| Class | Responsibilities | Time Drains |
+|-------|-----------------|-------------|
+| Parent | 11 → 15 | 12 → 17 |
+| Student | 12 → 18 | 12 → 17 |
+| Professional | 13 → 18 | 12 → 17 |
+| Entrepreneur | 12 → 18 | 12 → 17 |
+| Creative | 10 → 13 | 13 → 16 |
+
+Notable non-addition changes:
+- **Parent Responsibilities:** dropped "Work responsibilities" (weird catch-all)
+- **Student Responsibilities:** dropped "Tutoring" (too narrow), renamed "Attending lectures" → "Attending classes" (more inclusive across middle school through college)
+
+New Parent items: emotional support, aging parents, screen time, relationship maintenance, self-care; driving kids, school communications, parenting questions, sandwich generation time drains. New Student items: part-time job, living situation, skills outside class, self-care, next-step planning, friendships, family; class registration, financial aid, roommate coordination, cognitive load. New Professional items: hiring/interviewing, mentoring, strategy, operations, career growth; reviewing others' work, tool-switching, travel/expenses, job hunting, workplace dynamics. New Entrepreneur items: hiring, customer retention, operations/fulfillment, legal/taxes, partnerships, fundraising; onboarding, bookkeeping/taxes, customer support, vendors/contractors, role-switching. New Creative items: regular practice, finishing projects, collaboration; comparison spirals, second-guessing, waiting for inspiration.
+
+**Smoke testing:**
+
+- Full Creative class hobby playthrough verified: profile recap correctly picked up the "create privately" signal, AI Opportunities and Quick Wins were medium-agnostic and audience-free, example prompts used bracketed placeholders. Both 4A instructions confirmed working as intended.
+- Responsibilities screens spot-checked across all five classes — all items render correctly, no layout breakage, no console errors.
+
+**Status:** committed and pushed to origin/main. Vercel deployment intentionally deferred (no Vercel project set up yet; domain not connected to a deployed site). The push is sitting on GitHub awaiting deploy when that work resumes.
 
 ---
 
@@ -1706,7 +1725,7 @@ The bash shell used by the desktop Code tab does not have Node.js on its PATH by
 ## Domain & Hosting
 
 - **Domain:** taketheleap.ai (purchased February 2026, Namecheap, 2-year registration)
-- **Hosting:** Vercel (free tier for V1)
+- **Hosting:** Vercel planned (free tier for V1) — **not yet set up**. No Vercel project exists, domain not connected to a deployed site. Code lives on GitHub at github.com/Tre-AG/leap; runs locally on `localhost:3000`. Deployment intentionally deferred until landing page redesign, email sending, and other UI/design work are further along.
 - **Domain Privacy:** Enabled (free via Namecheap)
 - **Auto-Renew:** Enabled for domain registration
 
